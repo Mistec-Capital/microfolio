@@ -6,5 +6,5 @@
 </script>
 
 <div class="text-sm text-primary {className}" {...props}>
-	Showing {$rowCount.start} to {$rowCount.end} of {$rowCount.total} entries
+	Mostrando {$rowCount.start} a {$rowCount.end} de {$rowCount.total} entradas
 </div>

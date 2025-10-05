@@ -1,7 +1,7 @@
 export const siteConfig = {
-	title: 'microfolio',
-	description: 'static portfolio generator',
-	author: 'AKER',
+	title: 'Mistec Capital',
+	description: 'Misiones, Capital Tecnológica',
+	author: 'Mistec Capital',
 	version: '0.4.0-beta.6',
 
 	// Social links
@@ -13,11 +13,11 @@ export const siteConfig = {
 
 	// Navigation
 	navigation: [
-		{ name: 'Home', href: '/' },
-		{ name: 'About', href: '/about' },
-		{ name: 'Projects', href: '/projects' },
-		{ name: 'List', href: '/list' },
-		{ name: 'Map', href: '/map' }
+		{ name: 'Inicio', href: '/' },
+		{ name: 'Nosotros', href: '/about' },
+		{ name: 'Proyectos', href: '/projects' },
+		{ name: 'Lista', href: '/list' },
+		{ name: 'Mapa', href: '/map' }
 		// ...
 	]
 };

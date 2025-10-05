@@ -7,7 +7,7 @@
 </script>
 
 <div class="flex items-center gap-2 {className}" {...props}>
-	<span class="text-sm">Show:</span>
+	<span class="text-sm">Mostrar:</span>
 	<select
 		bind:value={$rowsPerPageStore}
 		class="rounded border border-primary bg-box px-2 py-1 text-sm focus:outline-none"
@@ -16,5 +16,5 @@
 			<option value={option}>{option}</option>
 		{/each}
 	</select>
-	<span class="text-sm">entries</span>
+	<span class="text-sm">entradas</span>
 </div>

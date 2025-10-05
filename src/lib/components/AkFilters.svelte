@@ -7,12 +7,12 @@
 		filteredProjects = $bindable([])
 	} = $props();
 
-	let projectTypes = $derived(['all', ...new Set(projects.map((p) => p.type))]);
+	let projectTypes = $derived(['todos', ...new Set(projects.map((p) => p.type))]);
 
 	$effect(() => {
 		filteredProjects = projects
 			.filter((project) => {
-				const matchesType = selectedType === 'all' || project.type === selectedType;
+				const matchesType = selectedType === 'todos' || project.type === selectedType;
 				const matchesSearch =
 					searchTerm === '' ||
 					project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -32,7 +32,7 @@
 	<div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
 		<input
 			type="text"
-			placeholder="Search projects..."
+			placeholder="Buscar proyectos..."
 			bind:value={searchTerm}
 			class="border-primary focus:bg-box rounded-lg border px-4 py-2 focus:outline-none"
 		/>
@@ -53,7 +53,7 @@
 	<!-- Results count -->
 	{#if showResultsCount}
 		<p class="mt-2 text-sm">
-			{filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''} found
+			{filteredProjects.length} proyecto{filteredProjects.length !== 1 ? 's' : ''} encontrado{filteredProjects.length !== 1 ? 's' : ''}
 		</p>
 	{/if}
 </div>

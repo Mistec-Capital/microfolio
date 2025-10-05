@@ -1,8 +1,8 @@
 ---
-title: 'Welcome!'
-description: 'A modern static portfolio generator built with SvelteKit and Tailwind CSS. Showcase your creative work with elegance and simplicity.'
+title: '¡Bienvenidos!'
+description: 'Soluciones tecnológicas de calidad desde el corazón de Misiones.'
 ---
 
-## This is the homepage
+## Misiones, Capital Tecnológica
 
-Add content here.
+En **Mistec Capital** desarrollamos soluciones informáticas innovadoras con compromiso y profesionalidad. Somos un equipo de ingenieros en sistemas unidos por la amistad y la pasión por la tecnología, trabajando para posicionar a Misiones como un referente tecnológico.

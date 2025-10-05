@@ -7,21 +7,21 @@
 	let { data } = $props();
 	let projects = $derived(data.projects);
 
-	let selectedType = $state('all');
+	let selectedType = $state('todos');
 	let searchTerm = $state('');
 	let filteredProjects = $state(data.projects);
 </script>
 
 <svelte:head>
-	<title>{siteConfig.title} • Projects</title>
-	<meta name="description" content="Projects list" />
+	<title>{siteConfig.title} • Proyectos</title>
+	<meta name="description" content="Lista de proyectos" />
 </svelte:head>
 
 <div class="space-y-8">
 	<!-- Header -->
 	<header>
-		<h1 class="text-primary mb-2 text-3xl font-bold">Projects</h1>
-		<p class="text-lg">Explore our diverse range of projects.</p>
+		<h1 class="text-primary mb-2 text-3xl font-bold">Proyectos</h1>
+		<p class="text-lg">Explora nuestros proyectos.</p>
 	</header>
 	<AkFilters {projects} bind:searchTerm bind:selectedType bind:filteredProjects />
 
@@ -35,7 +35,7 @@
 	<!-- Empty state -->
 	{#if filteredProjects.length === 0}
 		<div class="py-12 text-center">
-			<p class="">No projects found matching your criteria.</p>
+			<p class="">No se encontraron proyectos que coincidan con tus criterios.</p>
 		</div>
 	{/if}
 </div>

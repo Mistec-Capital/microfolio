@@ -19,11 +19,11 @@
 	let handler = $state();
 
 	// Filter state
-	let selectedType = $state('all');
+	let selectedType = $state('todos');
 	let searchTerm = $state('');
 
 	// Get unique project types
-	let projectTypes = $derived(['all', ...new Set(projects.map((p) => p.type))]);
+	let projectTypes = $derived(['todos', ...new Set(projects.map((p) => p.type))]);
 
 	// Get rows from handler
 	let rows = $derived(handler ? handler.getRows() : []);
@@ -39,7 +39,7 @@
 	$effect(() => {
 		if (!handler) return;
 		// Apply type filter
-		if (selectedType === 'all') {
+		if (selectedType === 'todos') {
 			handler.clearFilters();
 		} else {
 			handler.filter(selectedType, 'type');
@@ -76,15 +76,15 @@
 </script>
 
 <svelte:head>
-	<title>{siteConfig.title} • Projects List</title>
-	<meta name="description" content="Searchable and sortable projects list" />
+	<title>{siteConfig.title} • Lista de Proyectos</title>
+	<meta name="description" content="Lista de proyectos ordenable y con búsqueda" />
 </svelte:head>
 
 <div class="space-y-8">
 	<!-- Header -->
 	<header>
-		<h1 class="text-primary mb-2 text-3xl font-bold">Projects List</h1>
-		<p class="text-lg">Searchable and sortable projects list</p>
+		<h1 class="text-primary mb-2 text-3xl font-bold">Lista de Proyectos</h1>
+		<p class="text-lg">Lista de proyectos ordenable y con búsqueda</p>
 	</header>
 
 	<!-- Filters and Search -->
@@ -92,7 +92,7 @@
 		<div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
 			<input
 				type="text"
-				placeholder="Search projects..."
+				placeholder="Buscar proyectos..."
 				bind:value={searchTerm}
 				class="border-primary focus:bg-box rounded-lg border px-4 py-2 focus:outline-none"
 			/>
@@ -129,25 +129,25 @@
 					<thead class="bg-box">
 						<tr>
 							<ThSort {handler} orderBy="title" class="px-4 py-3 text-left">
-								<span class="font-semibold">Title</span>
+								<span class="font-semibold">Título</span>
 							</ThSort>
 							<ThSort {handler} orderBy="type" class="px-4 py-3 text-left">
-								<span class="font-semibold">Type</span>
+								<span class="font-semibold">Tipo</span>
 							</ThSort>
 							<ThSort {handler} orderBy="location" class="px-4 py-3 text-left">
-								<span class="font-semibold">Location</span>
+								<span class="font-semibold">Ubicación</span>
 							</ThSort>
 							<ThSort {handler} orderBy="date" class="px-4 py-3 text-left">
-								<span class="font-semibold">Date</span>
+								<span class="font-semibold">Fecha</span>
 							</ThSort>
 							<th class="px-4 py-3 text-left">
-								<span class="font-semibold">Description</span>
+								<span class="font-semibold">Descripción</span>
 							</th>
 							<th class="px-4 py-3 text-left">
-								<span class="font-semibold">Tags</span>
+								<span class="font-semibold">Etiquetas</span>
 							</th>
 							<th class="px-4 py-3 text-left">
-								<span class="font-semibold">Actions</span>
+								<span class="font-semibold">Acciones</span>
 							</th>
 						</tr>
 					</thead>
@@ -187,7 +187,7 @@
 									<a
 										href="{base}/projects/{project.slug}"
 										class="group bg-box text-primary border-primary inline-block cursor-pointer rounded-full border-1 p-2"
-										aria-label="View project"
+										aria-label="Ver proyecto"
 									>
 										<IconArrowRight class="pointer-events-none size-4 group-hover:scale-120" />
 									</a>
@@ -205,7 +205,7 @@
 		</div>
 	{:else}
 		<div class="flex items-center justify-center py-8">
-			<p class="text-neutral-500">Loading projects...</p>
+			<p class="text-neutral-500">Cargando proyectos...</p>
 		</div>
 	{/if}
 </div>

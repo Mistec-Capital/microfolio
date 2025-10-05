@@ -110,7 +110,7 @@
 		<p class="text-lg">{project.description}</p>
 
 		<!-- Back to projects link -->
-		<a href="{base}/projects" class="my-4 block text-sm hover:underline">← Back to Projects</a>
+		<a href="{base}/projects" class="my-4 block text-sm hover:underline">← Volver a Proyectos</a>
 
 		<!-- Main thumbnail -->
 		<img
@@ -129,7 +129,7 @@
 				<p class="italic">{thumbnailMetadata.description}</p>
 			{/if}
 			{#if thumbnailMetadata?.creditLine}
-				<p class="mt-1 text-xs">Credit: {thumbnailMetadata.creditLine}</p>
+				<p class="mt-1 text-xs">Crédito: {thumbnailMetadata.creditLine}</p>
 			{/if}
 		</div>
 
@@ -155,15 +155,15 @@
 		<hr />
 		<!-- Location & Date -->
 		<div>
-			<h3 class="text-base font-medium">Infos</h3>
-			<span class="font-medium">Location & Date ›</span>
+			<h3 class="text-base font-medium">Información</h3>
+			<span class="font-medium">Ubicación y Fecha ›</span>
 			<span>{project.location} / </span>
 			<span>{new Date(project.date).toISOString().slice(0, 7)}</span>
 
 			<!-- Status -->
 			{#if project.status}
 				<div>
-					<span class="font-medium">Status › </span>
+					<span class="font-medium">Estado › </span>
 					<span class="capitalize">{project.status}</span>
 				</div>
 			{/if}
@@ -171,7 +171,7 @@
 			<!-- Project Owner -->
 			{#if project.owner}
 				<div>
-					<span class="font-medium">Project Owner › </span>
+					<span class="font-medium">Cliente › </span>
 					<span>{project.owner}</span>
 				</div>
 			{/if}
@@ -179,7 +179,7 @@
 			<!-- Surface Area -->
 			{#if project.surface_area}
 				<div>
-					<span class="font-medium">Surface Area › </span>
+					<span class="font-medium">Superficie › </span>
 					<span>{project.surface_area}</span>
 				</div>
 			{/if}
@@ -187,7 +187,7 @@
 			<!-- Cost -->
 			{#if project.cost}
 				<div>
-					<span class="font-medium">Cost ›</span>
+					<span class="font-medium">Costo ›</span>
 					<span>{project.cost}</span>
 				</div>
 			{/if}
@@ -195,7 +195,7 @@
 		<!-- Authors -->
 		{#if project.authors && project.authors.length > 0}
 			<div class="mt-2">
-				<h3 class="text-base font-medium">Team</h3>
+				<h3 class="text-base font-medium">Equipo</h3>
 
 				{#each project.authors as author}
 					<div>
@@ -226,7 +226,7 @@
 	<!-- Images Gallery -->
 	{#if project.resources.images && project.resources.images.length > 0}
 		<section class="mb-12">
-			<h2 class="mb-6 text-2xl font-bold">Gallery</h2>
+			<h2 class="mb-6 text-2xl font-bold">Galería</h2>
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 				{#each project.resources.images as image}
 					<div class="group">
@@ -253,7 +253,7 @@
 								<p class="italic">{image.metadata.description}</p>
 							{/if}
 							{#if image.metadata?.creditLine}
-								<p class="mt-1 text-xs">Credit: {image.metadata.creditLine}</p>
+								<p class="mt-1 text-xs">Crédito: {image.metadata.creditLine}</p>
 							{/if}
 						</div>
 					</div>
@@ -272,7 +272,7 @@
 						<video controls class="w-full" preload="metadata">
 							<source src={video.path} type="video/mp4" />
 							<track kind="captions" />
-							Your browser does not support the video tag.
+							Tu navegador no soporta la reproducción de videos.
 						</video>
 						<p class="text-primary mt-2 text-sm font-medium">{video.name}</p>
 					</div>
@@ -284,7 +284,7 @@
 	<!-- Documents -->
 	{#if project.resources.documents && project.resources.documents.length > 0}
 		<section class="mb-12">
-			<h2 class="mb-6 text-2xl font-bold">Documents</h2>
+			<h2 class="mb-6 text-2xl font-bold">Documentos</h2>
 			<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
 				{#each project.resources.documents as document}
 					<a
@@ -298,7 +298,7 @@
 						</div>
 						<div class="flex-1">
 							<p class="text-primary text-sm font-medium">{document.name}</p>
-							<p class="text-primary text-xs">Click to download</p>
+							<p class="text-primary text-xs">Click para descargar</p>
 						</div>
 					</a>
 				{/each}
@@ -415,34 +415,34 @@
 									<!-- Technical details -->
 									{#if metadata?.camera || metadata?.lens || metadata?.focalLength || metadata?.aperture || metadata?.shutterSpeed || metadata?.iso}
 										<div>
-											<h3 class="text-base font-medium">Technical Details</h3>
+											<h3 class="text-base font-medium">Detalles Técnicos</h3>
 											{#if metadata.camera}
 												<div>
-													<span class="font-medium">Camera › </span>
+													<span class="font-medium">Cámara › </span>
 													<span>{metadata.camera}</span>
 												</div>
 											{/if}
 											{#if metadata.lens}
 												<div>
-													<span class="font-medium">Lens › </span>
+													<span class="font-medium">Lente › </span>
 													<span>{metadata.lens}</span>
 												</div>
 											{/if}
 											{#if metadata.focalLength}
 												<div>
-													<span class="font-medium">Focal Length › </span>
+													<span class="font-medium">Distancia Focal › </span>
 													<span>{metadata.focalLength}</span>
 												</div>
 											{/if}
 											{#if metadata.aperture}
 												<div>
-													<span class="font-medium">Aperture › </span>
+													<span class="font-medium">Apertura › </span>
 													<span>{metadata.aperture}</span>
 												</div>
 											{/if}
 											{#if metadata.shutterSpeed}
 												<div>
-													<span class="font-medium">Shutter Speed › </span>
+													<span class="font-medium">Velocidad › </span>
 													<span>{metadata.shutterSpeed}</span>
 												</div>
 											{/if}
@@ -458,22 +458,22 @@
 									<!-- Location and date -->
 									{#if metadata?.dateTime || metadata?.city || metadata?.state || metadata?.country || metadata?.location || metadata?.gps}
 										<div>
-											<h3 class="text-base font-medium">Location & Date</h3>
+											<h3 class="text-base font-medium">Ubicación y Fecha</h3>
 											{#if metadata.dateTime}
 												<div>
-													<span class="font-medium">Date › </span>
+													<span class="font-medium">Fecha › </span>
 													<span>{new Date(metadata.dateTime).toLocaleString()}</span>
 												</div>
 											{/if}
 											{#if metadata.location}
 												<div>
-													<span class="font-medium">Location › </span>
+													<span class="font-medium">Ubicación › </span>
 													<span>{metadata.location}</span>
 												</div>
 											{/if}
 											{#if metadata.city || metadata.state || metadata.country}
 												<div>
-													<span class="font-medium">Address › </span>
+													<span class="font-medium">Dirección › </span>
 													<span
 														>{[metadata.city, metadata.state, metadata.country]
 															.filter(Boolean)
@@ -483,7 +483,7 @@
 											{/if}
 											{#if metadata.gps}
 												<div>
-													<span class="font-medium">Coordinates › </span>
+													<span class="font-medium">Coordenadas › </span>
 													<span>
 														<a
 															href="https://www.openstreetmap.org/?mlat={metadata.gps
@@ -528,7 +528,7 @@
 								<p class="mt-1 text-sm italic">{selectedImage.metadata.description}</p>
 							{/if}
 							{#if selectedImage.metadata?.creditLine}
-								<p class="mt-1 text-xs">Credit: {selectedImage.metadata.creditLine}</p>
+								<p class="mt-1 text-xs">Crédito: {selectedImage.metadata.creditLine}</p>
 							{/if}
 						</div>
 

@@ -9,7 +9,7 @@
 	let { data } = $props();
 	let projects = $derived(data.projects);
 
-	let selectedType = $state('all');
+	let selectedType = $state('todos');
 	let searchTerm = $state('');
 	let filteredProjects = $state([]);
 
@@ -216,16 +216,16 @@
 </script>
 
 <svelte:head>
-	<title>{siteConfig.title} • Projects Map</title>
-	<meta name="description" content="Interactive map of projects" />
+	<title>{siteConfig.title} • Mapa de Proyectos</title>
+	<meta name="description" content="Mapa interactivo de proyectos" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </svelte:head>
 
 <div class="space-y-8">
 	<!-- Header -->
 	<header>
-		<h1 class="text-primary mb-2 text-3xl font-bold">Projects Maps</h1>
-		<p class="text-lg">Interactive map of projects</p>
+		<h1 class="text-primary mb-2 text-3xl font-bold">Mapa de Proyectos</h1>
+		<p class="text-lg">Mapa interactivo de proyectos</p>
 	</header>
 
 	<AkFilters {projects} bind:searchTerm bind:selectedType bind:filteredProjects />

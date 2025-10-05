@@ -29,7 +29,7 @@
 {#if featuredProjects && featuredProjects.length > 0}
 	<div class="mt-8">
 		<!-- Header -->
-		<h2 class="mb-6 text-2xl font-bold">Featured Projects</h2>
+		<h2 class="mb-6 text-2xl font-bold">Proyectos Destacados</h2>
 
 		<!-- Mosaic Grid -->
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-4">

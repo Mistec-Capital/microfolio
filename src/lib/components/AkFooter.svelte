@@ -11,7 +11,7 @@
 	>
 		<p class="text-center text-sm md:text-left">
 			© {siteConfig.author}
-			{new Date().getFullYear()} — generated with
+			{new Date().getFullYear()} — generado con
 			<a
 				href="https://github.com/aker-dev/microfolio"
 				target="_blank"
