@@ -10,24 +10,13 @@
 @theme {
 	--default-font-family: 'IBM Plex Sans', 'sans-serif';
 
-	/* Light theme colors (default) */
-	--color-primary: black;
-	--color-background: oklch(97% 0 0); /* neutral-100 */
-	--color-box: white;
-
-	/* Dark theme colors */
-	--color-primary-dark: white;
-	--color-background-dark: oklch(20.5% 0 0); /* neutral-900 */
-	--color-box-dark: oklch(26.9% 0 0); /* neutral-800 */
-}
-
-/* Apply dark theme colors based on system preference */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-primary: var(--color-primary-dark);
-		--color-background: var(--color-background-dark);
-		--color-box: var(--color-box-dark);
-	}
+	/* Brand colors - Single theme */
+	--color-primary: #000000; /* Negro */
+	--color-background: #ffffff; /* Blanco */
+	--color-box: #f8f8f8; /* Gris muy claro para cards */
+	--color-accent: #ff9000; /* Naranja brand */
+	--color-accent-hover: #e68000; /* Naranja más oscuro para hover */
+	--color-text-secondary: #666666; /* Gris para texto secundario */
 }
 
 /* Custom utility classes */

@@ -13,7 +13,7 @@
 		<AkOptimizedImage
 			src={project.thumbnailSrc}
 			alt={project.title}
-			class="image-hover-effect h-full w-full bg-neutral-500 object-cover"
+			class="image-hover-effect h-full w-full bg-white object-fit"
 			hasWebP={project.hasWebP || false}
 		/>
 	</div>
@@ -24,7 +24,7 @@
 			<AkBadge>{project.type}</AkBadge>
 
 			{#if project.featured}
-				<IconStarFilled class="inline-block size-6 pb-1" />
+				<IconStarFilled class="text-accent inline-block size-6 pb-1" />
 			{/if}
 		</div>
 
@@ -36,7 +36,7 @@
 			{project.description}…
 		</p>
 
-		<div class="flex items-center justify-between text-xs">
+		<div class="text-secondary flex items-center justify-between text-xs">
 			<span>{project.location}</span>
 			<span>{new Date(project.date).toISOString().slice(0, 7)}</span>
 		</div>

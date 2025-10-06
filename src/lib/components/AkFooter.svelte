@@ -15,23 +15,38 @@
 			<a
 				href="https://github.com/aker-dev/microfolio"
 				target="_blank"
-				class="font-medium hover:underline">microfolio {siteConfig.version}</a
+				class="text-accent hover:text-accent font-medium hover:underline">microfolio {siteConfig.version}</a
 			>
 		</p>
 		<nav>
 			<ul class="flex justify-center gap-4 md:justify-end">
 				<li>
-					<a href={siteConfig.socialLinks.instagram} target="_blank" aria-label="Instagram">
+					<a
+						href={siteConfig.socialLinks.instagram}
+						target="_blank"
+						aria-label="Instagram"
+						class="hover:text-accent transition-colors"
+					>
 						<IconInstagram class="pointer-events-none h-5 w-5" />
 					</a>
 				</li>
 				<li>
-					<a href={siteConfig.socialLinks.linkedin} target="_blank" aria-label="LinkedIn">
+					<a
+						href={siteConfig.socialLinks.linkedin}
+						target="_blank"
+						aria-label="LinkedIn"
+						class="hover:text-accent transition-colors"
+					>
 						<IconLinkedin class="pointer-events-none h-5 w-5" />
 					</a>
 				</li>
 				<li>
-					<a href={siteConfig.socialLinks.github} target="_blank" aria-label="GitHub">
+					<a
+						href={siteConfig.socialLinks.github}
+						target="_blank"
+						aria-label="GitHub"
+						class="hover:text-accent transition-colors"
+					>
 						<IconGithub class="pointer-events-none h-5 w-5" />
 					</a>
 				</li>

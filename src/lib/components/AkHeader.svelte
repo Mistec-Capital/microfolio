@@ -61,10 +61,10 @@
 			<ul class="flex h-8 gap-4">
 				{#each siteConfig.navigation as item}
 					<li
-						class="hover:border-primary px-2 hover:font-medium {currentPage === base + item.href ||
+						class="hover:border-accent px-2 hover:font-medium {currentPage === base + item.href ||
 						currentPage === base + item.href + '/+page' ||
 						currentPage.startsWith(base + item.href + '/')
-							? 'border-primary border-b-2 font-medium'
+							? 'border-accent border-b-2 font-medium'
 							: ''}"
 					>
 						<a href="{base}{item.href}">{item.name}</a>
@@ -75,7 +75,7 @@
 
 		<!-- Mobile Menu Button -->
 		<button
-			class="bg-box text-primary border-primary z-100 mb-3 cursor-pointer rounded-full border-1 p-2 md:hidden"
+			class="bg-box text-primary border-primary hover:bg-accent z-100 mb-3 cursor-pointer rounded-full border-1 p-2 transition-colors hover:border-transparent hover:text-white md:hidden"
 			onclick={toggleMobileMenu}
 			aria-label="Alternar menú móvil"
 		>
@@ -96,11 +96,11 @@
 						<li>
 							<a
 								href="{base}{item.href}"
-								class="block px-2 py-2 text-lg hover:font-medium hover:underline {currentPage ===
+								class="hover:text-accent block px-2 py-2 text-lg hover:font-medium {currentPage ===
 									base + item.href ||
 								currentPage === base + item.href + '/+page' ||
 								currentPage.startsWith(base + item.href + '/')
-									? 'font-medium underline'
+									? 'text-accent font-medium'
 									: ''}"
 								onclick={closeMobileMenu}
 							>

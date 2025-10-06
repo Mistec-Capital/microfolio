@@ -8,6 +8,9 @@
 .bg-box {
 	background-color: var(--color-box);
 }
+.bg-accent {
+	background-color: var(--color-accent);
+}
 
 .text-primary {
 	color: var(--color-primary);
@@ -17,6 +20,12 @@
 }
 .text-box {
 	color: var(--color-box);
+}
+.text-accent {
+	color: var(--color-accent);
+}
+.text-secondary {
+	color: var(--color-text-secondary);
 }
 
 .border-primary {
@@ -28,6 +37,9 @@
 .border-box {
 	border-color: var(--color-box);
 }
+.border-accent {
+	border-color: var(--color-accent);
+}
 
 .hover\:bg-primary:hover {
 	background-color: var(--color-primary);
@@ -37,6 +49,9 @@
 }
 .hover\:bg-box:hover {
 	background-color: var(--color-box);
+}
+.hover\:bg-accent:hover {
+	background-color: var(--color-accent-hover);
 }
 
 .hover\:text-primary:hover {
@@ -48,6 +63,9 @@
 .hover\:text-box:hover {
 	color: var(--color-box);
 }
+.hover\:text-accent:hover {
+	color: var(--color-accent-hover);
+}
 
 .hover\:border-primary:hover {
 	border-color: var(--color-primary);
@@ -57,6 +75,9 @@
 }
 .hover\:border-box:hover {
 	border-color: var(--color-box);
+}
+.hover\:border-accent:hover {
+	border-color: var(--color-accent-hover);
 }
 
 /* Default text color and background */
