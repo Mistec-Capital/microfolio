@@ -4,7 +4,7 @@ date: '2022-01-01'
 location: 'Chile'
 coordinates: [-33.4489, -70.6693]
 description: 'Aplicación móvil para reservas hoteleras, conectando clientes con propietarios de hoteles en Android e iOS.'
-type: 'software'
+type: 'mobile-app'
 tags: ['mobile', 'React Native', 'Expo', 'reservas', 'hoteles', 'turismo']
 authors:
   - name: 'Mistec Capital'

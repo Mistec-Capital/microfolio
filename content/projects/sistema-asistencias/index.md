@@ -4,7 +4,7 @@ date: '2023-09-01'
 location: 'Corrientes, Corrientes, Argentina'
 coordinates: [-27.4692, -58.8306]
 description: 'Sistema integral de gestión de asistencias con integración biométrica ZKTeco para una empresa maderera correntina.'
-type: 'software'
+type: 'recursos-humanos'
 tags: ['recursos humanos', 'asistencias', 'biometría', 'ZKTeco', 'reportes', 'turnos']
 authors:
   - name: 'Mistec Capital'

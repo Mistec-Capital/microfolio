@@ -4,7 +4,7 @@ date: '2025-01-01'
 location: 'Ituzaingó, Corrientes, Argentina'
 coordinates: [-27.5833, -56.6833]
 description: 'Sistema integral de gestión de socios, cuotas y servicios para la asociación barrial Rincón Santa María.'
-type: 'software'
+type: 'gestion-administrativa'
 tags: ['gestión de socios', 'cuotas', 'administración', 'barrio privado', 'cobranzas']
 authors:
   - name: 'Mistec Capital'

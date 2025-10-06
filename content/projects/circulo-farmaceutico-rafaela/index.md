@@ -4,7 +4,7 @@ date: '2024-07-01'
 location: 'Rafaela, Santa Fe, Argentina'
 coordinates: [-31.2500, -61.4833]
 description: 'Plataforma de e-commerce para red de farmacias con sistema de retiro en sucursales y gestión de stock distribuido.'
-type: 'software'
+type: 'e-commerce'
 tags: ['e-commerce', 'farmacias', 'salud', 'retail', 'geolocalización']
 authors:
   - name: 'Mistec Capital'

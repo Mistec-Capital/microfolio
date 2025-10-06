@@ -4,7 +4,7 @@ date: '2024-11-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Sistema integral para la gestión de expedientes administrativos y legislativos, recursos humanos, recursos médicos y biblioteca del H.C.D de Posadas.'
-type: 'software'
+type: 'gobierno-digital'
 tags: ['gobierno', 'gestión administrativa', 'expedientes', 'recursos humanos', 'biblioteca']
 authors:
   - name: 'Mistec Capital'

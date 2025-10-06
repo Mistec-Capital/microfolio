@@ -4,7 +4,7 @@ date: '2021-01-01'
 location: 'Santa Fe, Santa Fe, Argentina'
 coordinates: [-31.6333, -60.7]
 description: 'Sistema provincial para la gestión y registro de marcas y señales de ganado en la provincia de Santa Fe.'
-type: 'software'
+type: 'gobierno-digital'
 tags: ['gobierno', 'ganadería', 'marcas', 'señales', 'registro']
 authors:
   - name: 'Mistec Capital'

@@ -4,7 +4,7 @@ date: '2023-03-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Sistema integral para la gestión de afiliados y pagos del Sindicato de Docentes de Educación Pública de Gestión Privada.'
-type: 'software'
+type: 'gestion-administrativa'
 tags: ['sindicato', 'gestión de afiliados', 'pagos', 'educación', 'cuotas']
 authors:
   - name: 'Mistec Capital'

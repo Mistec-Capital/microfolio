@@ -4,7 +4,7 @@ date: '2025-09-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Plataforma integral de mensajería y gestión de tickets de servicio con integración multicanal para empresas.'
-type: 'software'
+type: 'saas'
 tags: ['mensajería', 'servicio al cliente', 'tickets', 'automatización', 'bots', 'multicanal']
 authors:
   - name: 'Mistec Capital'

@@ -4,7 +4,7 @@ date: '2020-01-01'
 location: 'Argentina'
 coordinates: [-34.6037, -58.3816]
 description: 'Sistema de visualización y análisis de datos espaciales para el seguimiento de eficiencia en la producción ganadera bovina en Argentina.'
-type: 'software'
+type: 'gis-mapas'
 tags: ['ganadería', 'análisis de datos', 'GIS', 'INTA', 'observatorio']
 authors:
   - name: 'Mistec Capital'

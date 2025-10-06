@@ -4,7 +4,7 @@ date: '2024-11-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Sistema de gestión y sitio web público del Digesto Jurídico de la ciudad de Posadas con todas las ordenanzas municipales.'
-type: 'software'
+type: 'gobierno-digital'
 tags: ['gobierno', 'legislación', 'ordenanzas', 'digesto jurídico', 'portal público']
 authors:
   - name: 'Mistec Capital'

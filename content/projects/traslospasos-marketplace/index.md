@@ -4,7 +4,7 @@ date: '2025-07-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Marketplace de libros usados con intermediación de librería física para garantizar calidad y fomentar la lectura.'
-type: 'software'
+type: 'e-commerce'
 tags: ['marketplace', 'e-commerce', 'libros', 'economía circular', 'librería', 'cultura']
 authors:
   - name: 'Mistec Capital'

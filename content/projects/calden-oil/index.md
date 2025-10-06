@@ -4,7 +4,7 @@ date: '2024-03-01'
 location: 'Argentina'
 coordinates: [-34.6037, -58.3816]
 description: 'Mantenimiento y soporte del sistema de gestión de cuenta corriente para clientes de estaciones de servicio Calden Oil.'
-type: 'software'
+type: 'gestion-administrativa'
 tags: ['cuenta corriente', 'estaciones de servicio', 'gestión financiera', 'clientes', 'mantenimiento']
 authors:
   - name: 'Mistec Capital'

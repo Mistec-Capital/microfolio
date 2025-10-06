@@ -4,7 +4,7 @@ date: '2024-04-01'
 location: 'Argentina'
 coordinates: [-34.6037, -58.3816]
 description: 'Sistema integral de gestión de franquicias con control de stock, movimientos diarios y cierres de caja para cadena de tiendas.'
-type: 'software'
+type: 'gestion-administrativa'
 tags: ['franquicias', 'gestión de stock', 'cierres de caja', 'inventario', 'retail']
 authors:
   - name: 'Mistec Capital'

@@ -4,7 +4,7 @@ date: '2025-05-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Plataforma de e-commerce y landing page para comercio de tecnología especializado en productos informáticos y electrónicos.'
-type: 'software'
+type: 'e-commerce'
 tags: ['e-commerce', 'tecnología', 'tienda online', 'landing page', 'retail']
 authors:
   - name: 'Mistec Capital'

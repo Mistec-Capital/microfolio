@@ -4,7 +4,7 @@ date: '2024-11-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Sistema web para la gestión de sesiones del Honorable Concejo Deliberante de la ciudad de Posadas.'
-type: 'software'
+type: 'gobierno-digital'
 tags: ['gobierno', 'sesiones', 'legislativo', 'web']
 authors:
   - name: 'Mistec Capital'

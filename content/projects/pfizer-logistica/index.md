@@ -4,7 +4,7 @@ date: '2024-01-01'
 location: 'Argentina'
 coordinates: [-34.6037, -58.3816]
 description: 'Mantenimiento y soporte del sistema de control logístico para la distribución farmacéutica de Pfizer.'
-type: 'software'
+type: 'logistica'
 tags: ['logística', 'farmacéutica', 'distribución', 'Pfizer', 'mantenimiento', 'cadena de suministro']
 authors:
   - name: 'Mistec Capital'

@@ -4,7 +4,7 @@ date: '2023-08-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Sistema de registro digital para instituciones deportivas del Ministerio de Deportes de la Provincia de Misiones.'
-type: 'software'
+type: 'gobierno-digital'
 tags: ['gobierno', 'deportes', 'registro', 'instituciones', 'gestión pública']
 authors:
   - name: 'Mistec Capital'

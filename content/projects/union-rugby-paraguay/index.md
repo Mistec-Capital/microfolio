@@ -4,7 +4,7 @@ date: '2023-01-01'
 location: 'Asunción, Paraguay'
 coordinates: [-25.2637, -57.5759]
 description: 'Sistema integral para la gestión de torneos, fichajes, clubes, jugadores y referees de la Unión de Rugby de Paraguay.'
-type: 'software'
+type: 'gestion-deportiva'
 tags: ['gestión deportiva', 'rugby', 'torneos', 'administración', 'web']
 authors:
   - name: 'Mistec Capital'

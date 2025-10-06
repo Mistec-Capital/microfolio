@@ -4,7 +4,7 @@ date: '2020-06-01'
 location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Sistema simple para la administración y control de presupuestos, pagos realizados y seguimiento de erogaciones por año.'
-type: 'software'
+type: 'gestion-administrativa'
 tags: ['administración', 'presupuestos', 'finanzas', 'control de gastos']
 authors:
   - name: 'Mistec Capital'

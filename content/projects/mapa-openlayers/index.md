@@ -4,7 +4,7 @@ date: '2020-03-01'
 location: 'Argentina'
 coordinates: [-34.6037, -58.3816]
 description: 'Aplicación web GIS con PostGIS, QGIS y React para visualización y gestión de datos espaciales mediante servicios WMS y WFS.'
-type: 'software'
+type: 'gis-mapas'
 tags: ['GIS', 'PostGIS', 'QGIS', 'OpenLayers', 'mapas', 'datos espaciales']
 authors:
   - name: 'Mistec Capital'

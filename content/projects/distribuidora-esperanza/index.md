@@ -4,7 +4,7 @@ date: '2023-06-01'
 location: 'Argentina'
 coordinates: [-34.6037, -58.3816]
 description: 'Plataforma de e-commerce integrada con sistema ERP para gestión de ventas, precios por cliente, stock y descuentos por volumen.'
-type: 'software'
+type: 'e-commerce'
 tags: ['e-commerce', 'ERP', 'ASP.Net', 'Angular', 'SQL Server', 'ventas']
 authors:
   - name: 'Mistec Capital'

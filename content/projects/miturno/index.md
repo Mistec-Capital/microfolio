@@ -4,7 +4,7 @@ date: '2024-09-01'
 location: 'Argentina'
 coordinates: [-34.6037, -58.3816]
 description: 'Sistema integral de gestión de turnos y reservas genérico para múltiples negocios con agenda online, pagos integrados y notificaciones automáticas.'
-type: 'software'
+type: 'saas'
 tags: ['turnos', 'reservas', 'agenda online', 'pagos', 'SaaS', 'automatización']
 authors:
   - name: 'Mistec Capital'

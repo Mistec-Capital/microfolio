@@ -4,7 +4,7 @@ date: '2025-07-01'
 location: 'Argentina'
 coordinates: [-34.6037, -58.3816]
 description: 'Aplicación móvil para programación y control por Bluetooth de robots educativos Rasti.'
-type: 'software'
+type: 'mobile-app'
 tags: ['mobile', 'educación', 'robótica', 'Bluetooth', 'React Native', 'programación']
 authors:
   - name: 'Mistec Capital'
