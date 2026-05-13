@@ -4,6 +4,7 @@
 	import AkBtnClose from '$lib/components/AkBtnClose.svelte';
 	import AkBtnMetadata from '$lib/components/AkBtnMetadata.svelte';
 	import AkOptimizedImage from '$lib/components/AkOptimizedImage.svelte';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import Kicker from '$lib/components/editorial/Kicker.svelte';
 	import Rule from '$lib/components/editorial/Rule.svelte';
 	import SerialNumber from '$lib/components/editorial/SerialNumber.svelte';
@@ -114,16 +115,12 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<svelte:head>
-	<title>{siteConfig.title} • {project.title}</title>
-	<meta name="description" content={project.description} />
-
-	<meta property="og:title" content={project.title} />
-	<meta property="og:description" content={project.description} />
-	<meta property="og:image" content="{base}/content/projects/{project.slug}/thumbnail.jpg" />
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content={siteConfig.title} />
-</svelte:head>
+<SeoHead
+	title={project.title}
+	description={project.description}
+	image="/content/projects/{project.slug}/thumbnail.jpg"
+	type="article"
+/>
 
 <!-- Back link -->
 <a

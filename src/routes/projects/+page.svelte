@@ -3,7 +3,7 @@
 	import AkFilters from '$lib/components/AkFilters.svelte';
 	import Kicker from '$lib/components/editorial/Kicker.svelte';
 	import SerialNumber from '$lib/components/editorial/SerialNumber.svelte';
-	import { siteConfig } from '$lib/config.js';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import { scrollReveal } from '$lib/actions/scrollReveal.js';
 
 	let { data } = $props();
@@ -12,12 +12,13 @@
 	let selectedType = $state('todos');
 	let searchTerm = $state('');
 	let filteredProjects = $state(data.projects);
+
+	let description = $derived(
+		`Índice completo de los ${projects.length} proyectos construidos por Mistec Capital desde 2020 — plataformas SaaS, sistemas de gobierno, IA aplicada y desarrollos a medida en LATAM.`
+	);
 </script>
 
-<svelte:head>
-	<title>{siteConfig.title} • Proyectos</title>
-	<meta name="description" content="Índice completo de proyectos de Mistec Capital." />
-</svelte:head>
+<SeoHead title="Proyectos" {description} />
 
 <div use:scrollReveal>
 	<!-- Section label -->
