@@ -2,7 +2,7 @@
 title: 'MiBarrio - Gestión de Barrios'
 date: '2025-04-01'
 location: 'Argentina'
-coordinates: [-34.6037, -58.3816]
+coordinates: [-27.713053, -54.9209698]
 description: 'Plataforma integral de gestión para barrios cerrados y asociaciones vecinales: socios, cuotas, servicios, comunicación y administración.'
 type: 'saas'
 tags: ['barrios', 'gestión vecinal', 'administración', 'comunidades', 'SaaS']
