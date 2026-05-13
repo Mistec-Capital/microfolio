@@ -1,7 +1,6 @@
 <script>
 	let { handler, class: className = '', ...props } = $props();
 
-	// Get pagination info from DataHandler
 	let pageNumber = $derived(handler.getPageNumber());
 	let pageCount = $derived(handler.getPageCount());
 	let pages = $derived(handler.getPages({ ellipsis: true }));
@@ -21,29 +20,27 @@
 
 {#if $pageCount > 1}
 	<nav class="flex items-center gap-1 {className}" {...props}>
-		<!-- Previous button -->
+		<!-- Previous -->
 		<button
 			onclick={previousPage}
 			disabled={$pageNumber === 1}
-			class="border-primary bg-box cursor-pointer rounded border px-3 py-1 text-sm disabled:cursor-not-allowed disabled:opacity-50 {$pageNumber !==
-			1
-				? 'hover:bg-primary hover:text-box'
-				: ''}"
-			aria-label="Go to previous page"
+			class="border border-[#2A2A28] bg-transparent text-[#8A857A] cursor-pointer rounded-sm px-3 py-1 font-mono text-xs uppercase tracking-wider transition-colors disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:border-[#FFB840] enabled:hover:text-[#FFB840]"
+			aria-label="Previous page"
 		>
-			Previous
+			←
 		</button>
 
-		<!-- Page numbers -->
+		<!-- Pages -->
 		{#each $pages as page}
 			{#if page === '...'}
-				<span class="text-primary px-2 py-1 text-sm">...</span>
+				<span class="font-mono text-xs text-[#8A857A]/60 px-2">…</span>
 			{:else}
 				<button
 					onclick={() => goToPage(page)}
-					class="cursor-pointer rounded border px-3 py-1 text-sm {$pageNumber === page
-						? 'border-primary bg-primary text-box'
-						: 'border-primary bg-box text-primary hover:bg-primary hover:text-box'}"
+					class="cursor-pointer rounded-sm border px-3 py-1 font-mono text-xs tabular-nums transition-colors {$pageNumber ===
+					page
+						? 'border-[#FFB840] text-[#FFB840] bg-[#FFB840]/10'
+						: 'border-[#2A2A28] text-[#8A857A] hover:border-[#8A857A] hover:text-[#E8E3D6]'}"
 					aria-label={'Go to page ' + page}
 				>
 					{page}
@@ -51,17 +48,14 @@
 			{/if}
 		{/each}
 
-		<!-- Next button -->
+		<!-- Next -->
 		<button
 			onclick={nextPage}
 			disabled={$pageNumber === $pageCount}
-			class="border-primary bg-box cursor-pointer rounded border px-3 py-1 text-sm disabled:cursor-not-allowed disabled:opacity-50 {$pageNumber !==
-			$pageCount
-				? 'hover:bg-primary hover:text-box'
-				: ''}"
-			aria-label="Go to next page"
+			class="border border-[#2A2A28] bg-transparent text-[#8A857A] cursor-pointer rounded-sm px-3 py-1 font-mono text-xs uppercase tracking-wider transition-colors disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:border-[#FFB840] enabled:hover:text-[#FFB840]"
+			aria-label="Next page"
 		>
-			Next
+			→
 		</button>
 	</nav>
 {/if}

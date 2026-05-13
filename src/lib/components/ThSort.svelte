@@ -5,19 +5,18 @@
 		handler.sort(orderBy);
 	}
 
-	// Get the current sort state
 	let sortState = $derived(handler.getSort());
 </script>
 
 <th class={className} {...props}>
 	<button
 		onclick={handleSort}
-		class="flex w-full items-center gap-1 rounded px-1 py-1 text-left hover:bg-gray-100"
+		class="flex w-full items-center gap-1.5 px-1 py-1 text-left cursor-pointer text-[#FFB840] hover:text-[#E8E3D6] transition-colors"
 	>
 		{@render children()}
 		{#if $sortState && $sortState.identifier === orderBy}
-			<span class="ml-1 text-xs">
-				{$sortState.direction === 'asc' ? '↑' : '↓'}
+			<span class="text-[10px] tabular-nums">
+				{$sortState.direction === 'asc' ? '▲' : '▼'}
 			</span>
 		{/if}
 	</button>

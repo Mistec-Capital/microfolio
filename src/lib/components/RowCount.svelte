@@ -1,10 +1,13 @@
 <script>
 	let { handler, class: className = '', ...props } = $props();
 
-	// Get row information from the DataHandler
 	let rowCount = $derived(handler.getRowCount());
 </script>
 
-<div class="text-sm text-primary {className}" {...props}>
-	Mostrando {$rowCount.start} a {$rowCount.end} de {$rowCount.total} entradas
+<div class="font-mono text-[11px] uppercase tracking-wider text-[#8A857A] {className}" {...props}>
+	<span class="text-[#FFB840] tabular-nums">{$rowCount.start}</span>
+	→
+	<span class="text-[#FFB840] tabular-nums">{$rowCount.end}</span>
+	<span>de</span>
+	<span class="text-[#E8E3D6] tabular-nums">{$rowCount.total}</span>
 </div>

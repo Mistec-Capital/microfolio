@@ -1,67 +1,97 @@
 <script>
 	import { base } from '$app/paths';
-	import AkBadge from './AkBadge.svelte';
 	import AkOptimizedImage from './AkOptimizedImage.svelte';
-	import IconStarFilled from '~icons/carbon/star-filled';
+	import IconArrowUpRight from '~icons/lucide/arrow-up-right';
+	import Kicker from '$lib/components/editorial/Kicker.svelte';
+	import Rule from '$lib/components/editorial/Rule.svelte';
+	import Marginalia from '$lib/components/editorial/Marginalia.svelte';
 
-	let { project, class: className } = $props();
+	let { project, class: className = '' } = $props();
+
+	function shortTitle(title) {
+		return (title || '').split(' - ')[0].split(' — ')[0];
+	}
+
+	function categoryLabel(type) {
+		switch ((type || '').toLowerCase()) {
+			case 'saas':
+				return 'SaaS';
+			case 'mobile-app':
+				return 'App Móvil';
+			case 'e-commerce':
+				return 'E-commerce';
+			case 'gobierno-digital':
+				return 'Gobierno Digital';
+			case 'logistica':
+				return 'Logística';
+			case 'recursos-humanos':
+				return 'RRHH';
+			case 'gestion-administrativa':
+				return 'Administrativo';
+			case 'gestion-deportiva':
+				return 'Gestión Deportiva';
+			case 'gis-mapas':
+				return 'GIS';
+			case 'ia':
+				return 'IA';
+			case 'iot':
+				return 'IoT';
+			default:
+				return type || 'Proyecto';
+		}
+	}
+
+	let year = $derived(
+		project?.date ? new Date(project.date).getFullYear().toString() : ''
+	);
 </script>
 
-<a href="{base}/projects/{project.slug}" class="group bg-box block overflow-hidden {className}">
-	<!-- Thumbnail -->
-	<div class="aspect-[4/3] overflow-hidden">
+<a
+	href="{base}/projects/{project.slug}"
+	class="group block border-r border-b border-[#2A2A28] overflow-hidden hover:bg-[#141413] transition-colors duration-300 {className}"
+>
+	<!-- Duotone image -->
+	<div class="relative h-48 overflow-hidden bg-[#141413]">
 		<AkOptimizedImage
 			src={project.thumbnailSrc}
 			alt={project.title}
-			class="image-hover-effect h-full w-full bg-white object-fit"
+			class="w-full h-full object-cover opacity-70 grayscale contrast-125 group-hover:opacity-90 group-hover:grayscale-0 transition-all duration-500"
 			hasWebP={project.hasWebP || false}
 		/>
+		<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent"></div>
+		{#if project.featured}
+			<div class="absolute top-3 right-3">
+				<Kicker tone="amber">★ DESTACADO</Kicker>
+			</div>
+		{/if}
 	</div>
 
-	<!-- Content -->
-	<div class="space-y-3 p-4">
-		<div class="flex items-center justify-between">
-			<AkBadge>{project.type}</AkBadge>
-
-			{#if project.featured}
-				<IconStarFilled class="text-accent inline-block size-6 pb-1" />
-			{/if}
+	<div class="p-6">
+		<!-- Top meta -->
+		<div class="flex items-center justify-between mb-4">
+			<Kicker>{categoryLabel(project.type)}</Kicker>
+			<Kicker>{year}</Kicker>
 		</div>
 
-		<h3 class="text-lg font-semibold text-balance">
-			{project.title}
+		<Rule />
+
+		<h3
+			class="font-display font-semibold text-[#E8E3D6] text-xl leading-tight tracking-tight mt-4 mb-3 group-hover:text-[#FFB840] transition-colors"
+		>
+			{shortTitle(project.title)}
 		</h3>
 
-		<p class="line-clamp-2 text-sm">
-			{project.description}…
+		<p class="font-body text-[#8A857A] text-sm leading-relaxed line-clamp-3 mb-5">
+			{project.description}
 		</p>
 
-		<div class="text-secondary flex items-center justify-between text-xs">
-			<span>{project.location}</span>
-			<span>{new Date(project.date).toISOString().slice(0, 7)}</span>
+		<div class="flex items-end justify-between pt-4 border-t border-[#2A2A28]">
+			<Marginalia class="!text-[#8A857A]/80 !leading-tight max-w-[75%]">
+				{project.location}
+			</Marginalia>
+			<IconArrowUpRight
+				class="w-4 h-4 text-[#8A857A] group-hover:text-[#FFB840] group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300"
+			/>
 		</div>
-
-		<!-- Tags -->
-		<!-- {#if project.tags && project.tags.length > 0}
-			<div class="flex flex-wrap gap-1">
-				{#each project.tags.slice(0, 3) as tag}
-					<span class="rounded bg-neutral-50 px-2 py-1 text-xs text-neutral-600">
-						{tag}
-					</span>
-				{/each}
-				{#if project.tags.length > 3}
-					<span class="rounded bg-neutral-50 px-2 py-1 text-xs text-neutral-600">
-						+{project.tags.length - 3}
-					</span>
-				{/if}
-			</div>
-		{/if} -->
-
-		<!-- Authors -->
-		<!-- {#if project.authors && project.authors.length > 0}
-			<div class="text-xs text-neutral-500">
-				By {project.authors.map((author) => author.name).join(', ')}
-			</div>
-		{/if} -->
 	</div>
 </a>
