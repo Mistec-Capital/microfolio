@@ -2,112 +2,131 @@
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
 	import { siteConfig } from '$lib/config.js';
-	import IconMenu from '~icons/carbon/menu';
-	import IconCloseLarge from '~icons/carbon/close-large';
+	import IconMenu from '~icons/lucide/menu';
+	import IconClose from '~icons/lucide/x';
 
-	// Current page URL - reactive to page changes
 	let currentPage = $derived($page.url.pathname);
-
-	// Mobile menu state
+	let isHome = $derived(currentPage === base + '/' || currentPage === base);
 	let mobileMenuOpen = $state(false);
+	let scrolled = $state(false);
 
-	// Toggle mobile menu
+	$effect(() => {
+		const onScroll = () => (scrolled = window.scrollY > 20);
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+		return () => window.removeEventListener('scroll', onScroll);
+	});
+
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
 	}
 
-	// Close mobile menu when clicking outside or on link
 	function closeMobileMenu() {
 		mobileMenuOpen = false;
 	}
 
-	// Close mobile menu when clicking outside
-	$effect(() => {
-		if (mobileMenuOpen) {
-			const handleClickOutside = (event) => {
-				const header = event.target.closest('header');
-				if (!header) {
-					mobileMenuOpen = false;
-				}
-			};
-
-			document.addEventListener('click', handleClickOutside);
-
-			return () => {
-				document.removeEventListener('click', handleClickOutside);
-			};
-		}
-	});
-
-	// Log page changes
-	$effect(() => {
-		console.log('Current page:', currentPage);
-	});
+	let navItems = $derived(isHome ? siteConfig.landingNav : siteConfig.navigation);
 </script>
 
-<header class="bg-background sticky top-0 z-5000 mb-8">
+<header
+	class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 {scrolled
+		? 'bg-[#0A0A0A]/85 backdrop-blur-md border-b border-[#2A2A28]'
+		: 'bg-transparent border-b border-transparent'}"
+>
 	<div
-		class="border-primary mr-auto ml-auto flex h-32 max-w-7xl items-end justify-between border-b border-solid pr-4 pl-4 md:h-32"
+		class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14 h-16 flex items-center justify-between gap-6"
 	>
-		<section class="h-15 flex-1">
-			<a href="{base}/">
-				<div class="text-2xl font-medium">{siteConfig.title}</div>
-				<div class="text-sm">{siteConfig.description}</div>
-			</a>
-		</section>
+		<!-- Wordmark -->
+		<a
+			href="{base}/"
+			class="group flex items-center gap-3"
+			aria-label="Mistec Capital — inicio"
+		>
+			<span
+				class="relative w-10 h-10 rounded-md bg-[#E8E3D6] overflow-hidden ring-1 ring-[#E8E3D6]/15 transition-all duration-300 group-hover:ring-[#FFB840]/60 group-hover:scale-105"
+			>
+				<img
+					src="{base}/mistec.png"
+					alt=""
+					class="absolute inset-0 w-full h-full object-contain p-[3px]"
+					aria-hidden="true"
+				/>
+			</span>
+			<span class="flex flex-col leading-none">
+				<span class="font-display font-semibold text-[#E8E3D6] text-[15px] tracking-tight">
+					{siteConfig.title}
+				</span>
+				<span
+					class="font-mono text-[10px] uppercase tracking-[0.18em] text-[#8A857A]/70 mt-1 hidden sm:inline"
+				>
+					{siteConfig.tagline}
+				</span>
+			</span>
+		</a>
 
-		<!-- Desktop Navigation -->
-		<nav class="hidden md:block">
-			<ul class="flex h-8 gap-4">
-				{#each siteConfig.navigation as item}
-					<li
-						class="hover:border-accent px-2 hover:font-medium {currentPage === base + item.href ||
-						currentPage === base + item.href + '/+page' ||
-						currentPage.startsWith(base + item.href + '/')
-							? 'border-accent border-b-2 font-medium'
-							: ''}"
-					>
-						<a href="{base}{item.href}">{item.name}</a>
-					</li>
-				{/each}
-			</ul>
+		<!-- Desktop nav -->
+		<nav class="hidden lg:flex items-center gap-7">
+			{#each navItems as item}
+				<a
+					href={item.href.startsWith('#') ? item.href : `${base}${item.href}`}
+					class="font-body text-[13px] font-medium text-[#8A857A] hover:text-[#E8E3D6] transition-colors duration-200 {!isHome &&
+					(currentPage === base + item.href || currentPage.startsWith(base + item.href + '/'))
+						? 'text-[#E8E3D6]'
+						: ''}"
+				>
+					{item.name}
+				</a>
+			{/each}
+			{#if isHome}
+				<a
+					href="{base}/projects"
+					class="font-body text-[13px] font-medium text-[#8A857A] hover:text-[#E8E3D6] transition-colors duration-200"
+				>
+					Ver todos
+				</a>
+			{/if}
 		</nav>
 
-		<!-- Mobile Menu Button -->
+		<!-- Mobile menu button -->
 		<button
-			class="bg-box text-primary border-primary hover:bg-accent z-100 mb-3 cursor-pointer rounded-full border-1 p-2 transition-colors hover:border-transparent hover:text-white md:hidden"
+			class="lg:hidden cursor-pointer p-2 text-[#E8E3D6] hover:text-[#FFB840] transition-colors"
 			onclick={toggleMobileMenu}
 			aria-label="Alternar menú móvil"
 		>
 			{#if mobileMenuOpen}
-				<IconCloseLarge class="pointer-events-none size-6 hover:scale-110" />
+				<IconClose class="size-6" />
 			{:else}
-				<IconMenu class="pointer-events-none size-6 hover:scale-110" />
+				<IconMenu class="size-6" />
 			{/if}
 		</button>
 	</div>
 
-	<!-- Mobile Menu -->
 	{#if mobileMenuOpen}
-		<div class="border-primary bg-box border-t border-solid md:hidden">
-			<nav class="mx-auto max-w-7xl px-4 py-4">
+		<div class="lg:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-[#2A2A28]">
+			<nav class="mx-auto max-w-[1440px] px-6 py-6">
 				<ul class="flex flex-col gap-4">
-					{#each siteConfig.navigation as item}
+					{#each navItems as item}
 						<li>
 							<a
-								href="{base}{item.href}"
-								class="hover:text-accent block px-2 py-2 text-lg hover:font-medium {currentPage ===
-									base + item.href ||
-								currentPage === base + item.href + '/+page' ||
-								currentPage.startsWith(base + item.href + '/')
-									? 'text-accent font-medium'
-									: ''}"
+								href={item.href.startsWith('#') ? item.href : `${base}${item.href}`}
+								class="block font-body text-base text-[#E8E3D6] hover:text-[#FFB840] transition-colors"
 								onclick={closeMobileMenu}
 							>
 								{item.name}
 							</a>
 						</li>
 					{/each}
+					{#if isHome}
+						<li>
+							<a
+								href="{base}/projects"
+								class="block font-body text-base text-[#E8E3D6] hover:text-[#FFB840] transition-colors"
+								onclick={closeMobileMenu}
+							>
+								Ver todos
+							</a>
+						</li>
+					{/if}
 				</ul>
 			</nav>
 		</div>

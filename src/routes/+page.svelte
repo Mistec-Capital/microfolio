@@ -1,41 +1,36 @@
 <script>
-	import AkProjectCard from '$lib/components/AkProjectCard.svelte';
 	import { siteConfig } from '$lib/config.js';
+	import Hero from '$lib/components/landing/Hero.svelte';
+	import Manifiesto from '$lib/components/landing/Manifiesto.svelte';
+	import ObraReciente from '$lib/components/landing/ObraReciente.svelte';
+	import Plataformas from '$lib/components/landing/Plataformas.svelte';
+	import Gobierno from '$lib/components/landing/Gobierno.svelte';
+	import IA from '$lib/components/landing/IA.svelte';
+	import Capacidades from '$lib/components/landing/Capacidades.svelte';
+	import Contacto from '$lib/components/landing/Contacto.svelte';
+
 	let { data } = $props();
-	let page = $derived(data.page);
-	let featuredProjects = $derived(data.featuredProjects);
+	let projects = $derived(data.projects ?? []);
+	let featuredProjects = $derived(data.featuredProjects ?? []);
+	let stats = $derived(data.stats ?? { total: 0, government: 0, countries: 0, featured: 0 });
+	let obraProjects = $derived(
+		(featuredProjects.length >= 9 ? featuredProjects : projects).slice(0, 9)
+	);
 </script>
 
 <svelte:head>
-	<title>{siteConfig.title} • {page.title}</title>
-	<meta name="description" content={page.description} />
+	<title>{siteConfig.title} — {siteConfig.description}</title>
+	<meta
+		name="description"
+		content="MisTec Capital: construimos software desde Posadas, Misiones. {stats.total}+ proyectos en LATAM — SaaS, gobierno digital, IA aplicada y soluciones a medida."
+	/>
 </svelte:head>
 
-<header class="mb-8">
-	<h1 class="text-primary mb-2 text-3xl font-bold">
-		{page.title}
-	</h1>
-	{#if page.description}
-		<p class="text-lg">
-			{page.description}
-		</p>
-	{/if}
-</header>
-
-<article class="prose prose-neutral text-primary">
-	{@html page.content}
-</article>
-<!-- Featured Projects Section -->
-{#if featuredProjects && featuredProjects.length > 0}
-	<div class="mt-8">
-		<!-- Header -->
-		<h2 class="mb-6 text-2xl font-bold">Proyectos Destacados</h2>
-
-		<!-- Mosaic Grid -->
-		<div class="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-4">
-			{#each featuredProjects as project}
-				<AkProjectCard {project} />
-			{/each}
-		</div>
-	</div>
-{/if}
+<Hero {stats} />
+<Manifiesto {stats} />
+<ObraReciente projects={obraProjects} totalCount={stats.total} />
+<Plataformas {projects} />
+<Gobierno {projects} />
+<IA {projects} />
+<Capacidades />
+<Contacto />

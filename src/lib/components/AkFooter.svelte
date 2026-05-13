@@ -1,56 +1,127 @@
 <script>
-	import IconInstagram from '~icons/akar-icons/instagram-fill';
-	import IconLinkedin from '~icons/akar-icons/linkedin-fill';
-	import IconGithub from '~icons/akar-icons/github-fill';
+	import { base } from '$app/paths';
 	import { siteConfig } from '$lib/config.js';
+	import Kicker from '$lib/components/editorial/Kicker.svelte';
+	import Rule from '$lib/components/editorial/Rule.svelte';
+	import Marginalia from '$lib/components/editorial/Marginalia.svelte';
 </script>
 
-<footer>
-	<div
-		class="border-primary mr-auto ml-auto flex h-auto max-w-7xl flex-col items-center justify-between gap-4 border-t-2 border-solid py-4 pr-4 pl-4 md:h-12 md:flex-row md:gap-0 md:py-0"
-	>
-		<p class="text-center text-sm md:text-left">
-			© {siteConfig.author}
-			{new Date().getFullYear()} — generado con
-			<a
-				href="https://github.com/aker-dev/microfolio"
-				target="_blank"
-				class="text-accent hover:text-accent font-medium hover:underline">microfolio {siteConfig.version}</a
-			>
-		</p>
-		<nav>
-			<ul class="flex justify-center gap-4 md:justify-end">
-				<li>
-					<a
-						href={siteConfig.socialLinks.instagram}
-						target="_blank"
-						aria-label="Instagram"
-						class="hover:text-accent transition-colors"
-					>
-						<IconInstagram class="pointer-events-none h-5 w-5" />
-					</a>
-				</li>
-				<li>
-					<a
-						href={siteConfig.socialLinks.linkedin}
-						target="_blank"
-						aria-label="LinkedIn"
-						class="hover:text-accent transition-colors"
-					>
-						<IconLinkedin class="pointer-events-none h-5 w-5" />
-					</a>
-				</li>
-				<li>
-					<a
-						href={siteConfig.socialLinks.github}
-						target="_blank"
-						aria-label="GitHub"
-						class="hover:text-accent transition-colors"
-					>
-						<IconGithub class="pointer-events-none h-5 w-5" />
-					</a>
-				</li>
-			</ul>
-		</nav>
+<footer class="section-ink border-t border-[#2A2A28] pt-20 pb-10 relative">
+	<div class="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-16">
+		<!-- Sitemap grid -->
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 mb-16">
+			<div>
+				<Kicker class="block mb-4">MISTEC CAPITAL</Kicker>
+				<p class="font-body text-[#8A857A] text-sm leading-relaxed max-w-[28ch]">
+					Construimos software desde Posadas, Misiones. Desde el interior, desde 2020.
+				</p>
+			</div>
+			<div>
+				<Kicker class="block mb-4">Empresa</Kicker>
+				<ul class="space-y-2.5">
+					<li>
+						<a
+							href="#manifiesto"
+							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+						>
+							Nosotros
+						</a>
+					</li>
+					<li>
+						<a
+							href="#obra"
+							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+						>
+							Proyectos
+						</a>
+					</li>
+					<li>
+						<a
+							href="{base}/projects"
+							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+						>
+							Ver todos
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<Kicker class="block mb-4">Servicios</Kicker>
+				<ul class="space-y-2.5">
+					<li>
+						<a
+							href="#plataformas"
+							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+						>
+							Plataformas
+						</a>
+					</li>
+					<li>
+						<a
+							href="#gobierno"
+							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+						>
+							Gobierno
+						</a>
+					</li>
+					<li>
+						<a
+							href="#ia"
+							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+						>
+							IA & Automatización
+						</a>
+					</li>
+					<li>
+						<a
+							href="#capacidades"
+							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+						>
+							Capacidades
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<Kicker class="block mb-4">Contacto</Kicker>
+				<ul class="space-y-2.5">
+					<li>
+						<a
+							href="mailto:{siteConfig.contact.email}"
+							class="font-mono text-xs text-[#8A857A] hover:text-[#FFB840] transition-colors"
+						>
+							{siteConfig.contact.email}
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://wa.me/{siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="font-mono text-xs text-[#8A857A] hover:text-[#FFB840] transition-colors"
+						>
+							{siteConfig.contact.whatsapp}
+						</a>
+					</li>
+					<li>
+						<span class="font-mono text-xs text-[#8A857A]/60">
+							{siteConfig.contact.location}
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<Rule />
+
+		<!-- Bottom row -->
+		<div class="flex flex-col md:flex-row md:justify-between md:items-center pt-6 gap-3">
+			<Marginalia>
+				© {new Date().getFullYear()} MISTEC CAPITAL S.R.L. — Fundado en Posadas, Misiones, Argentina — 2020
+			</Marginalia>
+			<Marginalia>
+				v{siteConfig.version} / MISTEC Capital S.R.L. — {siteConfig.contact.email}
+			</Marginalia>
+		</div>
 	</div>
 </footer>
