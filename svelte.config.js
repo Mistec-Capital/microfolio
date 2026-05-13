@@ -43,6 +43,7 @@ async function createConfig() {
 			},
 			prerender: {
 				handleHttpError: 'warn',
+				handleMissingId: 'warn',
 				entries
 			}
 		}
