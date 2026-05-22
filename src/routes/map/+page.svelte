@@ -6,8 +6,8 @@
 	import AkBtnClose from '$lib/components/AkBtnClose.svelte';
 	import Kicker from '$lib/components/editorial/Kicker.svelte';
 	import SerialNumber from '$lib/components/editorial/SerialNumber.svelte';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import { scrollReveal } from '$lib/actions/scrollReveal.js';
-	import { siteConfig } from '$lib/config.js';
 
 	let { data } = $props();
 	let projects = $derived(data.projects);
@@ -157,9 +157,12 @@
 	}
 </script>
 
+<SeoHead
+	title="Mapa de Proyectos"
+	description="Mapa interactivo geolocalizado de los {projects.length} proyectos de Mistec Capital en Argentina, Paraguay y LATAM."
+/>
+
 <svelte:head>
-	<title>{siteConfig.title} • Mapa de Proyectos</title>
-	<meta name="description" content="Mapa interactivo geolocalizado de los proyectos de Mistec Capital." />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </svelte:head>
 

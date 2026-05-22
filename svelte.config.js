@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function createConfig() {
-	const entries = ['/', '/projects', '/list', '/map', '/about'];
+	const entries = ['/', '/projects', '/list', '/map', '/about', '/sitemap.xml'];
 
 	try {
 		const projectsPath = join(process.cwd(), 'content/projects');
@@ -43,6 +43,7 @@ async function createConfig() {
 			},
 			prerender: {
 				handleHttpError: 'warn',
+				handleMissingId: 'warn',
 				entries
 			}
 		}

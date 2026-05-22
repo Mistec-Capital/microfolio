@@ -5,6 +5,12 @@ export const siteConfig = {
 	author: 'Mistec Capital',
 	version: '0.4.0-beta.6',
 
+	// Canonical site URL (used for sitemap, OG, JSON-LD)
+	siteUrl: 'https://mistec-capital.com',
+	defaultOgImage: '/og-default.jpg',
+	locale: 'es_AR',
+	founded: '2020',
+
 	// Social links
 	socialLinks: {
 		github: 'https://github.com/mistec-capital',

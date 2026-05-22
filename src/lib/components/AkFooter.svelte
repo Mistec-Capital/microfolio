@@ -21,7 +21,7 @@
 				<ul class="space-y-2.5">
 					<li>
 						<a
-							href="#manifiesto"
+							href="{base}/#manifiesto"
 							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
 						>
 							Nosotros
@@ -29,7 +29,7 @@
 					</li>
 					<li>
 						<a
-							href="#obra"
+							href="{base}/#obra"
 							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
 						>
 							Proyectos
@@ -50,7 +50,7 @@
 				<ul class="space-y-2.5">
 					<li>
 						<a
-							href="#plataformas"
+							href="{base}/#plataformas"
 							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
 						>
 							Plataformas
@@ -58,7 +58,7 @@
 					</li>
 					<li>
 						<a
-							href="#gobierno"
+							href="{base}/#gobierno"
 							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
 						>
 							Gobierno
@@ -66,7 +66,7 @@
 					</li>
 					<li>
 						<a
-							href="#ia"
+							href="{base}/#ia"
 							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
 						>
 							IA & Automatización
@@ -74,7 +74,7 @@
 					</li>
 					<li>
 						<a
-							href="#capacidades"
+							href="{base}/#capacidades"
 							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
 						>
 							Capacidades

@@ -10,7 +10,7 @@
 	import Kicker from '$lib/components/editorial/Kicker.svelte';
 	import SerialNumber from '$lib/components/editorial/SerialNumber.svelte';
 	import { scrollReveal } from '$lib/actions/scrollReveal.js';
-	import { siteConfig } from '$lib/config.js';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import IconArrowUpRight from '~icons/lucide/arrow-up-right';
 
 	let { data } = $props();
@@ -70,10 +70,10 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{siteConfig.title} • Lista de Proyectos</title>
-	<meta name="description" content="Lista ordenable con búsqueda de los proyectos." />
-</svelte:head>
+<SeoHead
+	title="Lista de Proyectos"
+	description="Lista ordenable con búsqueda de los {projects.length} proyectos de Mistec Capital — filtrable por categoría, ubicación, año y tags."
+/>
 
 <div use:scrollReveal>
 	<!-- Section label -->
