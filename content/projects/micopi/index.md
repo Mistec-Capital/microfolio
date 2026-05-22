@@ -10,7 +10,6 @@ authors:
   - name: 'Mistec Capital'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
-featured: true
 ---
 
 ## Descripción General

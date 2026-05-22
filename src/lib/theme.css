@@ -87,6 +87,96 @@ body {
 }
 
 /* ============================================
+   Section-paper: remap dark-theme tokens
+   so existing components stay readable on cream.
+   ============================================ */
+.section-paper .text-\[\#E8E3D6\] {
+	color: var(--ink);
+}
+.section-paper .text-\[\#8A857A\] {
+	color: #6b665a;
+}
+.section-paper .text-\[\#8A857A\]\/80,
+.section-paper .text-\[\#8A857A\]\/60 {
+	color: #6b665a;
+	opacity: 0.85;
+}
+.section-paper .text-\[\#FFB840\] {
+	color: var(--amber-dim);
+}
+.section-paper .border-\[\#2A2A28\] {
+	border-color: var(--rule-paper);
+}
+.section-paper .bg-\[\#141413\] {
+	background-color: #dcd4be;
+}
+.section-paper .bg-\[\#0A0A0A\] {
+	background-color: var(--paper);
+}
+.section-paper .bg-white\/\[0\.02\],
+.section-paper .bg-white\/\[0\.015\],
+.section-paper .bg-white\/\[0\.005\] {
+	background-color: rgba(10, 10, 10, 0.025);
+}
+.section-paper .chip {
+	border-color: var(--rule-paper);
+	background-color: rgba(10, 10, 10, 0.025);
+	color: var(--ink);
+}
+.section-paper .chip-amber {
+	border-color: rgba(204, 143, 26, 0.45);
+	background-color: rgba(204, 143, 26, 0.1);
+	color: var(--amber-dim);
+}
+.section-paper .kicker,
+.section-paper .kicker-bone {
+	color: #6b665a;
+}
+.section-paper .kicker-amber {
+	color: var(--amber-dim);
+}
+.section-paper .gradient-text-amber {
+	background: linear-gradient(135deg, #cc8f1a 0%, #b87c10 50%, #cc8f1a 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.section-paper .text-display,
+.section-paper .text-headline,
+.section-paper .text-subhead {
+	color: var(--ink);
+}
+.section-paper .rule-h {
+	background-color: var(--rule-paper);
+}
+.section-paper .ed-card {
+	border-color: var(--rule-paper);
+}
+.section-paper .ed-card:hover {
+	border-color: #9a927e;
+}
+.section-paper .ed-card::after {
+	background-color: var(--amber-dim);
+}
+.section-paper .card-dark {
+	background-color: rgba(10, 10, 10, 0.025);
+	border-color: rgba(10, 10, 10, 0.08);
+}
+.section-paper .card-dark:hover {
+	background-color: rgba(204, 143, 26, 0.05);
+	border-color: rgba(204, 143, 26, 0.4);
+}
+.section-paper .glow-amber-sm {
+	box-shadow: 0 0 30px -8px rgba(204, 143, 26, 0.35);
+}
+.section-paper .glow-amber-md {
+	box-shadow: 0 0 60px -12px rgba(204, 143, 26, 0.4);
+}
+.section-paper .glow-amber-lg {
+	box-shadow: 0 0 120px -20px rgba(204, 143, 26, 0.25);
+}
+
+/* ============================================
    Hairline rules
    ============================================ */
 .rule-h {
@@ -368,7 +458,7 @@ a.editorial-link:hover {
 }
 .reveal.visible {
 	opacity: 1;
-	clip-path: inset(0 0 0 0);
+	clip-path: inset(-200px);
 }
 .reveal-scale {
 	opacity: 0;
@@ -379,7 +469,7 @@ a.editorial-link:hover {
 }
 .reveal-scale.visible {
 	opacity: 1;
-	clip-path: inset(0 0 0 0);
+	clip-path: inset(-200px);
 }
 .reveal-left {
 	opacity: 0;
@@ -500,6 +590,7 @@ a.editorial-link:hover {
 	background-color: var(--amber);
 	flex-shrink: 0;
 	vertical-align: middle;
+	isolation: isolate;
 }
 .status-dot-live::after {
 	content: '';
@@ -507,7 +598,7 @@ a.editorial-link:hover {
 	inset: -2px;
 	border-radius: 50%;
 	background-color: var(--amber);
-	animation: status-pulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	animation: status-pulse 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
 	pointer-events: none;
 	z-index: -1;
 }

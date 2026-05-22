@@ -50,42 +50,38 @@
 			{#each projects as project, idx (project.slug)}
 				<a
 					href="{base}/projects/{project.slug}"
-					class="card-dark group cursor-pointer overflow-hidden reveal reveal-delay-{Math.min((idx % 3) + 1, 3)}"
+					class="card-dark group cursor-pointer overflow-hidden reveal reveal-delay-{Math.min((idx % 3) + 1, 3)} flex flex-col"
 				>
-					<!-- Thumb -->
-					<div class="relative h-44 overflow-hidden bg-[#141413]">
-						<img
-							src={project.thumbnailSrc}
-							alt={project.title}
-							class="w-full h-full object-cover opacity-50 grayscale contrast-125 group-hover:opacity-80 group-hover:grayscale-0 group-hover:scale-[1.04] transition-all duration-500"
-							loading="lazy"
-						/>
-						<div
-							class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent"
-						></div>
-						<div class="absolute top-3 left-3 flex items-center gap-2">
-							<span
-								class="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-[#0A0A0A]/80 backdrop-blur border border-[#2A2A28] text-[#E8E3D6]"
-							>
-								{project.category}
-							</span>
+					<div class="p-6 flex flex-col h-full">
+						<!-- Header: avatar + meta -->
+						<div class="flex items-center justify-between gap-3 mb-6">
+							<div class="w-11 h-11 rounded-sm overflow-hidden bg-[#141413] border border-[#2A2A28] flex items-center justify-center shrink-0">
+								<img
+									src={project.thumbnailSrc}
+									alt={project.title}
+									class="w-full h-full object-cover"
+									loading="lazy"
+								/>
+							</div>
+							<div class="flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider">
+								<span class="text-[#E8E3D6]">{project.category}</span>
+								<span class="text-[#2A2A28]">·</span>
+								<span class="text-[#8A857A] tabular-nums">{project.year}</span>
+							</div>
 						</div>
-						<div class="absolute top-3 right-3 font-mono text-[10px] text-[#8A857A] tabular-nums">
-							{project.year}
-						</div>
-					</div>
 
-					<!-- Body -->
-					<div class="p-6">
+						<!-- Title + description -->
 						<h3
 							class="font-display font-semibold text-[#E8E3D6] text-xl leading-tight tracking-tight mb-2 group-hover:text-[#FFB840] transition-colors"
 						>
 							{shortTitle(project.title)}
 						</h3>
-						<p class="font-body text-sm text-[#8A857A] line-clamp-2 mb-5 leading-relaxed">
+						<p class="font-body text-sm text-[#8A857A] line-clamp-3 leading-relaxed flex-1">
 							{project.description}
 						</p>
-						<div class="flex items-end justify-between pt-4 border-t border-[#2A2A28]">
+
+						<!-- Footer: tags + arrow -->
+						<div class="flex items-end justify-between pt-5 mt-5 border-t border-[#2A2A28]">
 							<div class="flex flex-wrap gap-1.5 max-w-[75%]">
 								{#if project.tags}
 									{#each project.tags.slice(0, 2) as tag}

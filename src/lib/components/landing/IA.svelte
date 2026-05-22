@@ -15,14 +15,14 @@
 		{
 			slug: 'guazuapp',
 			fallback: lookup('guazuapp'),
-			title: 'MiCopi',
+			title: 'Guazu',
 			kicker: 'ASISTENTE MULTICANAL',
 			desc: 'Asistente multi-agente para asesoramiento comercial, financiero y operativo. Integra WhatsApp, web, email y API; aprende el contexto de cada empresa mediante un onboarding estructurado y mantiene memoria conversacional persistente.',
 			stack: ['multi-agent', 'LLM', 'multicanal', 'onboarding'],
 			icon: IconCpu
 		},
 		{
-			slug: 'hcd-digesto-juridico-posadas',
+			slug: 'digesto-rag-posadas',
 			fallback: lookup('hcd-digesto-juridico-posadas'),
 			title: 'Digesto RAG',
 			kicker: 'CONSULTA JURÍDICA IA',
@@ -36,7 +36,7 @@
 <section
 	id="ia"
 	use:scrollReveal
-	class="section-ink bg-mesh-amber py-32 relative overflow-hidden"
+	class="section-paper bg-mesh-amber py-32 relative overflow-hidden"
 >
 	<div
 		class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full pointer-events-none"

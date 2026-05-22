@@ -10,7 +10,6 @@ authors:
   - name: 'Mistec Capital'
     role: 'Desarrollo y soporte'
 status: 'en mantenimiento'
-featured: true
 ---
 
 ## Descripción General

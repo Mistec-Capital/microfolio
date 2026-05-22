@@ -3,7 +3,7 @@
 	import Hero from '$lib/components/landing/Hero.svelte';
 	import Manifiesto from '$lib/components/landing/Manifiesto.svelte';
 	import ObraReciente from '$lib/components/landing/ObraReciente.svelte';
-	import Plataformas from '$lib/components/landing/Plataformas.svelte';
+	// import Plataformas from '$lib/components/landing/Plataformas.svelte';
 	import Gobierno from '$lib/components/landing/Gobierno.svelte';
 	import IA from '$lib/components/landing/IA.svelte';
 	import Capacidades from '$lib/components/landing/Capacidades.svelte';
@@ -29,8 +29,8 @@
 <Hero {stats} />
 <Manifiesto {stats} />
 <ObraReciente projects={obraProjects} totalCount={stats.total} />
-<Plataformas {projects} />
+<!-- <Plataformas {projects} /> -->
 <Gobierno {projects} />
-<IA {projects} />
 <Capacidades />
+<IA {projects} />
 <Contacto />

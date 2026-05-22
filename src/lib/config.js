@@ -15,7 +15,7 @@ export const siteConfig = {
 	// Contact
 	contact: {
 		email: 'mistec.capital@gmail.com',
-		whatsapp: '+54 9 3764 123456',
+		whatsapp: '+54 9 3764 734375',
 		location: 'Posadas, Misiones — AR'
 	},
 
@@ -23,7 +23,7 @@ export const siteConfig = {
 	landingNav: [
 		{ name: 'Nosotros', href: '#manifiesto' },
 		{ name: 'Proyectos', href: '#obra' },
-		{ name: 'Plataformas', href: '#plataformas' },
+		// { name: 'Plataformas', href: '#plataformas' },
 		{ name: 'Gobierno', href: '#gobierno' },
 		{ name: 'Contacto', href: '#contacto' }
 	],

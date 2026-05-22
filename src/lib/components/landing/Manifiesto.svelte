@@ -16,7 +16,7 @@
 <section
 	id="manifiesto"
 	use:scrollReveal
-	class="section-ink bg-mesh-soft py-32 relative overflow-hidden"
+	class="section-paper bg-mesh-soft py-32 relative overflow-hidden"
 >
 	<div
 		class="absolute -top-20 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full pointer-events-none"
@@ -38,8 +38,8 @@
 			class="text-center font-display font-bold text-[#E8E3D6] tracking-[-0.04em] leading-[1.05] max-w-[22ch] mx-auto reveal reveal-delay-1"
 			style="font-size: clamp(2.5rem, 5.5vw, 5rem)"
 		>
-			Piensa en grande.
-			<span class="gradient-text-amber">Ya estamos ahí.</span>
+			Calidad técnica.
+			<span class="gradient-text-amber">Compromiso humano.</span>
 		</h2>
 
 		<!-- Body -->

@@ -4,7 +4,7 @@
 	import IconMessageCircle from '~icons/lucide/message-circle';
 	import IconMail from '~icons/lucide/mail';
 
-	const phone = '+54 9 3764 123456';
+	const phone = '+54 9 3764 734375';
 	const email = 'mistec.capital@gmail.com';
 	const waLink = `https://wa.me/${phone.replace(/[^0-9]/g, '')}`;
 </script>

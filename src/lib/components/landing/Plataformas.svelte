@@ -77,7 +77,7 @@
 <section
 	id="plataformas"
 	use:scrollReveal
-	class="section-ink bg-mesh-amber py-32 relative overflow-hidden"
+	class="section-paper bg-mesh-amber py-32 relative overflow-hidden"
 >
 	<div class="relative max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
 		<!-- Header -->

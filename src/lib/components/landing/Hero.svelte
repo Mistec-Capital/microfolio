@@ -54,10 +54,10 @@
 			<h1
 				class="col-span-12 lg:col-span-9 text-display font-display text-[#E8E3D6] reveal reveal-delay-1"
 			>
-				<span class="block">Tecnología</span>
-				<span class="block">que piensa</span>
+				<span class="block">Construimos</span>
+				<span class="block">software que</span>
 				<span class="block">
-					en <span class="gradient-text-amber">grande.</span>
+					<span class="gradient-text-amber">dura.</span>
 					<span class="cursor-blink" aria-hidden="true"></span>
 				</span>
 			</h1>

@@ -10,7 +10,6 @@ authors:
   - name: 'Mistec Capital'
     role: 'Desarrollo Full Stack'
 status: 'en desarrollo'
-featured: true
 ---
 
 ## Descripción General
