@@ -38,15 +38,15 @@
 			class="text-center font-display font-bold text-[#E8E3D6] tracking-[-0.04em] leading-[1.05] max-w-[22ch] mx-auto reveal reveal-delay-1"
 			style="font-size: clamp(2.5rem, 5.5vw, 5rem)"
 		>
-			Calidad técnica.
-			<span class="gradient-text-amber">Compromiso humano.</span>
+			Calidad técnica
+			<span class="gradient-text-amber">Compromiso humano</span>
 		</h2>
 
 		<!-- Body -->
 		<p
 			class="mt-10 mx-auto max-w-[64ch] text-center font-body text-base md:text-lg text-[#8A857A] leading-relaxed reveal reveal-delay-2"
 		>
-			Somos ingenieros de sistemas formados en Posadas, Misiones — el interior de Argentina.
+			Somos misioneros, ingenieros de sistemas egresados de la UTN.
 			Trabajamos con la convicción de que la tecnología de calidad puede y debe desarrollarse desde
 			cualquier lugar. Combinamos la calidez del interior con el rigor técnico de la industria IT
 			moderna, y construimos desde hace seis años software a medida, plataformas SaaS propias y

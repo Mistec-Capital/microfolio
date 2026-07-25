@@ -27,10 +27,10 @@
 					class="font-display font-bold text-[#E8E3D6] tracking-[-0.04em] leading-[1.05] mt-6"
 					style="font-size: clamp(2.25rem, 4.5vw, 3.75rem)"
 				>
-					Nueve proyectos destacados.
+					Nueve proyectos destacados
 				</h2>
 				<p class="mt-5 font-body text-base md:text-lg text-[#8A857A] max-w-[58ch] leading-relaxed">
-					Una selección de plataformas propias, sistemas para el Estado y desarrollos a medida
+					Una selección de plataformas propias, sistemas para el Estado y desarrollos a medida,
 					actualmente en producción o en desarrollo activo.
 				</p>
 			</div>

@@ -57,7 +57,7 @@
 				<span class="block">Construimos</span>
 				<span class="block">software que</span>
 				<span class="block">
-					<span class="gradient-text-amber">dura.</span>
+					<span class="gradient-text-amber">dura</span>
 					<span class="cursor-blink" aria-hidden="true"></span>
 				</span>
 			</h1>
