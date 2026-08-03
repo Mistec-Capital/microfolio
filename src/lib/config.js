@@ -1,8 +1,8 @@
 export const siteConfig = {
-	title: 'Mistec Capital',
+	title: 'MisTec',
 	tagline: 'Software · LATAM',
 	description: 'Ingeniería de Software desde el Interior',
-	author: 'Mistec Capital',
+	author: 'MisTec',
 	version: '0.4.0-beta.6',
 
 	// Canonical site URL (used for sitemap, OG, JSON-LD)

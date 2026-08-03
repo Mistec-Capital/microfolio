@@ -1,20 +1,21 @@
 ---
-title: 'GOU - Plataforma de Movilidad y Delivery'
+title: 'GoUP - Plataforma de Movilidad y Delivery'
 date: '2026-06-01'
 location: 'Posadas, Argentina'
 coordinates: [-27.3621, -55.9007]
 description: 'Plataforma white-label de ride-hailing y delivery: apps de pasajero y conductor, panel de administración, despacho en tiempo real, ruteo, pagos con MercadoPago y precios por zona y reglas. Monorepo Nx con frontends Flutter y APIs Node.'
 type: 'movilidad'
 tags: ['movilidad', 'ride-hailing', 'delivery', 'flutter', 'graphql', 'tiempo real', 'mercadopago', 'geolocalización', 'white-label']
+status: 'descontinuado'
 featured: true
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 ---
 
 ## Descripción
 
-GOU es una plataforma de movilidad y delivery tipo ride-hailing desplegada sobre una base white-label. Conecta pasajeros y conductores en tiempo real, calcula tarifas y rutas, gestiona pagos y permite a un administrador controlar precios, zonas y operaciones sin tocar código.
+GoUP es una plataforma de movilidad y delivery tipo ride-hailing desplegada sobre una base white-label. Conecta pasajeros y conductores en tiempo real, calcula tarifas y rutas, gestiona pagos y permite a un administrador controlar precios, zonas y operaciones sin tocar código.
 
 El sistema se organiza en un ecosistema multi-rol con interfaces dedicadas para pasajero, conductor y administración, sobre un backend compartido en monorepo.
 

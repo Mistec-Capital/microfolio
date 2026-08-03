@@ -19,15 +19,13 @@
 	);
 
 	let description = $derived(
-		`Mistec Capital construye software desde Posadas, Misiones. ${stats.total}+ proyectos en LATAM — plataformas SaaS propias, sistemas para el Estado, IA aplicada y soluciones a medida.`
+		`MisTec construye software desde Posadas, Misiones. ${stats.total}+ proyectos en LATAM — plataformas SaaS propias, sistemas para el Estado, IA aplicada y soluciones a medida.`
 	);
 
 	const organizationJsonLd = {
 		'@context': 'https://schema.org',
 		'@type': 'Organization',
-		name: 'Mistec Capital S.R.L.',
-		alternateName: 'Mistec Capital',
-		legalName: 'MISTEC CAPITAL S.R.L.',
+		name: 'MisTec',
 		url: siteConfig.siteUrl,
 		logo: `${siteConfig.siteUrl}/mistec.png`,
 		image: `${siteConfig.siteUrl}${siteConfig.defaultOgImage}`,

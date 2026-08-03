@@ -1,15 +1,15 @@
 ---
-title: 'Sobre Mistec Capital'
+title: 'Sobre MisTec'
 description: 'Tecnología de calidad desde el corazón de Misiones.'
 ---
 
 ## Quiénes Somos
 
-**Mistec Capital** nace del sueño compartido de un grupo de amigos y compañeros que forjaron su amistad en las aulas de la secundaria y consolidaron su visión durante sus años de facultad, cursando Ingeniería en Sistemas. Unidos por la pasión por la tecnología y el deseo de independencia profesional, decidimos emprender nuestro propio camino.
+**MisTec** nace del sueño compartido de un grupo de amigos y compañeros que forjaron su amistad en las aulas de la secundaria y consolidaron su visión durante sus años de facultad, cursando Ingeniería en Sistemas. Unidos por la pasión por la tecnología y el deseo de independencia profesional, decidimos emprender nuestro propio camino.
 
 Nuestra empresa surge con una misión clara: proveer servicios informáticos de calidad, manteniendo un compromiso profundo con nuestras raíces. Estamos fuertemente arraigados a nuestra provincia, **Misiones**, tierra que nos vio crecer y que representa el núcleo de nuestra identidad como empresa.
 
-El nombre **Mistec Capital** no es casual. Es la síntesis de nuestra visión: posicionar a **Misiones** como una verdadera **capital tecnológica**. Creemos firmemente que desde aquí, desde nuestra provincia, podemos ofrecer soluciones innovadoras y servicios de excelencia que compitan con los mejores estándares nacionales e internacionales.
+La marca es **MisTec**, a secas: MisTec no tiene Capital — ni en el nombre, ni en la mentalidad. Creemos firmemente que desde aquí, desde nuestra provincia, podemos ofrecer soluciones innovadoras y servicios de excelencia que compitan con los mejores estándares nacionales e internacionales.
 
 ## Nuestra Filosofía
 
@@ -19,7 +19,7 @@ Como equipo de ingenieros formados académicamente y fortalecidos por años de a
 
 ## Nuestro Compromiso
 
-En Mistec Capital nos comprometemos a:
+En MisTec nos comprometemos a:
 
 - Ofrecer servicios informáticos de alta calidad
 - Mantener la excelencia técnica en cada proyecto
@@ -27,4 +27,4 @@ En Mistec Capital nos comprometemos a:
 - Contribuir al crecimiento de Misiones como polo tecnológico
 - Trabajar con independencia, creatividad y responsabilidad
 
-Somos Mistec Capital: **Misiones, Capital Tecnológica**.
+Somos **MisTec**: ingeniería de software desde el interior.

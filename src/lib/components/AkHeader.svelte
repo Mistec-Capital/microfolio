@@ -40,7 +40,7 @@
 		<a
 			href="{base}/"
 			class="group flex items-center gap-3"
-			aria-label="Mistec Capital — inicio"
+			aria-label="MisTec — inicio"
 		>
 			<span
 				class="relative w-10 h-10 rounded-md bg-[#E8E3D6] overflow-hidden ring-1 ring-[#E8E3D6]/15 transition-all duration-300 group-hover:ring-[#FFB840]/60 group-hover:scale-105"

@@ -11,7 +11,7 @@
 		<!-- Sitemap grid -->
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 mb-16">
 			<div>
-				<Kicker class="block mb-4">MISTEC CAPITAL</Kicker>
+				<Kicker class="block mb-4">MISTEC</Kicker>
 				<p class="font-body text-[#8A857A] text-sm leading-relaxed max-w-[28ch]">
 					Construimos software desde Posadas, Misiones. Desde el interior, desde 2020.
 				</p>
@@ -117,10 +117,10 @@
 		<!-- Bottom row -->
 		<div class="flex flex-col md:flex-row md:justify-between md:items-center pt-6 gap-3">
 			<Marginalia>
-				© {new Date().getFullYear()} MISTEC CAPITAL S.R.L. — Fundado en Posadas, Misiones, Argentina — 2020
+				© {new Date().getFullYear()} MisTec — Fundado en Posadas, Misiones, Argentina — 2020
 			</Marginalia>
 			<Marginalia>
-				v{siteConfig.version} / MISTEC Capital S.R.L. — {siteConfig.contact.email}
+				v{siteConfig.version} / MisTec — {siteConfig.contact.email}
 			</Marginalia>
 		</div>
 	</div>
