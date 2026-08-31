@@ -10,6 +10,7 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
+		"check:brand": "bash scripts/check-brand.sh",
 		"deploy": "NODE_ENV=production pnpm run build",
 		"optimize-images": "node scripts/generate-optimized-images.js",
 		"clean-images": "node scripts/clean-optimized-images.js"
