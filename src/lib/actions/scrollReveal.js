@@ -1,17 +1,15 @@
 /**
- * Svelte action: when this node enters the viewport, mark its
- * descendant .reveal / .reveal-scale / .reveal-left / .reveal-right
- * elements with `.visible` to trigger the CSS reveal transition.
- *
- * Honors prefers-reduced-motion and has a 3s safety fallback.
+ * Acción Svelte: cuando un descendiente `.reveal` entra en el viewport
+ * recibe `.visible` y dispara el revelado (opacidad + clip sobre su eje).
+ * Respeta prefers-reduced-motion y tiene un fallback de 3 s.
  */
 export function scrollReveal(node) {
 	if (typeof window === 'undefined') return;
 
-	const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-	const targets = node.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
+	const targets = node.querySelectorAll('.reveal');
+	const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-	if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+	if (reduce || !('IntersectionObserver' in window)) {
 		targets.forEach((t) => t.classList.add('visible'));
 		return;
 	}
@@ -38,9 +36,7 @@ export function scrollReveal(node) {
 	});
 
 	const safety = window.setTimeout(() => {
-		targets.forEach((t) => {
-			if (!t.classList.contains('visible')) t.classList.add('visible');
-		});
+		targets.forEach((t) => t.classList.add('visible'));
 	}, 3000);
 
 	return {

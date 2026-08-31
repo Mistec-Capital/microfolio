@@ -1,39 +1,28 @@
 @import 'tailwindcss';
 
-@plugin '@tailwindcss/typography';
-
-/* Editorial tech-noir design system */
+/* Tokens y componentes del sistema de marca MisTec. */
 @import './lib/theme.css';
 
+/* Los mismos tokens, expuestos como utilidades Tailwind
+   (bg-ink, text-mist, border-rule, gap-s2, p-s3…). Sin ámbar a propósito:
+   el acento solo existe como .accent en theme.css. */
 @theme {
-	--default-font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 
-	--font-display: 'Geist', ui-sans-serif, system-ui, sans-serif;
-	--font-body: 'Geist', ui-sans-serif, system-ui, sans-serif;
-	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
-	--font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
-
-	/* Editorial palette */
 	--color-ink: #0a0a0a;
-	--color-paper: #ede6d6;
+	--color-ink-2: #141413;
 	--color-bone: #e8e3d6;
-	--color-amber: #ffb840;
-	--color-amber-dim: #cc8f1a;
-	--color-rule: #2a2a28;
-	--color-rule-paper: #c8c0ae;
 	--color-mist: #8a857a;
-	--color-sig: #d64545;
+	--color-rule: #2a2a28;
 
-	/* Background defaults align with editorial palette */
-	--color-background: #0a0a0a;
-	--color-primary: #e8e3d6;
-	--color-accent: #ffb840;
-	--color-accent-hover: #cc8f1a;
-	--color-text-secondary: #8a857a;
-	--color-box: #141413;
+	--spacing-s1: 8px;
+	--spacing-s2: 16px;
+	--spacing-s3: 32px;
+	--spacing-s4: 64px;
+	--spacing-s5: 128px;
 
 	--radius-sm: 2px;
-	--radius-md: 4px;
-	--radius-lg: 4px;
-	--radius-xl: 4px;
+	--radius-md: 2px;
+	--radius-lg: 2px;
+	--radius-xl: 2px;
 }
