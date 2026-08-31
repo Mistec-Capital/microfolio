@@ -7,3 +7,13 @@ bun.lockb
 
 # Miscellaneous
 /static/
+
+# No formatear contenido, documentación ni configuración de herramientas (solo código fuente)
+content/
+doc/
+docs/
+.superpowers/
+.claude/
+.vscode/
+.github/
+CHANGELOG.md

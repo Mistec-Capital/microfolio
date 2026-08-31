@@ -77,24 +77,20 @@
 
 <div use:scrollReveal>
 	<!-- Section label -->
-	<div
-		class="flex items-baseline gap-6 pb-4 mb-16 border-b border-[#2A2A28] reveal flex-wrap"
-	>
+	<div class="reveal mb-16 flex flex-wrap items-baseline gap-6 border-b border-[#2A2A28] pb-4">
 		<SerialNumber n={5} />
 		<Kicker>/ TABLA EDITORIAL</Kicker>
 		<Kicker class="ml-auto">{String(projects.length).padStart(3, '0')} REGISTROS</Kicker>
 	</div>
 
 	<!-- Title -->
-	<div class="grid grid-cols-12 gap-8 mb-16">
+	<div class="mb-16 grid grid-cols-12 gap-8">
 		<h1
-			class="col-span-12 lg:col-span-8 text-headline font-display text-[#E8E3D6] reveal reveal-delay-1"
+			class="text-headline font-display reveal reveal-delay-1 col-span-12 text-[#E8E3D6] lg:col-span-8"
 		>
 			Datos ordenables.
 		</h1>
-		<p
-			class="col-span-12 lg:col-span-4 text-body text-[#8A857A] pt-3 reveal reveal-delay-2"
-		>
+		<p class="text-body reveal reveal-delay-2 col-span-12 pt-3 text-[#8A857A] lg:col-span-4">
 			Ordenable por columna, paginado y con búsqueda combinada por título, descripción, tags y
 			ubicación.
 		</p>
@@ -112,7 +108,7 @@
 	<!-- Table controls -->
 	{#if handler}
 		<div
-			class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6 font-mono text-xs text-[#8A857A] reveal"
+			class="reveal mb-6 flex flex-col gap-4 font-mono text-xs text-[#8A857A] sm:flex-row sm:items-center sm:justify-between"
 		>
 			<div class="flex items-center gap-6">
 				<RowsPerPage {handler} />
@@ -131,43 +127,43 @@
 							<ThSort
 								{handler}
 								orderBy="title"
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
+								class="px-4 py-3 text-left font-mono text-[10px] tracking-[0.12em] text-[#FFB840] uppercase"
 							>
 								Título
 							</ThSort>
 							<ThSort
 								{handler}
 								orderBy="type"
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
+								class="px-4 py-3 text-left font-mono text-[10px] tracking-[0.12em] text-[#FFB840] uppercase"
 							>
 								Tipo
 							</ThSort>
 							<ThSort
 								{handler}
 								orderBy="location"
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
+								class="px-4 py-3 text-left font-mono text-[10px] tracking-[0.12em] text-[#FFB840] uppercase"
 							>
 								Ubicación
 							</ThSort>
 							<ThSort
 								{handler}
 								orderBy="date"
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
+								class="px-4 py-3 text-left font-mono text-[10px] tracking-[0.12em] text-[#FFB840] uppercase"
 							>
 								Fecha
 							</ThSort>
 							<th
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
+								class="px-4 py-3 text-left font-mono text-[10px] tracking-[0.12em] text-[#FFB840] uppercase"
 							>
 								Descripción
 							</th>
 							<th
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
+								class="px-4 py-3 text-left font-mono text-[10px] tracking-[0.12em] text-[#FFB840] uppercase"
 							>
 								Tags
 							</th>
 							<th
-								class="px-4 py-3 text-right font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
+								class="px-4 py-3 text-right font-mono text-[10px] tracking-[0.12em] text-[#FFB840] uppercase"
 							>
 								Acción
 							</th>
@@ -175,13 +171,11 @@
 					</thead>
 					<tbody>
 						{#each $rows as project (project.slug)}
-							<tr
-								class="border-t border-[#2A2A28] hover:bg-[#141413] transition-colors group"
-							>
+							<tr class="group border-t border-[#2A2A28] transition-colors hover:bg-[#141413]">
 								<td class="px-4 py-3">
 									<a
 										href="{base}/projects/{project.slug}"
-										class="font-display text-[#E8E3D6] font-medium hover:text-[#FFB840] transition-colors"
+										class="font-display font-medium text-[#E8E3D6] transition-colors hover:text-[#FFB840]"
 									>
 										{project.title}
 									</a>
@@ -195,7 +189,7 @@
 								<td class="px-4 py-3 font-mono text-xs text-[#8A857A] tabular-nums">
 									{formatDate(project.date)}
 								</td>
-								<td class="px-4 py-3 text-sm text-[#8A857A] max-w-md">
+								<td class="max-w-md px-4 py-3 text-sm text-[#8A857A]">
 									{truncate(project.description)}
 								</td>
 								<td class="px-4 py-3">
@@ -203,13 +197,12 @@
 										<div class="flex flex-wrap gap-1">
 											{#each project.tags.slice(0, 3) as tag}
 												<span
-													class="font-mono text-[10px] text-[#8A857A]/80 px-1.5 py-0.5 border border-[#2A2A28]"
+													class="border border-[#2A2A28] px-1.5 py-0.5 font-mono text-[10px] text-[#8A857A]/80"
 													>{tag}</span
 												>
 											{/each}
 											{#if project.tags.length > 3}
-												<span
-													class="font-mono text-[10px] text-[#FFB840]/80 px-1.5 py-0.5"
+												<span class="px-1.5 py-0.5 font-mono text-[10px] text-[#FFB840]/80"
 													>+{project.tags.length - 3}</span
 												>
 											{/if}
@@ -219,7 +212,7 @@
 								<td class="px-4 py-3 text-right">
 									<a
 										href="{base}/projects/{project.slug}"
-										class="inline-flex items-center justify-center border border-[#2A2A28] text-[#8A857A] hover:border-[#FFB840] hover:text-[#FFB840] rounded-full p-2 transition-colors"
+										class="inline-flex items-center justify-center rounded-full border border-[#2A2A28] p-2 text-[#8A857A] transition-colors hover:border-[#FFB840] hover:text-[#FFB840]"
 										aria-label="Ver proyecto"
 									>
 										<IconArrowUpRight class="size-3.5" />
@@ -233,7 +226,7 @@
 		</div>
 
 		<!-- Pagination -->
-		<div class="flex justify-center mt-8 font-mono text-xs">
+		<div class="mt-8 flex justify-center font-mono text-xs">
 			<Pagination {handler} />
 		</div>
 	{:else}

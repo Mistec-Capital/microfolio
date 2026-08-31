@@ -1,10 +1,5 @@
 <script>
-	let {
-		src,
-		alt,
-		class: className = '',
-		hasWebP = false
-	} = $props();
+	let { src, alt, class: className = '', hasWebP = false } = $props();
 
 	// Replace extension with .webp for thumbnails
 	const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');

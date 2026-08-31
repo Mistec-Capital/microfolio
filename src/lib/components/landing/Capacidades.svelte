@@ -73,25 +73,21 @@
 	}
 </script>
 
-<section
-	id="capacidades"
-	use:scrollReveal
-	class="section-ink py-32 relative overflow-hidden"
->
-	<div class="relative max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+<section id="capacidades" use:scrollReveal class="section-ink relative overflow-hidden py-32">
+	<div class="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-14">
 		<!-- Header -->
-		<div class="max-w-[700px] mb-14 reveal">
+		<div class="reveal mb-14 max-w-[700px]">
 			<span class="chip">
-				<IconLayers class="w-3 h-3" />
+				<IconLayers class="h-3 w-3" />
 				CAPACIDADES
 			</span>
 			<h2
-				class="font-display font-bold text-[#E8E3D6] tracking-[-0.04em] leading-[1.05] mt-6"
+				class="font-display mt-6 leading-[1.05] font-bold tracking-[-0.04em] text-[#E8E3D6]"
 				style="font-size: clamp(2.25rem, 4.5vw, 3.75rem)"
 			>
 				Doce disciplinas bajo un mismo techo.
 			</h2>
-			<p class="mt-5 font-body text-base md:text-lg text-[#8A857A] max-w-[58ch] leading-relaxed">
+			<p class="font-body mt-5 max-w-[58ch] text-base leading-relaxed text-[#8A857A] md:text-lg">
 				Equipos de desarrollo multidisciplinarios que cubren desde frontend moderno hasta
 				integración IoT y contabilidad fiscal LATAM.
 			</p>
@@ -99,16 +95,14 @@
 
 		<!-- Three-column domain layout -->
 		<div
-			class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#2A2A28] border border-[#2A2A28] rounded-sm overflow-hidden"
+			class="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#2A2A28] bg-[#2A2A28] md:grid-cols-3"
 		>
 			{#each GROUPS as group, groupIdx (group.id)}
-				<div
-					class="section-ink bg-white/[0.005] p-7 md:p-8 reveal reveal-delay-{groupIdx + 1}"
-				>
+				<div class="section-ink reveal bg-white/[0.005] p-7 md:p-8 reveal-delay-{groupIdx + 1}">
 					<!-- Column header -->
-					<div class="flex items-baseline justify-between pb-5 mb-5 border-b border-[#2A2A28]">
+					<div class="mb-5 flex items-baseline justify-between border-b border-[#2A2A28] pb-5">
 						<div>
-							<div class="font-mono text-[10px] uppercase tracking-[0.18em] text-[#FFB840] mb-1.5">
+							<div class="mb-1.5 font-mono text-[10px] tracking-[0.18em] text-[#FFB840] uppercase">
 								{String(groupIdx + 1).padStart(2, '0')} · {group.label}
 							</div>
 							<div class="font-body text-xs text-[#8A857A]/70">
@@ -126,24 +120,24 @@
 							{@const number = nextNumber()}
 							{@const Icon = cap.icon}
 							<li
-								class="group flex items-start gap-4 py-3 px-2 -mx-2 rounded-sm hover:bg-[#FFB840]/[0.04] transition-colors"
+								class="group -mx-2 flex items-start gap-4 rounded-sm px-2 py-3 transition-colors hover:bg-[#FFB840]/[0.04]"
 							>
 								<span
-									class="font-mono text-[10px] text-[#8A857A]/40 tabular-nums shrink-0 mt-1.5 w-5"
+									class="mt-1.5 w-5 shrink-0 font-mono text-[10px] text-[#8A857A]/40 tabular-nums"
 								>
 									{String(number).padStart(2, '0')}
 								</span>
 								<Icon
-									class="w-4 h-4 text-[#FFB840]/80 shrink-0 mt-1 group-hover:text-[#FFB840] transition-colors"
+									class="mt-1 h-4 w-4 shrink-0 text-[#FFB840]/80 transition-colors group-hover:text-[#FFB840]"
 								/>
-								<div class="flex-1 min-w-0">
+								<div class="min-w-0 flex-1">
 									<div
-										class="font-display font-medium text-[#E8E3D6] text-sm group-hover:text-[#FFB840] transition-colors"
+										class="font-display text-sm font-medium text-[#E8E3D6] transition-colors group-hover:text-[#FFB840]"
 									>
 										{cap.title}
 									</div>
 									<div
-										class="mt-0.5 font-mono text-[10px] tracking-wider text-[#8A857A]/70 leading-relaxed"
+										class="mt-0.5 font-mono text-[10px] leading-relaxed tracking-wider text-[#8A857A]/70"
 									>
 										{cap.kicker}
 									</div>
@@ -156,9 +150,7 @@
 		</div>
 
 		<!-- Footnote -->
-		<div
-			class="mt-10 font-mono text-xs text-[#8A857A]/60 tracking-wider flex items-center gap-3"
-		>
+		<div class="mt-10 flex items-center gap-3 font-mono text-xs tracking-wider text-[#8A857A]/60">
 			<span class="text-[#FFB840]">▲</span>
 			<span>12 disciplinas · 1 stack común · equipos formados in-house</span>
 		</div>

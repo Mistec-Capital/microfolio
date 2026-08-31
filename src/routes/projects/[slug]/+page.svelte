@@ -55,9 +55,7 @@
 		}
 	}
 
-	let year = $derived(
-		project?.date ? new Date(project.date).getFullYear().toString() : ''
-	);
+	let year = $derived(project?.date ? new Date(project.date).getFullYear().toString() : '');
 
 	function openLightbox(image) {
 		selectedImage = image;
@@ -125,25 +123,25 @@
 <!-- Back link -->
 <a
 	href="{base}/projects"
-	class="inline-flex items-center gap-2 kicker hover:!text-[#FFB840] transition-colors mb-8"
+	class="kicker mb-8 inline-flex items-center gap-2 transition-colors hover:!text-[#FFB840]"
 >
-	<IconArrowLeft class="w-3 h-3" />
+	<IconArrowLeft class="h-3 w-3" />
 	VOLVER
 </a>
 
 <!-- Editorial hero with duotone image -->
-<div class="relative h-[420px] md:h-[520px] overflow-hidden bg-[#141413] mb-20">
+<div class="relative mb-20 h-[420px] overflow-hidden bg-[#141413] md:h-[520px]">
 	<img
 		src="{base}/content/projects/{project.slug}/thumbnail.jpg"
 		alt={project.title}
-		class="w-full h-full object-cover opacity-60 grayscale contrast-125"
+		class="h-full w-full object-cover opacity-60 contrast-125 grayscale"
 	/>
 	<div
 		class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/10"
 	></div>
 
-	<div class="absolute bottom-0 left-0 right-0 pb-10 px-6 md:px-10 lg:px-14">
-		<div class="flex items-baseline gap-4 mb-5 flex-wrap">
+	<div class="absolute right-0 bottom-0 left-0 px-6 pb-10 md:px-10 lg:px-14">
+		<div class="mb-5 flex flex-wrap items-baseline gap-4">
 			<Kicker tone="amber">{categoryLabel(project.type)}</Kicker>
 			{#if project.featured}
 				<Kicker tone="amber">★ DESTACADO</Kicker>
@@ -152,7 +150,7 @@
 		</div>
 		<Rule />
 		<h1
-			class="font-display font-extrabold text-[#E8E3D6] leading-[1.02] tracking-tight mt-6"
+			class="font-display mt-6 leading-[1.02] font-extrabold tracking-tight text-[#E8E3D6]"
 			style="font-size: clamp(2.5rem, 5.5vw, 5rem)"
 		>
 			{project.title}
@@ -160,20 +158,16 @@
 	</div>
 </div>
 
-<div use:scrollReveal class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+<div use:scrollReveal class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
 	<!-- Main column -->
-	<div class="lg:col-span-8 space-y-20">
+	<div class="space-y-20 lg:col-span-8">
 		<!-- Overview -->
 		<section>
-			<div
-				class="flex items-baseline gap-5 pb-3 mb-8 border-b border-[#2A2A28] reveal flex-wrap"
-			>
+			<div class="reveal mb-8 flex flex-wrap items-baseline gap-5 border-b border-[#2A2A28] pb-3">
 				<SerialNumber n={1} size="sm" />
 				<Kicker>/ DESCRIPCIÓN</Kicker>
 			</div>
-			<p
-				class="font-body text-[#E8E3D6]/85 text-lg leading-[1.75] reveal reveal-delay-1"
-			>
+			<p class="font-body reveal reveal-delay-1 text-lg leading-[1.75] text-[#E8E3D6]/85">
 				{project.description}
 			</p>
 		</section>
@@ -181,21 +175,19 @@
 		<!-- Markdown content (features, technical details, etc.) -->
 		{#if project.content}
 			<section>
-				<div
-					class="flex items-baseline gap-5 pb-3 mb-8 border-b border-[#2A2A28] reveal flex-wrap"
-				>
+				<div class="reveal mb-8 flex flex-wrap items-baseline gap-5 border-b border-[#2A2A28] pb-3">
 					<SerialNumber n={2} size="sm" />
 					<Kicker>/ DETALLES</Kicker>
 				</div>
 				<article
-					class="prose prose-invert max-w-none reveal reveal-delay-1
-						prose-headings:font-display prose-headings:tracking-tight prose-headings:text-[#E8E3D6]
-						prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-						prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-[#FFB840]
-						prose-p:text-[#E8E3D6]/85 prose-p:leading-relaxed
-						prose-li:text-[#E8E3D6]/85
+					class="prose prose-invert reveal reveal-delay-1 prose-headings:font-display
+						prose-headings:tracking-tight prose-headings:text-[#E8E3D6] prose-h2:text-2xl
+						prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl
+						prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-[#FFB840] prose-p:text-[#E8E3D6]/85
+						prose-p:leading-relaxed prose-li:text-[#E8E3D6]/85
 						prose-strong:text-[#E8E3D6]
-						prose-a:text-[#FFB840] hover:prose-a:text-[#CC8F1A]"
+						prose-a:text-[#FFB840]
+						hover:prose-a:text-[#CC8F1A] max-w-none"
 				>
 					{@html project.content}
 				</article>
@@ -205,31 +197,29 @@
 		<!-- Image gallery -->
 		{#if project.resources?.images && project.resources.images.length > 0}
 			<section>
-				<div
-					class="flex items-baseline gap-5 pb-3 mb-8 border-b border-[#2A2A28] reveal flex-wrap"
-				>
+				<div class="reveal mb-8 flex flex-wrap items-baseline gap-5 border-b border-[#2A2A28] pb-3">
 					<SerialNumber n={3} size="sm" />
 					<Kicker>/ GALERÍA</Kicker>
 					<Kicker class="ml-auto">
 						{String(project.resources.images.length).padStart(2, '0')} IMÁGENES
 					</Kicker>
 				</div>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 					{#each project.resources.images as image}
 						<div class="group reveal">
 							<button
 								type="button"
 								onclick={() => openLightbox(image)}
-								class="block aspect-[4/3] w-full cursor-pointer overflow-hidden bg-[#141413] border border-[#2A2A28]"
+								class="block aspect-[4/3] w-full cursor-pointer overflow-hidden border border-[#2A2A28] bg-[#141413]"
 							>
 								<AkOptimizedImage
 									src={image.path}
 									alt={image.name}
-									class="h-full w-full object-cover opacity-70 grayscale contrast-125 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
+									class="h-full w-full object-cover opacity-70 contrast-125 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
 									hasWebP={image.hasWebP || false}
 								/>
 							</button>
-							<div class="font-mono text-xs text-[#8A857A] mt-2 leading-snug">
+							<div class="mt-2 font-mono text-xs leading-snug text-[#8A857A]">
 								{#if image.metadata?.headline}
 									<p class="text-[#E8E3D6]">{image.metadata.headline}</p>
 								{:else}
@@ -251,21 +241,19 @@
 		<!-- Videos -->
 		{#if project.resources?.videos && project.resources.videos.length > 0}
 			<section>
-				<div
-					class="flex items-baseline gap-5 pb-3 mb-8 border-b border-[#2A2A28] reveal flex-wrap"
-				>
+				<div class="reveal mb-8 flex flex-wrap items-baseline gap-5 border-b border-[#2A2A28] pb-3">
 					<SerialNumber n={4} size="sm" />
 					<Kicker>/ VIDEOS</Kicker>
 				</div>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 					{#each project.resources.videos as video}
-						<div class="border border-[#2A2A28] overflow-hidden">
+						<div class="overflow-hidden border border-[#2A2A28]">
 							<video controls class="w-full" preload="metadata">
 								<source src={video.path} type="video/mp4" />
 								<track kind="captions" />
 								Tu navegador no soporta la reproducción de videos.
 							</video>
-							<p class="font-mono text-xs text-[#E8E3D6] mt-2 px-3 py-2">{video.name}</p>
+							<p class="mt-2 px-3 py-2 font-mono text-xs text-[#E8E3D6]">{video.name}</p>
 						</div>
 					{/each}
 				</div>
@@ -275,26 +263,24 @@
 		<!-- Documents -->
 		{#if project.resources?.documents && project.resources.documents.length > 0}
 			<section>
-				<div
-					class="flex items-baseline gap-5 pb-3 mb-8 border-b border-[#2A2A28] reveal flex-wrap"
-				>
+				<div class="reveal mb-8 flex flex-wrap items-baseline gap-5 border-b border-[#2A2A28] pb-3">
 					<SerialNumber n={5} size="sm" />
 					<Kicker>/ DOCUMENTOS</Kicker>
 				</div>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+				<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
 					{#each project.resources.documents as document}
 						<a
 							href={document.path}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex items-center gap-3 p-4 border border-[#2A2A28] hover:border-[#FFB840] hover:bg-[#141413] transition-colors"
+							class="flex items-center gap-3 border border-[#2A2A28] p-4 transition-colors hover:border-[#FFB840] hover:bg-[#141413]"
 						>
-							<IconDocument class="text-[#FFB840] shrink-0 h-5 w-5" />
-							<div class="flex-1 min-w-0">
-								<p class="font-mono text-sm text-[#E8E3D6] truncate">{document.name}</p>
+							<IconDocument class="h-5 w-5 shrink-0 text-[#FFB840]" />
+							<div class="min-w-0 flex-1">
+								<p class="truncate font-mono text-sm text-[#E8E3D6]">{document.name}</p>
 								<p class="font-mono text-[10px] text-[#8A857A]">Click para descargar</p>
 							</div>
-							<IconArrowUpRight class="w-4 h-4 text-[#8A857A]" />
+							<IconArrowUpRight class="h-4 w-4 text-[#8A857A]" />
 						</a>
 					{/each}
 				</div>
@@ -304,38 +290,38 @@
 
 	<!-- Sidebar -->
 	<aside class="lg:col-span-4">
-		<div class="lg:sticky lg:top-24 space-y-8">
+		<div class="space-y-8 lg:sticky lg:top-24">
 			<!-- Ficha -->
-			<div class="border border-[#2A2A28] p-6 space-y-6 reveal reveal-right">
+			<div class="reveal reveal-right space-y-6 border border-[#2A2A28] p-6">
 				<Kicker tone="amber" as="div">FICHA</Kicker>
 
 				<dl class="space-y-4">
-					<div class="pb-3 border-b border-[#2A2A28]/60">
+					<div class="border-b border-[#2A2A28]/60 pb-3">
 						<dt><Kicker>Categoría</Kicker></dt>
-						<dd class="font-mono text-sm text-[#E8E3D6] mt-1 leading-snug">
+						<dd class="mt-1 font-mono text-sm leading-snug text-[#E8E3D6]">
 							{categoryLabel(project.type)}
 						</dd>
 					</div>
 					{#if project.location}
-						<div class="pb-3 border-b border-[#2A2A28]/60">
+						<div class="border-b border-[#2A2A28]/60 pb-3">
 							<dt><Kicker>Ubicación</Kicker></dt>
-							<dd class="font-mono text-sm text-[#E8E3D6] mt-1 leading-snug">
+							<dd class="mt-1 font-mono text-sm leading-snug text-[#E8E3D6]">
 								{project.location}
 							</dd>
 						</div>
 					{/if}
 					{#if year}
-						<div class="pb-3 border-b border-[#2A2A28]/60">
+						<div class="border-b border-[#2A2A28]/60 pb-3">
 							<dt><Kicker>Año</Kicker></dt>
-							<dd class="font-mono text-sm text-[#E8E3D6] mt-1 leading-snug tabular-nums">
+							<dd class="mt-1 font-mono text-sm leading-snug text-[#E8E3D6] tabular-nums">
 								{year}
 							</dd>
 						</div>
 					{/if}
 					{#if project.status}
-						<div class="pb-3 border-b border-[#2A2A28]/60 last:border-0">
+						<div class="border-b border-[#2A2A28]/60 pb-3 last:border-0">
 							<dt><Kicker>Estado</Kicker></dt>
-							<dd class="font-mono text-sm text-[#E8E3D6] mt-1 leading-snug capitalize">
+							<dd class="mt-1 font-mono text-sm leading-snug text-[#E8E3D6] capitalize">
 								{project.status}
 							</dd>
 						</div>
@@ -345,13 +331,13 @@
 
 			<!-- Equipo -->
 			{#if project.authors && project.authors.length > 0}
-				<div class="border border-[#2A2A28] p-6 space-y-4 reveal reveal-right reveal-delay-1">
+				<div class="reveal reveal-right reveal-delay-1 space-y-4 border border-[#2A2A28] p-6">
 					<Kicker as="div">EQUIPO</Kicker>
 					<ul class="space-y-3">
 						{#each project.authors as author}
 							<li class="font-mono text-sm leading-snug">
 								<div class="text-[#E8E3D6]">{author.name}</div>
-								<div class="text-[#8A857A] text-xs">› {author.role}</div>
+								<div class="text-xs text-[#8A857A]">› {author.role}</div>
 							</li>
 						{/each}
 					</ul>
@@ -360,8 +346,8 @@
 
 			<!-- Tags -->
 			{#if project.tags && project.tags.length > 0}
-				<div class="border border-[#2A2A28] p-6 reveal reveal-right reveal-delay-2">
-					<Kicker class="block mb-4">Tags</Kicker>
+				<div class="reveal reveal-right reveal-delay-2 border border-[#2A2A28] p-6">
+					<Kicker class="mb-4 block">Tags</Kicker>
 					<div class="flex flex-wrap gap-2">
 						{#each project.tags as tag}
 							<span class="tag-pill">{tag}</span>
@@ -372,7 +358,7 @@
 
 			<a
 				href="{base}/projects"
-				class="block text-center w-full border border-[#E8E3D6]/60 text-[#E8E3D6] hover:border-[#FFB840] hover:text-[#FFB840] transition-colors h-12 leading-[3rem] font-body font-medium text-sm rounded-sm"
+				class="font-body block h-12 w-full rounded-sm border border-[#E8E3D6]/60 text-center text-sm leading-[3rem] font-medium text-[#E8E3D6] transition-colors hover:border-[#FFB840] hover:text-[#FFB840]"
 			>
 				Ver todos los proyectos →
 			</a>
@@ -387,7 +373,7 @@
 		aria-modal="true"
 		aria-label="Image lightbox"
 		tabindex="-1"
-		class="bg-[#0A0A0A]/95 fixed inset-0 z-[10000] flex items-center justify-center p-4 backdrop-blur-sm"
+		class="fixed inset-0 z-[10000] flex items-center justify-center bg-[#0A0A0A]/95 p-4 backdrop-blur-sm"
 		onclick={closeLightbox}
 		onkeydown={handleKeydown}
 	>
@@ -438,7 +424,7 @@
 						e.stopPropagation();
 						previousImage();
 					}}
-					class="absolute top-1/2 left-4 z-30 -translate-y-1/2 cursor-pointer border border-[#2A2A28] bg-[#0A0A0A]/80 text-[#E8E3D6] hover:border-[#FFB840] hover:text-[#FFB840] rounded-full p-3 transition-colors"
+					class="absolute top-1/2 left-4 z-30 -translate-y-1/2 cursor-pointer rounded-full border border-[#2A2A28] bg-[#0A0A0A]/80 p-3 text-[#E8E3D6] transition-colors hover:border-[#FFB840] hover:text-[#FFB840]"
 					aria-label="Previous image"
 				>
 					<IconChevronLeft class="size-5" />
@@ -449,7 +435,7 @@
 						e.stopPropagation();
 						nextImage();
 					}}
-					class="absolute top-1/2 right-4 z-30 -translate-y-1/2 cursor-pointer border border-[#2A2A28] bg-[#0A0A0A]/80 text-[#E8E3D6] hover:border-[#FFB840] hover:text-[#FFB840] rounded-full p-3 transition-colors"
+					class="absolute top-1/2 right-4 z-30 -translate-y-1/2 cursor-pointer rounded-full border border-[#2A2A28] bg-[#0A0A0A]/80 p-3 text-[#E8E3D6] transition-colors hover:border-[#FFB840] hover:text-[#FFB840]"
 					aria-label="Next image"
 				>
 					<IconChevronRight class="size-5" />
@@ -468,14 +454,16 @@
 							/>
 						</div>
 
-						<div class="font-mono pointer-events-auto max-w-[90vw] text-center lg:max-w-[60vw] text-[#E8E3D6]">
+						<div
+							class="pointer-events-auto max-w-[90vw] text-center font-mono text-[#E8E3D6] lg:max-w-[60vw]"
+						>
 							{#if selectedImage.metadata?.headline}
 								<p class="text-base">{selectedImage.metadata.headline}</p>
 							{:else}
 								<p class="text-base">{selectedImage.name}</p>
 							{/if}
 							{#if selectedImage.metadata?.description}
-								<p class="mt-1 text-xs italic text-[#8A857A]">
+								<p class="mt-1 text-xs text-[#8A857A] italic">
 									{selectedImage.metadata.description}
 								</p>
 							{/if}
@@ -488,7 +476,7 @@
 
 						{#if project.resources?.images && project.resources.images.length > 1}
 							<div
-								class="font-mono border border-[#2A2A28] bg-[#0A0A0A]/80 text-[#E8E3D6] rounded-full px-3 py-1 text-xs tabular-nums"
+								class="rounded-full border border-[#2A2A28] bg-[#0A0A0A]/80 px-3 py-1 font-mono text-xs text-[#E8E3D6] tabular-nums"
 							>
 								{currentImageIndex + 1} / {project.resources.images.length}
 							</div>

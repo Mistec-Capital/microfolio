@@ -9,95 +9,86 @@
 	const waLink = `https://wa.me/${phone.replace(/[^0-9]/g, '')}`;
 </script>
 
-<section
-	id="contacto"
-	use:scrollReveal
-	class="section-ink py-32 relative overflow-hidden"
->
+<section id="contacto" use:scrollReveal class="section-ink relative overflow-hidden py-32">
 	<div
-		class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full pointer-events-none"
+		class="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full"
 		style="background: radial-gradient(ellipse, rgba(255, 184, 64, 0.07) 0%, transparent 60%); filter: blur(80px);"
 		aria-hidden="true"
 	></div>
 
-	<div class="relative max-w-[1200px] mx-auto px-6 md:px-10 lg:px-14">
+	<div class="relative mx-auto max-w-[1200px] px-6 md:px-10 lg:px-14">
 		<!-- Header -->
-		<div class="text-center max-w-[800px] mx-auto mb-14 reveal">
+		<div class="reveal mx-auto mb-14 max-w-[800px] text-center">
 			<span class="chip-amber">
 				<span class="status-dot" aria-hidden="true"></span>
 				CONTACTO
 			</span>
 			<h2
-				class="font-display font-bold text-[#E8E3D6] tracking-[-0.04em] leading-[1.02] mt-6"
+				class="font-display mt-6 leading-[1.02] font-bold tracking-[-0.04em] text-[#E8E3D6]"
 				style="font-size: clamp(2.75rem, 6vw, 5rem)"
 			>
 				Agendemos una reunión. <span class="gradient-text-amber">→</span>
 			</h2>
 			<p
-				class="mt-6 font-body text-base md:text-lg text-[#8A857A] max-w-[52ch] mx-auto leading-relaxed"
+				class="font-body mx-auto mt-6 max-w-[52ch] text-base leading-relaxed text-[#8A857A] md:text-lg"
 			>
 				¿Tenés un proyecto en mente? Contanos qué necesitás y charlemos cómo podemos ayudarte.
 			</p>
 		</div>
 
 		<!-- Contact cards -->
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[800px] mx-auto">
+		<div class="mx-auto grid max-w-[800px] grid-cols-1 gap-5 md:grid-cols-2">
 			<a
 				href={waLink}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="card-gradient-border group p-7 reveal reveal-delay-1"
+				class="card-gradient-border group reveal reveal-delay-1 p-7"
 			>
-				<div class="flex items-start justify-between mb-5">
+				<div class="mb-5 flex items-start justify-between">
 					<div
-						class="w-11 h-11 rounded-sm bg-[#FFB840]/10 border border-[#FFB840]/30 flex items-center justify-center group-hover:shadow-[0_0_24px_-6px_rgba(255,184,64,0.4)] transition-all duration-300"
+						class="flex h-11 w-11 items-center justify-center rounded-sm border border-[#FFB840]/30 bg-[#FFB840]/10 transition-all duration-300 group-hover:shadow-[0_0_24px_-6px_rgba(255,184,64,0.4)]"
 					>
-						<IconMessageCircle class="w-5 h-5 text-[#FFB840]" />
+						<IconMessageCircle class="h-5 w-5 text-[#FFB840]" />
 					</div>
-					<span class="font-mono text-[10px] uppercase tracking-wider text-[#8A857A]">
+					<span class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase">
 						WhatsApp
 					</span>
 				</div>
 				<div
-					class="font-mono text-base md:text-lg text-[#E8E3D6] group-hover:text-[#FFB840] transition-colors"
+					class="font-mono text-base text-[#E8E3D6] transition-colors group-hover:text-[#FFB840] md:text-lg"
 				>
 					{phone}
 				</div>
-				<div class="mt-5 flex items-center justify-between pt-4 border-t border-[#2A2A28]">
-					<span class="font-mono text-[10px] uppercase tracking-wider text-[#8A857A]">
+				<div class="mt-5 flex items-center justify-between border-t border-[#2A2A28] pt-4">
+					<span class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase">
 						Lunes a Viernes 9 a 18hs
 					</span>
 					<IconArrowUpRight
-						class="w-4 h-4 text-[#8A857A] group-hover:text-[#FFB840] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300"
+						class="h-4 w-4 text-[#8A857A] transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#FFB840]"
 					/>
 				</div>
 			</a>
 
-			<a
-				href="mailto:{email}"
-				class="card-gradient-border group p-7 reveal reveal-delay-2"
-			>
-				<div class="flex items-start justify-between mb-5">
+			<a href="mailto:{email}" class="card-gradient-border group reveal reveal-delay-2 p-7">
+				<div class="mb-5 flex items-start justify-between">
 					<div
-						class="w-11 h-11 rounded-sm bg-[#FFB840]/10 border border-[#FFB840]/30 flex items-center justify-center group-hover:shadow-[0_0_24px_-6px_rgba(255,184,64,0.4)] transition-all duration-300"
+						class="flex h-11 w-11 items-center justify-center rounded-sm border border-[#FFB840]/30 bg-[#FFB840]/10 transition-all duration-300 group-hover:shadow-[0_0_24px_-6px_rgba(255,184,64,0.4)]"
 					>
-						<IconMail class="w-5 h-5 text-[#FFB840]" />
+						<IconMail class="h-5 w-5 text-[#FFB840]" />
 					</div>
-					<span class="font-mono text-[10px] uppercase tracking-wider text-[#8A857A]">
-						Email
-					</span>
+					<span class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase"> Email </span>
 				</div>
 				<div
-					class="font-mono text-base md:text-lg text-[#E8E3D6] group-hover:text-[#FFB840] transition-colors break-all"
+					class="font-mono text-base break-all text-[#E8E3D6] transition-colors group-hover:text-[#FFB840] md:text-lg"
 				>
 					{email}
 				</div>
-				<div class="mt-5 flex items-center justify-between pt-4 border-t border-[#2A2A28]">
-					<span class="font-mono text-[10px] uppercase tracking-wider text-[#8A857A]">
+				<div class="mt-5 flex items-center justify-between border-t border-[#2A2A28] pt-4">
+					<span class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase">
 						Respondemos en &lt; 24H
 					</span>
 					<IconArrowUpRight
-						class="w-4 h-4 text-[#8A857A] group-hover:text-[#FFB840] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300"
+						class="h-4 w-4 text-[#8A857A] transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#FFB840]"
 					/>
 				</div>
 			</a>

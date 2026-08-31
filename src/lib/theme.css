@@ -33,10 +33,7 @@ body {
 	color: var(--bone);
 	font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-feature-settings:
-		'cv11',
-		'ss01',
-		'ss03';
+	font-feature-settings: 'cv11', 'ss01', 'ss03';
 }
 
 [data-tabular],
@@ -785,12 +782,7 @@ a.editorial-link:hover {
    ============================================ */
 .divider-glow {
 	height: 1px;
-	background: linear-gradient(
-		90deg,
-		transparent 0%,
-		rgba(255, 184, 64, 0.4) 50%,
-		transparent 100%
-	);
+	background: linear-gradient(90deg, transparent 0%, rgba(255, 184, 64, 0.4) 50%, transparent 100%);
 }
 
 /* ============================================

@@ -1,12 +1,5 @@
 <script>
-	let {
-		target,
-		prefix = '',
-		suffix = '',
-		pad = 0,
-		duration,
-		class: className = ''
-	} = $props();
+	let { target, prefix = '', suffix = '', pad = 0, duration, class: className = '' } = $props();
 
 	let value = $state(0);
 	let el;

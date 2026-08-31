@@ -58,11 +58,7 @@
 	};
 </script>
 
-<SeoHead
-	title={siteConfig.title}
-	description={description}
-	jsonLd={organizationJsonLd}
-/>
+<SeoHead title={siteConfig.title} {description} jsonLd={organizationJsonLd} />
 
 <Hero {stats} />
 <Manifiesto {stats} />

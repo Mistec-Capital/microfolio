@@ -24,7 +24,7 @@
 		<button
 			onclick={previousPage}
 			disabled={$pageNumber === 1}
-			class="border border-[#2A2A28] bg-transparent text-[#8A857A] cursor-pointer rounded-sm px-3 py-1 font-mono text-xs uppercase tracking-wider transition-colors disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:border-[#FFB840] enabled:hover:text-[#FFB840]"
+			class="cursor-pointer rounded-sm border border-[#2A2A28] bg-transparent px-3 py-1 font-mono text-xs tracking-wider text-[#8A857A] uppercase transition-colors enabled:hover:border-[#FFB840] enabled:hover:text-[#FFB840] disabled:cursor-not-allowed disabled:opacity-30"
 			aria-label="Previous page"
 		>
 			←
@@ -33,13 +33,13 @@
 		<!-- Pages -->
 		{#each $pages as page}
 			{#if page === '...'}
-				<span class="font-mono text-xs text-[#8A857A]/60 px-2">…</span>
+				<span class="px-2 font-mono text-xs text-[#8A857A]/60">…</span>
 			{:else}
 				<button
 					onclick={() => goToPage(page)}
 					class="cursor-pointer rounded-sm border px-3 py-1 font-mono text-xs tabular-nums transition-colors {$pageNumber ===
 					page
-						? 'border-[#FFB840] text-[#FFB840] bg-[#FFB840]/10'
+						? 'border-[#FFB840] bg-[#FFB840]/10 text-[#FFB840]'
 						: 'border-[#2A2A28] text-[#8A857A] hover:border-[#8A857A] hover:text-[#E8E3D6]'}"
 					aria-label={'Go to page ' + page}
 				>
@@ -52,7 +52,7 @@
 		<button
 			onclick={nextPage}
 			disabled={$pageNumber === $pageCount}
-			class="border border-[#2A2A28] bg-transparent text-[#8A857A] cursor-pointer rounded-sm px-3 py-1 font-mono text-xs uppercase tracking-wider transition-colors disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:border-[#FFB840] enabled:hover:text-[#FFB840]"
+			class="cursor-pointer rounded-sm border border-[#2A2A28] bg-transparent px-3 py-1 font-mono text-xs tracking-wider text-[#8A857A] uppercase transition-colors enabled:hover:border-[#FFB840] enabled:hover:text-[#FFB840] disabled:cursor-not-allowed disabled:opacity-30"
 			aria-label="Next page"
 		>
 			→

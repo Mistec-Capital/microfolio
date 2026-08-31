@@ -77,30 +77,30 @@
 <section
 	id="plataformas"
 	use:scrollReveal
-	class="section-paper bg-mesh-amber py-32 relative overflow-hidden"
+	class="section-paper bg-mesh-amber relative overflow-hidden py-32"
 >
-	<div class="relative max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+	<div class="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-14">
 		<!-- Header -->
-		<div class="flex flex-wrap items-end justify-between gap-8 mb-14 reveal">
+		<div class="reveal mb-14 flex flex-wrap items-end justify-between gap-8">
 			<div class="max-w-[700px]">
 				<span class="chip-amber mb-6">
 					<span class="status-dot" aria-hidden="true"></span>
 					PLATAFORMAS Mi*
 				</span>
 				<h2
-					class="font-display font-bold text-[#E8E3D6] tracking-[-0.04em] leading-[1.05] mt-6"
+					class="font-display mt-6 leading-[1.05] font-bold tracking-[-0.04em] text-[#E8E3D6]"
 					style="font-size: clamp(2.25rem, 4.5vw, 3.75rem)"
 				>
 					Productos SaaS propios, hechos en Argentina.
 				</h2>
-				<p class="mt-5 font-body text-base md:text-lg text-[#8A857A] max-w-[58ch] leading-relaxed">
+				<p class="font-body mt-5 max-w-[58ch] text-base leading-relaxed text-[#8A857A] md:text-lg">
 					Software de gestión construido desde nuestra experiencia, pensado para el mercado LATAM.
 				</p>
 			</div>
 		</div>
 
 		<!-- Bento grid -->
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+		<div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
 			{#each PLATFORMS as platform, idx (platform.slug)}
 				{@const real = lookup(platform.slug)}
 				{@const href = real ? `${base}/projects/${platform.slug}` : `${base}/projects`}
@@ -108,18 +108,21 @@
 				{@const Icon = platform.icon}
 				<a
 					{href}
-					class="card-gradient-border group cursor-pointer p-7 reveal reveal-delay-{Math.min((idx % 3) + 1, 3)}"
+					class="card-gradient-border group reveal cursor-pointer p-7 reveal-delay-{Math.min(
+						(idx % 3) + 1,
+						3
+					)}"
 				>
 					<!-- Icon + status -->
-					<div class="flex items-start justify-between mb-8">
+					<div class="mb-8 flex items-start justify-between">
 						<div
-							class="w-12 h-12 rounded-sm bg-[#FFB840]/10 border border-[#FFB840]/30 flex items-center justify-center transition-all duration-300 group-hover:bg-[#FFB840]/15 group-hover:border-[#FFB840]/50 group-hover:shadow-[0_0_30px_-6px_rgba(255,184,64,0.4)]"
+							class="flex h-12 w-12 items-center justify-center rounded-sm border border-[#FFB840]/30 bg-[#FFB840]/10 transition-all duration-300 group-hover:border-[#FFB840]/50 group-hover:bg-[#FFB840]/15 group-hover:shadow-[0_0_30px_-6px_rgba(255,184,64,0.4)]"
 						>
-							<Icon class="w-5 h-5 text-[#FFB840]" />
+							<Icon class="h-5 w-5 text-[#FFB840]" />
 						</div>
 						<div class="flex flex-col items-end gap-1.5">
 							<span
-								class="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider {dev
+								class="flex items-center gap-1.5 font-mono text-[10px] tracking-wider uppercase {dev
 									? 'text-[#FFB840]'
 									: 'text-[#8A857A]'}"
 							>
@@ -134,23 +137,21 @@
 
 					<!-- Name -->
 					<h3
-						class="font-display font-semibold text-[#E8E3D6] text-2xl tracking-[-0.02em] mb-3 group-hover:text-[#FFB840] transition-colors"
+						class="font-display mb-3 text-2xl font-semibold tracking-[-0.02em] text-[#E8E3D6] transition-colors group-hover:text-[#FFB840]"
 					>
 						{platform.title}
 					</h3>
 
 					<!-- Description -->
-					<p
-						class="font-body text-sm text-[#8A857A] leading-relaxed mb-5 min-h-[2.5rem]"
-					>
+					<p class="font-body mb-5 min-h-[2.5rem] text-sm leading-relaxed text-[#8A857A]">
 						{platform.desc}
 					</p>
 
 					<!-- Stack badges -->
-					<div class="flex flex-wrap gap-1.5 mb-7">
+					<div class="mb-7 flex flex-wrap gap-1.5">
 						{#each platform.stack as s}
 							<span
-								class="font-mono text-[10px] tracking-wider text-[#8A857A]/80 px-2 py-0.5 rounded-sm border border-[#2A2A28] bg-white/[0.02] group-hover:border-[#FFB840]/30 group-hover:text-[#E8E3D6] transition-colors"
+								class="rounded-sm border border-[#2A2A28] bg-white/[0.02] px-2 py-0.5 font-mono text-[10px] tracking-wider text-[#8A857A]/80 transition-colors group-hover:border-[#FFB840]/30 group-hover:text-[#E8E3D6]"
 							>
 								{s}
 							</span>
@@ -158,14 +159,14 @@
 					</div>
 
 					<!-- Footer link -->
-					<div class="flex items-center justify-between pt-5 border-t border-[#2A2A28]">
+					<div class="flex items-center justify-between border-t border-[#2A2A28] pt-5">
 						<span
-							class="font-mono text-[10px] uppercase tracking-wider text-[#8A857A] group-hover:text-[#FFB840] transition-colors"
+							class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase transition-colors group-hover:text-[#FFB840]"
 						>
 							Ver ficha
 						</span>
 						<IconArrowUpRight
-							class="w-4 h-4 text-[#8A857A] group-hover:text-[#FFB840] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300"
+							class="h-4 w-4 text-[#8A857A] transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#FFB840]"
 						/>
 					</div>
 				</a>

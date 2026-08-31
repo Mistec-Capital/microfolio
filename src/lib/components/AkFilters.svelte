@@ -57,17 +57,15 @@
 	});
 </script>
 
-<div class="reveal flex flex-col gap-5 mb-12 pb-6 border-b border-[#2A2A28]">
+<div class="reveal mb-12 flex flex-col gap-5 border-b border-[#2A2A28] pb-6">
 	<!-- Search -->
 	<div class="relative max-w-md">
-		<IconSearch
-			class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#8A857A]"
-		/>
+		<IconSearch class="absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-[#8A857A]" />
 		<input
 			type="text"
 			placeholder="Buscar proyectos..."
 			bind:value={searchTerm}
-			class="w-full bg-transparent border border-[#2A2A28] text-[#E8E3D6] placeholder-[#8A857A]/70 pl-9 pr-4 py-2 font-mono text-sm rounded-sm focus:outline-none focus:border-[#FFB840] transition-colors"
+			class="w-full rounded-sm border border-[#2A2A28] bg-transparent py-2 pr-4 pl-9 font-mono text-sm text-[#E8E3D6] placeholder-[#8A857A]/70 transition-colors focus:border-[#FFB840] focus:outline-none"
 		/>
 	</div>
 
@@ -87,11 +85,13 @@
 
 	<!-- Results count -->
 	{#if showResultsCount}
-		<p class="font-mono text-[11px] uppercase tracking-wider text-[#8A857A]">
+		<p class="font-mono text-[11px] tracking-wider text-[#8A857A] uppercase">
 			<span class="text-[#FFB840] tabular-nums"
 				>{String(filteredProjects.length).padStart(3, '0')}</span
 			>
-			proyecto{filteredProjects.length !== 1 ? 's' : ''} encontrado{filteredProjects.length !== 1 ? 's' : ''}
+			proyecto{filteredProjects.length !== 1 ? 's' : ''} encontrado{filteredProjects.length !== 1
+				? 's'
+				: ''}
 		</p>
 	{/if}
 </div>

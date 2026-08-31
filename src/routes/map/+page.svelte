@@ -168,26 +168,22 @@
 
 <div use:scrollReveal>
 	<!-- Section label -->
-	<div
-		class="flex items-baseline gap-6 pb-4 mb-16 border-b border-[#2A2A28] reveal flex-wrap"
-	>
+	<div class="reveal mb-16 flex flex-wrap items-baseline gap-6 border-b border-[#2A2A28] pb-4">
 		<SerialNumber n={4} />
 		<Kicker>/ MAPA GEORREFERENCIADO</Kicker>
 		<Kicker class="ml-auto">{String(projects.length).padStart(3, '0')} UBICACIONES</Kicker>
 	</div>
 
 	<!-- Title -->
-	<div class="grid grid-cols-12 gap-8 mb-16">
+	<div class="mb-16 grid grid-cols-12 gap-8">
 		<h1
-			class="col-span-12 lg:col-span-8 text-headline font-display text-[#E8E3D6] reveal reveal-delay-1"
+			class="text-headline font-display reveal reveal-delay-1 col-span-12 text-[#E8E3D6] lg:col-span-8"
 		>
 			La obra, sobre el territorio.
 		</h1>
-		<p
-			class="col-span-12 lg:col-span-4 text-body text-[#8A857A] pt-3 reveal reveal-delay-2"
-		>
-			Cada marcador es un proyecto en producción o desarrollo. Filtrá por categoría o búsqueda
-			para reducir el alcance.
+		<p class="text-body reveal reveal-delay-2 col-span-12 pt-3 text-[#8A857A] lg:col-span-4">
+			Cada marcador es un proyecto en producción o desarrollo. Filtrá por categoría o búsqueda para
+			reducir el alcance.
 		</p>
 	</div>
 
@@ -195,9 +191,7 @@
 	<AkFilters {projects} bind:searchTerm bind:selectedType bind:filteredProjects />
 
 	<!-- Map Container (editorial frame) -->
-	<div
-		class="relative overflow-hidden border border-[#2A2A28] reveal reveal-delay-1 bg-[#141413]"
-	>
+	<div class="reveal reveal-delay-1 relative overflow-hidden border border-[#2A2A28] bg-[#141413]">
 		<div
 			bind:this={mapContainer}
 			class="w-full"
@@ -206,12 +200,12 @@
 
 		<!-- Corner ticks -->
 		<div
-			class="absolute top-2 left-2 font-mono text-[10px] uppercase tracking-wider text-[#FFB840]/70 pointer-events-none z-[400]"
+			class="pointer-events-none absolute top-2 left-2 z-[400] font-mono text-[10px] tracking-wider text-[#FFB840]/70 uppercase"
 		>
 			<span class="status-dot-live mr-2"></span>LIVE / GEO STREAM
 		</div>
 		<div
-			class="absolute bottom-2 right-2 font-mono text-[10px] uppercase tracking-wider text-[#8A857A]/70 pointer-events-none z-[400]"
+			class="pointer-events-none absolute right-2 bottom-2 z-[400] font-mono text-[10px] tracking-wider text-[#8A857A]/70 uppercase"
 		>
 			{filteredProjects.length} de {projects.length}
 		</div>
@@ -221,14 +215,24 @@
 			<div
 				class="absolute inset-0 z-[1000] flex items-center justify-center bg-[#0A0A0A]/85 backdrop-blur-sm"
 			>
-				<div class="relative max-w-sm w-full mx-6">
+				<div class="relative mx-6 w-full max-w-sm">
 					<button
 						type="button"
-						class="absolute -top-3 -right-3 z-10 border border-[#2A2A28] bg-[#0A0A0A] text-[#E8E3D6] hover:border-[#FFB840] hover:text-[#FFB840] rounded-full p-2 transition-colors cursor-pointer"
+						class="absolute -top-3 -right-3 z-10 cursor-pointer rounded-full border border-[#2A2A28] bg-[#0A0A0A] p-2 text-[#E8E3D6] transition-colors hover:border-[#FFB840] hover:text-[#FFB840]"
 						aria-label="Cerrar"
 						onclick={closeProjectCard}
 					>
-						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="14"
+							height="14"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
 							<path d="M18 6 6 18M6 6l12 12" />
 						</svg>
 					</button>

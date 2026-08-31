@@ -6,23 +6,23 @@
 	import Marginalia from '$lib/components/editorial/Marginalia.svelte';
 </script>
 
-<footer class="section-ink border-t border-[#2A2A28] pt-20 pb-10 relative">
-	<div class="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-16">
+<footer class="section-ink relative border-t border-[#2A2A28] pt-20 pb-10">
+	<div class="mx-auto max-w-[1440px] px-8 md:px-12 lg:px-16">
 		<!-- Sitemap grid -->
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 mb-16">
+		<div class="mb-16 grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-12">
 			<div>
-				<Kicker class="block mb-4">MISTEC</Kicker>
-				<p class="font-body text-[#8A857A] text-sm leading-relaxed max-w-[28ch]">
+				<Kicker class="mb-4 block">MISTEC</Kicker>
+				<p class="font-body max-w-[28ch] text-sm leading-relaxed text-[#8A857A]">
 					Construimos software desde Posadas, Misiones. Desde el interior, desde 2020.
 				</p>
 			</div>
 			<div>
-				<Kicker class="block mb-4">Empresa</Kicker>
+				<Kicker class="mb-4 block">Empresa</Kicker>
 				<ul class="space-y-2.5">
 					<li>
 						<a
 							href="{base}/#manifiesto"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+							class="font-body text-sm text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							Nosotros
 						</a>
@@ -30,7 +30,7 @@
 					<li>
 						<a
 							href="{base}/#obra"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+							class="font-body text-sm text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							Proyectos
 						</a>
@@ -38,7 +38,7 @@
 					<li>
 						<a
 							href="{base}/projects"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+							class="font-body text-sm text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							Ver todos
 						</a>
@@ -46,12 +46,12 @@
 				</ul>
 			</div>
 			<div>
-				<Kicker class="block mb-4">Servicios</Kicker>
+				<Kicker class="mb-4 block">Servicios</Kicker>
 				<ul class="space-y-2.5">
 					<li>
 						<a
 							href="{base}/#plataformas"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+							class="font-body text-sm text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							Plataformas
 						</a>
@@ -59,7 +59,7 @@
 					<li>
 						<a
 							href="{base}/#gobierno"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+							class="font-body text-sm text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							Gobierno
 						</a>
@@ -67,7 +67,7 @@
 					<li>
 						<a
 							href="{base}/#ia"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+							class="font-body text-sm text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							IA & Automatización
 						</a>
@@ -75,7 +75,7 @@
 					<li>
 						<a
 							href="{base}/#capacidades"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
+							class="font-body text-sm text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							Capacidades
 						</a>
@@ -83,12 +83,12 @@
 				</ul>
 			</div>
 			<div>
-				<Kicker class="block mb-4">Contacto</Kicker>
+				<Kicker class="mb-4 block">Contacto</Kicker>
 				<ul class="space-y-2.5">
 					<li>
 						<a
 							href="mailto:{siteConfig.contact.email}"
-							class="font-mono text-xs text-[#8A857A] hover:text-[#FFB840] transition-colors"
+							class="font-mono text-xs text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							{siteConfig.contact.email}
 						</a>
@@ -98,7 +98,7 @@
 							href="https://wa.me/{siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="font-mono text-xs text-[#8A857A] hover:text-[#FFB840] transition-colors"
+							class="font-mono text-xs text-[#8A857A] transition-colors hover:text-[#FFB840]"
 						>
 							{siteConfig.contact.whatsapp}
 						</a>
@@ -115,7 +115,7 @@
 		<Rule />
 
 		<!-- Bottom row -->
-		<div class="flex flex-col md:flex-row md:justify-between md:items-center pt-6 gap-3">
+		<div class="flex flex-col gap-3 pt-6 md:flex-row md:items-center md:justify-between">
 			<Marginalia>
 				© {new Date().getFullYear()} MisTec — Fundado en Posadas, Misiones, Argentina — 2020
 			</Marginalia>

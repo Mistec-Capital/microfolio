@@ -22,7 +22,7 @@
 	</main>
 {:else}
 	<main class="bg-[#0A0A0A] pt-24 pb-24">
-		<div class="max-w-7xl mx-auto px-6 md:px-10 lg:px-14">
+		<div class="mx-auto max-w-7xl px-6 md:px-10 lg:px-14">
 			{@render children()}
 		</div>
 	</main>

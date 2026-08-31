@@ -22,26 +22,22 @@
 
 <div use:scrollReveal>
 	<!-- Section label -->
-	<div
-		class="flex items-baseline gap-6 pb-4 mb-16 border-b border-[#2A2A28] reveal flex-wrap"
-	>
+	<div class="reveal mb-16 flex flex-wrap items-baseline gap-6 border-b border-[#2A2A28] pb-4">
 		<SerialNumber n={3} />
 		<Kicker>/ ÍNDICE COMPLETO</Kicker>
 		<Kicker class="ml-auto">{String(projects.length).padStart(3, '0')} OBRAS</Kicker>
 	</div>
 
 	<!-- Title -->
-	<div class="grid grid-cols-12 gap-8 mb-16">
+	<div class="mb-16 grid grid-cols-12 gap-8">
 		<h1
-			class="col-span-12 lg:col-span-8 text-headline font-display text-[#E8E3D6] reveal reveal-delay-1"
+			class="text-headline font-display reveal reveal-delay-1 col-span-12 text-[#E8E3D6] lg:col-span-8"
 		>
 			Índice completo de la obra.
 		</h1>
-		<p
-			class="col-span-12 lg:col-span-4 text-body text-[#8A857A] pt-3 reveal reveal-delay-2"
-		>
-			Todos los proyectos que hemos construido y mantenido desde 2020 — filtrables por categoría
-			y búsqueda por título, descripción o tags.
+		<p class="text-body reveal reveal-delay-2 col-span-12 pt-3 text-[#8A857A] lg:col-span-4">
+			Todos los proyectos que hemos construido y mantenido desde 2020 — filtrables por categoría y
+			búsqueda por título, descripción o tags.
 		</p>
 	</div>
 
@@ -49,9 +45,7 @@
 	<AkFilters {projects} bind:searchTerm bind:selectedType bind:filteredProjects />
 
 	<!-- Projects grid (border grid, no gaps) -->
-	<div
-		class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#2A2A28]"
-	>
+	<div class="grid grid-cols-1 border-t border-l border-[#2A2A28] md:grid-cols-2 lg:grid-cols-3">
 		{#each filteredProjects as project (project.slug)}
 			<AkProjectCard {project} />
 		{/each}

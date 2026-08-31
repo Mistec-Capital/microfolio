@@ -33,9 +33,7 @@
 	let ogWidth = $derived(usingDefaultImage ? 1200 : imageWidth);
 	let ogHeight = $derived(usingDefaultImage ? 630 : imageHeight);
 
-	let jsonLdString = $derived(
-		jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null
-	);
+	let jsonLdString = $derived(jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null);
 </script>
 
 <svelte:head>

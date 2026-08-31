@@ -1,13 +1,19 @@
 <script>
 	const EVENTS = [
-		{ glyph: '▲', event: 'deploy ok',      project: 'digesto-rag',        env: 'prod',    tone: 'ok' },
-		{ glyph: '◆', event: 'commit pushed',  project: 'guazuapp-mobile',    env: 'main',    tone: 'neutral' },
-		{ glyph: '✓', event: 'ci passed',      project: 'hcd-obera',          env: 'staging', tone: 'ok' },
-		{ glyph: '◇', event: 'build',          project: 'micopi-agent',       env: 'preview', tone: 'mid' },
-		{ glyph: '▲', event: 'release v0.4.2', project: 'mibarrio',           env: 'prod',    tone: 'ok' },
-		{ glyph: '◆', event: 'pr merged',      project: 'marcas-santafe',     env: 'main',    tone: 'neutral' },
-		{ glyph: '✓', event: 'tests passed',   project: 'minucleo-erp',       env: 'main',    tone: 'ok' },
-		{ glyph: '◇', event: 'migration',      project: 'expedientes-garupa', env: 'prod',    tone: 'mid' }
+		{ glyph: '▲', event: 'deploy ok', project: 'digesto-rag', env: 'prod', tone: 'ok' },
+		{
+			glyph: '◆',
+			event: 'commit pushed',
+			project: 'guazuapp-mobile',
+			env: 'main',
+			tone: 'neutral'
+		},
+		{ glyph: '✓', event: 'ci passed', project: 'hcd-obera', env: 'staging', tone: 'ok' },
+		{ glyph: '◇', event: 'build', project: 'micopi-agent', env: 'preview', tone: 'mid' },
+		{ glyph: '▲', event: 'release v0.4.2', project: 'mibarrio', env: 'prod', tone: 'ok' },
+		{ glyph: '◆', event: 'pr merged', project: 'marcas-santafe', env: 'main', tone: 'neutral' },
+		{ glyph: '✓', event: 'tests passed', project: 'minucleo-erp', env: 'main', tone: 'ok' },
+		{ glyph: '◇', event: 'migration', project: 'expedientes-garupa', env: 'prod', tone: 'mid' }
 	];
 
 	function timestamp(offsetSeconds) {
@@ -40,13 +46,13 @@
 </script>
 
 <div
-	class="border-[#2A2A28] bg-white/[0.015] rounded-sm font-mono text-[11px] leading-none overflow-hidden border"
+	class="overflow-hidden rounded-sm border border-[#2A2A28] bg-white/[0.015] font-mono text-[11px] leading-none"
 	aria-label="Live deployment ticker"
 >
-	<div class="flex items-center gap-2 px-3 py-2 border-b border-[#2A2A28] bg-white/[0.02]">
+	<div class="flex items-center gap-2 border-b border-[#2A2A28] bg-white/[0.02] px-3 py-2">
 		<span class="status-dot-live" aria-hidden="true"></span>
-		<span class="text-[#FFB840] tracking-[0.18em] uppercase text-[10px]">LIVE</span>
-		<span class="text-[#8A857A]/50 ml-auto tracking-wider hidden sm:inline">
+		<span class="text-[10px] tracking-[0.18em] text-[#FFB840] uppercase">LIVE</span>
+		<span class="ml-auto hidden tracking-wider text-[#8A857A]/50 sm:inline">
 			mistec.deploy / stream
 		</span>
 	</div>
@@ -60,11 +66,11 @@
 						? 'opacity-70'
 						: 'opacity-40'}"
 			>
-				<span class="text-[#8A857A]/60 w-[60px]">[{timestamp(e.offsetSeconds)}]</span>
+				<span class="w-[60px] text-[#8A857A]/60">[{timestamp(e.offsetSeconds)}]</span>
 				<span class="{toneClass(e.tone)} w-3">{e.glyph}</span>
-				<span class="text-[#E8E3D6] min-w-[110px]">{e.event}</span>
-				<span class="text-[#FFB840]/80 truncate flex-1">{e.project}</span>
-				<span class="text-[#8A857A]/60 hidden md:inline">{e.env}</span>
+				<span class="min-w-[110px] text-[#E8E3D6]">{e.event}</span>
+				<span class="flex-1 truncate text-[#FFB840]/80">{e.project}</span>
+				<span class="hidden text-[#8A857A]/60 md:inline">{e.env}</span>
 			</div>
 		{/each}
 	</div>
