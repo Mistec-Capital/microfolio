@@ -7,8 +7,7 @@
 
 	let { children } = $props();
 
-	// On the landing the sections are full-bleed; other routes use the
-	// constrained editorial container.
+	// La landing compone sus propias secciones a sangre; el resto usa el contenedor.
 	let isHome = $derived(
 		$page.url.pathname === base + '/' || $page.url.pathname === base || $page.url.pathname === '/'
 	);
@@ -16,16 +15,14 @@
 
 <AkHeader />
 
-{#if isHome}
-	<main class="bg-[#0A0A0A]">
+<main class="bg-ink">
+	{#if isHome}
 		{@render children()}
-	</main>
-{:else}
-	<main class="bg-[#0A0A0A] pt-24 pb-24">
-		<div class="mx-auto max-w-7xl px-6 md:px-10 lg:px-14">
+	{:else}
+		<div class="container-brand pb-s5 pt-[calc(64px_+_var(--s-4))]">
 			{@render children()}
 		</div>
-	</main>
-{/if}
+	{/if}
+</main>
 
 <AkFooter />
