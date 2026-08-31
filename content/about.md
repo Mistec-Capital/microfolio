@@ -1,30 +1,58 @@
 ---
 title: 'Sobre MisTec'
-description: 'Tecnología de calidad desde el corazón de Misiones.'
+description: 'Ingeniería de software y soluciones digitales para organizaciones públicas y privadas.'
 ---
 
-## Quiénes Somos
+## Quiénes somos
 
-**MisTec** nace del sueño compartido de un grupo de amigos y compañeros que forjaron su amistad en las aulas de la secundaria y consolidaron su visión durante sus años de facultad, cursando Ingeniería en Sistemas. Unidos por la pasión por la tecnología y el deseo de independencia profesional, decidimos emprender nuestro propio camino.
+MisTec es una empresa especializada en ingeniería de software y desarrollo de soluciones digitales para organizaciones públicas y privadas.
 
-Nuestra empresa surge con una misión clara: proveer servicios informáticos de calidad, manteniendo un compromiso profundo con nuestras raíces. Estamos fuertemente arraigados a nuestra provincia, **Misiones**, tierra que nos vio crecer y que representa el núcleo de nuestra identidad como empresa.
+Desde sus inicios, la empresa ha orientado su crecimiento al desarrollo de productos tecnológicos capaces de resolver desafíos reales mediante soluciones confiables, escalables y sostenibles.
 
-La marca es **MisTec**, a secas: MisTec no tiene Capital — ni en el nombre, ni en la mentalidad. Creemos firmemente que desde aquí, desde nuestra provincia, podemos ofrecer soluciones innovadoras y servicios de excelencia que compitan con los mejores estándares nacionales e internacionales.
+Su experiencia integra consultoría tecnológica, arquitectura de software, diseño de experiencia de usuario, desarrollo de aplicaciones, automatización de procesos, inteligencia artificial e integración de sistemas.
 
-## Nuestra Filosofía
+La empresa acompaña a sus clientes durante todo el ciclo de vida de cada solución, desde la identificación de una necesidad hasta la evolución permanente del producto implementado.
 
-Trabajamos con la convicción de que la tecnología de calidad puede y debe desarrollarse desde cualquier lugar. Combinamos la calidez y los valores del interior con la profesionalidad y el rigor técnico que exige la industria IT moderna.
+Más que desarrollar software, MisTec construye soluciones tecnológicas que permiten mejorar procesos, optimizar recursos y generar nuevas oportunidades de crecimiento.
 
-Como equipo de ingenieros formados académicamente y fortalecidos por años de amistad, entendemos que el mejor trabajo surge de la confianza mutua, el compromiso compartido y la pasión por lo que hacemos.
+## Historia
 
-## Nuestro Compromiso
+MisTec nace con el propósito de acercar soluciones tecnológicas de alto nivel a organizaciones que requieren acompañamiento profesional para afrontar procesos de transformación digital.
 
-En MisTec nos comprometemos a:
+A lo largo de su evolución la empresa ha ampliado progresivamente sus capacidades, incorporando nuevas tecnologías, fortaleciendo equipos multidisciplinarios y desarrollando productos propios capaces de responder a necesidades específicas de distintos sectores.
 
-- Ofrecer servicios informáticos de alta calidad
-- Mantener la excelencia técnica en cada proyecto
-- Apoyar el desarrollo tecnológico regional
-- Contribuir al crecimiento de Misiones como polo tecnológico
-- Trabajar con independencia, creatividad y responsabilidad
+Su crecimiento ha estado acompañado por una permanente actualización tecnológica y por una visión orientada a construir relaciones de largo plazo con cada cliente.
 
-Somos **MisTec**: ingeniería de software desde el interior.
+La experiencia acumulada en proyectos para organismos públicos, empresas privadas y organizaciones de diferentes industrias permitió consolidar una metodología de trabajo basada en la planificación, la calidad técnica y la mejora continua.
+
+Hoy MisTec desarrolla soluciones que operan en distintos países y continúa ampliando su ecosistema de productos y servicios manteniendo el mismo compromiso con la excelencia que dio origen a la empresa.
+
+## Propósito
+
+Desarrollar soluciones tecnológicas que generen impacto positivo y sostenible en las organizaciones, contribuyendo a mejorar procesos, fortalecer capacidades y crear nuevas oportunidades mediante el uso inteligente de la tecnología.
+
+## Misión
+
+Diseñar, desarrollar e implementar soluciones digitales que ayuden a organizaciones públicas y privadas a transformar sus procesos mediante tecnología confiable, escalable y centrada en las personas.
+
+## Visión
+
+Ser una empresa referente en ingeniería de software y desarrollo de soluciones digitales, reconocida por la calidad de sus productos, la innovación aplicada y la confianza construida con cada proyecto.
+
+## Valores
+
+- **Compromiso.** Asumimos cada proyecto como una responsabilidad compartida con nuestros clientes. Trabajamos con dedicación, cercanía y responsabilidad para alcanzar los objetivos definidos.
+- **Calidad.** Buscamos la excelencia técnica en cada etapa del desarrollo, promoviendo soluciones robustas, mantenibles y preparadas para evolucionar en el tiempo.
+- **Innovación.** Incorporamos nuevas tecnologías cuando aportan valor real a las organizaciones, priorizando siempre la utilidad por sobre la novedad.
+- **Colaboración.** Creemos que los mejores resultados se obtienen mediante el trabajo conjunto entre equipos, clientes y especialistas, promoviendo el intercambio permanente de conocimientos.
+- **Transparencia.** Construimos relaciones basadas en la confianza, la comunicación clara y el cumplimiento de los compromisos asumidos.
+
+## Audiencias
+
+- Organismos públicos.
+- Empresas privadas.
+- Instituciones.
+- Organizaciones sin fines de lucro.
+- Directivos y responsables de transformación digital.
+- Equipos técnicos y áreas de tecnología.
+- Emprendedores y empresas en proceso de innovación.
