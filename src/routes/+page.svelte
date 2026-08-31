@@ -5,6 +5,9 @@
 	import Hero from '$lib/components/landing/Hero.svelte';
 	import QuienesSomos from '$lib/components/landing/QuienesSomos.svelte';
 	import PropuestaValor from '$lib/components/landing/PropuestaValor.svelte';
+	import Soluciones from '$lib/components/landing/Soluciones.svelte';
+	import ComoTrabajamos from '$lib/components/landing/ComoTrabajamos.svelte';
+	import Alcance from '$lib/components/landing/Alcance.svelte';
 
 	let { data } = $props();
 	let stats = $derived(data.stats ?? { total: 0, government: 0, countries: 0 });
@@ -51,4 +54,7 @@
 	<Hero />
 	<QuienesSomos />
 	<PropuestaValor />
+	<Soluciones />
+	<ComoTrabajamos />
+	<Alcance {stats} />
 </div>
