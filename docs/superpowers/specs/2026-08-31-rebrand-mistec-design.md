@@ -28,7 +28,8 @@ Alinear el sitio (`mistec-capital.com`, SvelteKit + Tailwind 4) con los manuales
 
 El manual fija la dirección: fondo obsidiana, texto hueso, un solo ámbar, reglas de 1 px, neo-grotesca única. Es una estética que hoy se parece a un "default" de diseño generado; acá **no es un default, es el brief**, y se sigue al pie de la letra. La distinción se juega en la precisión, no en la ornamentación:
 
-- **Firma del sitio:** el hero como portada de presentación — la marca ya está arriba a la izquierda, el título ocupa el tercio inferior, y una sola palabra del sitio va en ámbar (*resolver*). Como único recurso gráfico, el isotipo **seccionado y extendido** fuera del borde derecho en color `rule` (≤ 14 % de contraste). Es una de las cuatro operaciones que el Sistema de Recursos Gráficos admite, ocupa un borde y no el centro.
+- **Firma del sitio:** el hero como portada de presentación — la marca ya está arriba a la izquierda, el título ocupa el tercio inferior, y **una palabra por titular** va en ámbar (regla literal del Manual de Identidad: "una palabra por titular, economía extrema"; en el hero, *resolver*). Como único recurso gráfico, el isotipo **seccionado y extendido** fuera del borde derecho en color `rule` (≤ 14 % de contraste). Es una de las cuatro operaciones que el Sistema de Recursos Gráficos admite, ocupa un borde y no el centro, y es exactamente lo que muestra la lámina "Información + Sistema" del documento de Estilo Visual.
+- **Modos de composición** (Estilo Visual, lámina "4 modos"): el hero es *Expresivo* (signo, escala); 01, 02, 03 y 06 son *Editorial* (tipografía, espacio, jerarquía); 04 y 05 son *Información* (proceso con chevrones, cifras). El modo *Humano* (fotografía) queda fuera de alcance. Intensidad: *Activa* — "balanceada, conectada, cotidiana".
 - **Lo que se quita para que eso se vea:** glows, degradados, blobs, mesh, grano, marquee, pulsos, cursor, ticker de deploys inventado, contadores animados, chips píldora, íconos en cajas ámbar, botón relleno ámbar, Bold.
 - **Numeración:** las secciones van numeradas 01–07 porque el Sistema Editorial exige "numeración continua y visible" y porque 04 Cómo trabajamos es una secuencia real. No es decoración: el índice del sitio es el índice del manual.
 - **Cifras grandes en Light 300**, no en Bold: "la marca comunica con confianza, no con volumen".
@@ -52,13 +53,14 @@ Reparto objetivo por pantalla: fondo ≈ 85 %, texto ≈ 13 %, ámbar ≤ 2 %. S
 
 ### 4.2 Tipografía
 
-- Familia: `'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif`. Archivo: `static/fonts/InterVariable.woff2` (peso 100–900), `font-display: swap`. Se borran Geist, JetBrains Mono (link de Google Fonts en `app.html`) y todos los `IBMPlexSans-*` + `ibm-plex-sans.css`.
+- Familia: `'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif`. Archivo: `static/fonts/InterVariable.woff2` (peso 100–900), `font-display: swap`. El `@font-face` va **inline en `src/app.html`** (no en `theme.css`) porque la URL necesita `%sveltekit.assets%` para funcionar tanto con dominio propio como con el base path `/microfolio`. Se borran Geist, JetBrains Mono (link de Google Fonts en `app.html`) y todos los `IBMPlexSans-*` + `ibm-plex-sans.css`.
+- Peso de títulos como token: `--w-titulo: 500`. Cambiarlo a 700 (el look de las exploraciones de Estilo Visual) es una línea; la decisión aprobada es 500 (Manual de Identidad).
 - Features: `'cv11', 'ss01', 'ss03'` opcionales; `'tnum'` en cifras y tablas.
 - Escala (variables CSS + clases de utilidad `.t-titulo`, `.t-subtitulo`, `.t-bajada`, `.t-cuerpo`, `.t-nota`, `.t-kicker`, `.t-cifra`):
 
 | Clase | Tamaño | Peso | Tracking | Interlineado | Color por defecto |
 |---|---|---|---|---|---|
-| `.t-titulo` | `clamp(2.5rem, 5.5vw, 4.5rem)` (40–72 px) | 500 | −0.022em | 1.04 | bone |
+| `.t-titulo` | `clamp(2.5rem, 5.5vw, 4.5rem)` (40–72 px) | `var(--w-titulo)` = 500 | −0.022em | 1.04 | bone |
 | `.t-subtitulo` | `2rem` (32 px) | 500 | −0.016em | 1.08 | bone |
 | `.t-bajada` | `1.25rem` (20 px) | 350 | −0.002em | 1.45 | mist |
 | `.t-cuerpo` | `1rem` (16 px) | 350 | −0.002em | 1.55 | bone |
@@ -110,7 +112,7 @@ Reparto objetivo por pantalla: fondo ≈ 85 %, texto ≈ 13 %, ámbar ≤ 2 %. S
 
 ### 4.7 Presupuesto de ámbar (lista cerrada)
 
-1. La palabra **resolver** en el título del hero.
+1. **Una palabra por titular**, con `<span class="accent">` (`.accent { color: var(--amber) }`). Lista cerrada de palabras: hero *resolver* · 01 *soluciones* · 02 *todo* · 03 *ecosistema* · 04 *continuo* · 05 *consolidada* · 06 *destacados* · 07 *proyecto* · `/projects` *proyectos* · `/list` *tabla* · `/map` *territorio*. Los títulos que vienen de datos (`/about`, detalle de proyecto) no llevan acento.
 2. `:focus-visible` (outline).
 3. `::selection`.
 4. `.status-dot` junto a "en desarrollo" (ficha de proyecto, tabla).
@@ -160,7 +162,7 @@ Copy: todo el texto de esta sección es **literal o condensado del Manual Instit
 ### 5.1 · 01 Quiénes somos (`#nosotros`)
 
 - Kicker `01 · Quiénes somos`. Sin bajada en `SectionHead`; el título va en la columna izquierda.
-- Grid 12: izquierda cols 1–5 `h2.t-titulo`: `Ingeniería de software y soluciones digitales para organizaciones públicas y privadas.`
+- Grid 12: izquierda cols 1–5 `h2.t-titulo`: "Ingeniería de software y *soluciones* digitales para organizaciones públicas y privadas." (*soluciones* en ámbar).
 - Derecha cols 7–12:
   - `p.t-cuerpo`: `MisTec es una empresa especializada en ingeniería de software y desarrollo de soluciones digitales para organizaciones públicas y privadas. Desde sus inicios orientó su crecimiento al desarrollo de productos tecnológicos capaces de resolver desafíos reales mediante soluciones confiables, escalables y sostenibles.`
   - `p.t-cuerpo`: `Su experiencia integra consultoría tecnológica, arquitectura de software, diseño de experiencia de usuario, desarrollo de aplicaciones, automatización de procesos, inteligencia artificial e integración de sistemas. Acompaña a sus clientes durante todo el ciclo de vida de cada solución, desde la identificación de una necesidad hasta la evolución permanente del producto implementado.`
@@ -174,14 +176,14 @@ Copy: todo el texto de esta sección es **literal o condensado del Manual Instit
 
 ### 5.2 · 02 Propuesta de valor (`#propuesta`)
 
-- Kicker `02 · Propuesta de valor`. Título: `Acompañar todo el ciclo de vida de una solución.`
+- Kicker `02 · Propuesta de valor`. Título: "Acompañar *todo* el ciclo de vida de una solución." (*todo* en ámbar).
 - Bajada: `No limitamos nuestra participación al desarrollo inicial de un sistema. Cada proyecto es una inversión de largo plazo y cada solución se diseña considerando escalabilidad, mantenimiento, seguridad y experiencia de usuario.`
 - Contenido (`margin-top: var(--s-4)`): `p.t-kicker` `Diferenciales`, luego `<ol>` en 2 columnas (`grid-cols-1 md:grid-cols-2`, gap `--s-2` × `--gutter`), cada ítem con número `.t-nota` tabular a la izquierda (ancho 2.5rem) y texto `.t-cuerpo`, `border-top: 1px solid var(--rule)`, `padding-block: var(--s-2)`:
   01 Ingeniería de software especializada. · 02 Desarrollo de productos digitales. · 03 Experiencia en proyectos públicos y privados. · 04 Equipos multidisciplinarios. · 05 Acompañamiento integral durante todo el ciclo de vida del producto. · 06 Soluciones escalables y mantenibles. · 07 Innovación aplicada a necesidades concretas. · 08 Compromiso con la calidad técnica y la mejora continua.
 
 ### 5.3 · 03 Soluciones (`#soluciones`)
 
-- Kicker `03 · Soluciones`. Título: `Un mismo ecosistema. Servicios, productos y capacidades.`
+- Kicker `03 · Soluciones`. Título: "Un mismo *ecosistema*. Servicios, productos y capacidades." (*ecosistema* en ámbar).
 - Bajada: `Un conjunto de capacidades que pueden implementarse de manera independiente o integrada según las necesidades de cada organización.`
 - Grilla 3 × 3 (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`), celdas con `border: 1px solid var(--rule)` colapsado (`gap: 1px; background: var(--rule)`, celdas `background: var(--ink)`), `padding: var(--s-3)`, `min-height: 240px`, `display:flex; flex-direction:column`. Sin íconos. Cada celda: `span.t-nota` número, `h3.t-cuerpo` 500 (`margin-top: var(--s-2)`), `p.t-nota` descripción (`margin-top: var(--s-1)`, `flex:1`):
   1. **Desarrollo de Software a Medida** — Diseño y construcción de aplicaciones adaptadas a procesos específicos, considerando criterios de escalabilidad, seguridad, mantenimiento y evolución continua.
@@ -195,10 +197,10 @@ Copy: todo el texto de esta sección es **literal o condensado del Manual Instit
   9. **Consultoría Tecnológica** — Acompañamiento estratégico para organizaciones que buscan definir, planificar o fortalecer sus procesos de transformación digital.
 - Nota al pie (`margin-top: var(--s-3)`, `p.t-nota`, `max-width: none`): `Capacidades técnicas — Ingeniería de Software · Arquitectura de Soluciones · Desarrollo Backend · Desarrollo Frontend · Desarrollo Mobile · Plataformas Cloud · DevOps · Inteligencia Artificial · Automatización · Integraciones · UX Research · UX/UI Design · Bases de Datos · Analítica y Visualización de Información`.
 
-### 5.4 · 04 Cómo trabajamos (`#metodo`)
+### 5.4 · 04 Cómo trabajamos (`#metodo`) — proceso con chevrones (modo Información)
 
-- Kicker `04 · Cómo trabajamos`. Grid 12: izquierda cols 1–4 (`lg:sticky top-24`): `h2.t-titulo` `Un proceso continuo.` + `p.t-bajada` `Todos los proyectos siguen una metodología estructurada que permite comprender el problema, diseñar la solución adecuada y acompañar su evolución en el tiempo.`
-- Derecha cols 6–12: `<ol>` con ítems `border-top: 1px solid var(--rule)` (y `border-bottom` en el último), `padding-block: var(--s-3)`, grid interno `3rem 1fr`: número `.t-nota` tabular, `h3.t-subtitulo` (32 px) y `p.t-cuerpo` mist (`margin-top: var(--s-1)`, `max-width: 62ch`):
+- Kicker `04 · Cómo trabajamos`. Título: "Un proceso *continuo*." (*continuo* en ámbar). Bajada: `Todos los proyectos siguen una metodología estructurada que permite comprender el problema, diseñar la solución adecuada y acompañar su evolución en el tiempo.`
+- Los 6 pasos en `<ol>`: en desktop (`≥ 1024px`) una fila de 6 columnas iguales, cada paso separado del anterior por `border-left: 1px solid var(--rule)` y un `Icon chevron-right` 16 en mist centrado sobre esa línea (con fondo ink para cortarla) — el chevron es el interior del isotipo, como en la lámina de proceso del Estilo Visual. En mobile, lista vertical con `border-top` por ítem. Cada paso: número `.t-nota` tabular, `h3.t-cuerpo` 500 y `p.t-nota` con la descripción:
   01 **Descubrimiento** — Comprender el contexto, identificar necesidades, relevar información y definir los objetivos del proyecto. Esta etapa permite construir una visión compartida entre el cliente y el equipo de trabajo.
   02 **Estrategia** — Definir el alcance, priorizar objetivos, seleccionar tecnologías y establecer una hoja de ruta para el desarrollo de la solución.
   03 **Diseño** — Diseñar la experiencia de usuario, la arquitectura funcional y los componentes necesarios para garantizar una solución clara, intuitiva y eficiente.
@@ -208,7 +210,7 @@ Copy: todo el texto de esta sección es **literal o condensado del Manual Instit
 
 ### 5.5 · 05 Alcance (`#alcance`)
 
-- Kicker `05 · Alcance`. Título: `Experiencia consolidada en organizaciones de distintas características.`
+- Kicker `05 · Alcance`. Título: "Experiencia *consolidada* en organizaciones de distintas características." (*consolidada* en ámbar).
 - Fila de 4 cifras (`grid-cols-2 lg:grid-cols-4`, `border-top` y `border-bottom` rule, cada celda `padding-block: var(--s-3)`, `border-left: 1px solid var(--rule)` desde la segunda en desktop): `span.t-cifra` (sin animación, valor final directo, `tnum`) + `span.t-nota` label:
   - `{stats.total}` — `proyectos desarrollados`
   - `{stats.countries}` — `países`
@@ -218,14 +220,14 @@ Copy: todo el texto de esta sección es **literal o condensado del Manual Instit
 
 ### 5.6 · 06 Proyectos (`#proyectos`)
 
-- Kicker `06 · Proyectos`. Título: `Proyectos destacados.` Bajada: `Una selección de plataformas propias, sistemas para organismos públicos y desarrollos a medida, en producción o en desarrollo activo.`
+- Kicker `06 · Proyectos`. Título: "Proyectos *destacados*." (*destacados* en ámbar). Bajada: `Una selección de plataformas propias, sistemas para organismos públicos y desarrollos a medida, en producción o en desarrollo activo.`
 - Fuente: `featuredProjects` ordenados por fecha desc, primeros 6 (si hay menos de 6 destacados, completar con `projects`).
 - Grilla `grid-cols-1 md:grid-cols-2 lg:grid-cols-3` con `gap: 1px; background: var(--rule)`; cada card `background: var(--ink)`. Usa el **mismo** `AkProjectCard` que `/projects` (7.4).
 - Link de cierre (`margin-top: var(--s-3)`): `<a class="btn-text" href="{base}/projects">Ver los {stats.total} proyectos <Icon name="arrow-right"/></a>`.
 
 ### 5.7 · 07 Contacto (`#contacto`)
 
-- Kicker `07 · Contacto`. Grid 12: izquierda cols 1–5: `h2.t-titulo` `Hablemos de tu proyecto.` + `p.t-bajada` `Contanos qué necesitás y te respondemos.`
+- Kicker `07 · Contacto`. Grid 12: izquierda cols 1–5: `h2.t-titulo` "Hablemos de tu *proyecto*." (*proyecto* en ámbar) + `p.t-bajada` `Contanos qué necesitás y te respondemos.`
 - Derecha cols 7–12: tres filas `<a>`/`<div>` con `border-top: 1px solid var(--rule)` (última con `border-bottom`), `padding-block: var(--s-2)`, grid `8rem 1fr auto`: label `.t-kicker`, valor `.t-cuerpo` bone, `Icon arrow-up-right` 16 en mist (bone al hover de la fila; la fila entera es el link):
   - `WhatsApp` — `+54 9 3764 734375` (nota debajo: `Lunes a viernes, 9 a 18 h`) → `https://wa.me/5493764734375`
   - `Email` — `mistec.capital@gmail.com` → `mailto:`
@@ -239,6 +241,7 @@ Copy: todo el texto de esta sección es **literal o condensado del Manual Instit
 ### 5.9 Contenido
 
 - `content/projects/hcd-posadas-sueldos/index.md` y `content/projects/houton-camisas/index.md`: `location: 'Posadas, Misiones'` → `'Posadas, Misiones, Argentina'`.
+- En todas las fichas, `authors[].name: 'Mistec Capital'` → `'MisTec'` (la marca ya no lleva "Capital"; commit `6c4a18d`). Ningún otro campo de las fichas cambia.
 - `content/index.md`: `title: 'MisTec'`, `description` = boilerplate corto; cuerpo = elevator pitch. (No se renderiza; queda coherente.)
 - `content/about.md`: ver 7.3.
 
@@ -289,21 +292,21 @@ Regla general: se conserva la lógica y la estructura de datos; se reemplazan cl
 
 ### 7.5 `/projects`
 
-- Cabecera: `p.t-kicker` `Índice`, `h1.t-titulo` `Todos los proyectos.` (cols 1–8), `p.t-bajada` `{n} proyectos desde 2020, filtrables por categoría y búsqueda.` Sin `SerialNumber`.
+- Cabecera: `p.t-kicker` `Índice`, `h1.t-titulo` "Todos los *proyectos*." (cols 1–8), `p.t-bajada` `{n} proyectos desde 2020, filtrables por categoría y búsqueda.` Sin `SerialNumber`.
 - `AkFilters`: input `.input` sin ícono (no hay lupa en el set y no hace falta: el placeholder `Buscar por título, descripción o tag` ya explica el campo); botones de categoría `.tag` / `.tag-active`; contador `.t-nota` `{n} proyectos`.
 - Grilla con `gap: 1px; background: var(--rule)` y cards `background: var(--ink)`.
 - Vacío: `p.t-cuerpo` mist `No hay proyectos que coincidan con la búsqueda.`
 
 ### 7.6 `/list`
 
-- Cabecera: kicker `Lista`, título `Proyectos en tabla.`, bajada `Ordenable por columna, con búsqueda y paginado.`
+- Cabecera: kicker `Lista`, título "Proyectos en *tabla*.", bajada `Ordenable por columna, con búsqueda y paginado.`
 - Tabla: `thead` `background: var(--ink-2)`, `th` `.t-kicker` mist alineado a la izquierda, `ThSort` botón mist → bone hover; el indicador de orden es texto `↑`/`↓` en `.t-nota` (un chevron rotado 90° rompería la regla de tres direcciones). Filas `border-top rule`, hover `background: var(--ink-2)`. Celdas `.t-nota`; título `.t-cuerpo` 500 bone; tags `.tag`; acción `Icon arrow-up-right` 16 sin borde ni círculo.
 - `Pagination`, `RowsPerPage`, `RowCount`: `.t-nota`, botones `.tag` / `.tag-active`, `select.input` altura 32.
 - Se elimina el `<style>` con JetBrains Mono.
 
 ### 7.7 `/map`
 
-- Cabecera: kicker `Mapa`, título `Proyectos en el territorio.`, bajada `Cada marcador es un proyecto. Filtrá por categoría o búsqueda.`
+- Cabecera: kicker `Mapa`, título "Proyectos en el *territorio*.", bajada `Cada marcador es un proyecto. Filtrá por categoría o búsqueda.`
 - Contenedor `border: 1px solid var(--rule); background: var(--ink-2)`. Se eliminan "LIVE / GEO STREAM" y el `status-dot-live`; queda el contador `{n} de {total}` en `.t-nota` abajo a la derecha.
 - Overlay de proyecto: `background: var(--ink)` **opaco** (sin blur), botón cerrar = `Icon close` 20 en `.btn` cuadrado 40 × 40 sin `rounded-full`.
 - CSS de Leaflet: familia `inherit`; controles ink/bone/rule; links de atribución bone; tooltip sin sombra. Se mantiene el filtro de tiles oscuro (no es decoración: es la cara ink aplicada al mapa).
@@ -315,7 +318,7 @@ Regla general: se conserva la lógica y la estructura de datos; se reemplazan cl
 - Imagen principal: `aspect-ratio: 16/9`, `object-fit: cover`, `border: 1px solid var(--rule)`, sin grayscale/degradado. `margin-block: var(--s-4)`.
 - Cuerpo cols 1–8: bloques `Detalles` (`.prose-brand`), `Galería`, `Videos`, `Documentos`, cada uno con `p.t-kicker` + `hr.rule` + contenido, separados por `--s-4`. Sin `SerialNumber`. Galería: imágenes planas, pies en `.t-nota`. Documentos: filas con `border-top rule`, `Icon arrow-up-right`.
 - Sidebar cols 10–12 (`lg:sticky top-24`): `Ficha` (dl con `dt.t-kicker`, `dd.t-cuerpo`, `border-bottom rule`), `Equipo`, `Tags` (`.tag`), botón `.btn` `Ver todos los proyectos`. Cajas `.card` sin hover.
-- Lightbox: fondo `var(--ink)` al 96 % **sin blur**; botones prev/next/cerrar/metadata con `Icon` 20 dentro de `.btn` cuadrado 40 × 40; contador `.t-nota`. `AkBtnClose` y `AkBtnMetadata` pasan a usar `Icon close` / `Icon plus` (metadata) y clases del sistema; se eliminan `scale` en hover y `rounded-full`.
+- Lightbox: fondo `var(--ink)` al 95 % **sin blur**; botones prev/next/cerrar con `Icon` 20 dentro de `.btn.btn-square` 40 × 40; contador `.t-nota`. `AkBtnClose` pasa a usar `Icon close` y clases del sistema; se eliminan `scale` en hover y `rounded-full`. `AkBtnMetadata` y el estado `showTechnicalInfo` se **eliminan**: el botón alterna una bandera que ninguna parte de la página renderiza (código muerto).
 
 ### 7.9 `AkFooter.svelte` — la firma
 
@@ -326,7 +329,8 @@ Regla general: se conserva la lógica y la estructura de datos; se reemplazan cl
 ### 7.10 Limpieza
 
 - `package.json`: quitar `@iconify/svelte`, `@iconify/json`, `unplugin-icons`; `vite.config.js`: quitar el plugin `Icons`. Ejecutar `bun install` y regenerar `bun.lock`.
-- Borrar: `src/lib/components/editorial/`, los 8 componentes viejos de `landing/`, `static/mistec.png`, `static/favicon.svg`, `static/fonts/IBMPlex*`, `static/fonts/ibm-plex-sans.css`, `landing.html` y `svelte-complete.txt` en la raíz **solo si** no los referencia nada (verificar con `grep`; si se usan, se dejan).
+- Borrar: `src/lib/components/editorial/`, los 8 componentes viejos de `landing/`, los componentes sin uso `AkBadge.svelte`, `Search.svelte`, `ThFilter.svelte` y `AkBtnMetadata.svelte`, `static/mistec.png`, `static/favicon.svg`, `static/fonts/IBMPlex*`, `static/fonts/ibm-plex-sans.css` y `landing.html` (no lo referencia nada). `svelte-complete.txt` **se queda**: lo referencia `.vscode/settings.json`.
+- `@tailwindcss/typography` también se quita de `package.json` y de `app.css`: `.prose-brand` lo reemplaza.
 - `CLAUDE.md`: actualizar la sección de estilos (tokens, Inter, presupuesto de ámbar, `Icon.svelte`) y aclarar que el lockfile es `bun.lock`.
 
 ## 8. Verificación
@@ -339,7 +343,7 @@ No hay framework de tests. La verificación es de build, lint, grep y visual:
 4. Visual con Playwright a 1440 × 900 y 390 × 844, para `/`, `/projects`, `/list`, `/map`, `/about`, `/projects/guazuapp`: captura completa, sin errores en consola, sin scroll horizontal (`document.documentElement.scrollWidth <= innerWidth`). Revisión de las capturas contra el "test del sistema": ¿está sobre la retícula? ¿se puede explicar cada distancia? ¿sobra algo? ¿podría pertenecer a otra empresa?
 5. Accesibilidad mínima: foco visible con teclado en header, botones, cards y filtros; `prefers-reduced-motion` emulado → sin transiciones; contraste bone/ink y mist/ink ≥ 4.5:1 (mist `#8A857A` sobre ink da ≈ 4.9:1).
 6. Favicon y OG: `curl -I` de `/favicon.ico`, `/favicon-96.png`, `/favicon-192.png`, `/apple-touch-icon.png`, `/og-default.jpg`, `/brand/*.png`, `/fonts/InterVariable.woff2` → 200; inspección visual del OG generado.
-7. Marca: en la captura del header medir que el bloque horizontal ≥ 80 px de ancho y tenga ≥ 16 px de aire; en el footer el isotipo ≥ 24 px de alto.
+7. Marca: en la captura del header medir que el bloque horizontal ≥ 80 px de ancho y tenga ≥ 2X de aire (X = grosor del asta ≈ 4 px a 112 px de ancho → ≥ 8 px; el header de 64 px deja 12 px arriba y abajo); en el footer el isotipo ≥ 24 px de alto.
 
 ## 9. Fuera de alcance
 
