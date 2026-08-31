@@ -23,7 +23,7 @@
 - Íconos: solo `src/lib/components/Icon.svelte` (`menu`, `close`, `arrow-right`, `arrow-up-right`, `chevron-left`, `chevron-right`, `plus`). Nada de `~icons/*`, `@iconify`, `lucide`.
 - Copy: literal o condensado del Manual Institucional (spec §5). Prohibidos en `src/`: `Mistec Capital`, `LATAM`, `mistec.png`.
 - Marca: solo los PNG de `static/brand/` generados desde `brand/signos/`. Nunca en ámbar, nunca con efectos.
-- Antes de cada commit: `bun run format && bun run lint` sin errores y `bun run build` en 0. A partir de la Task 15, además `bun run check:brand` en 0.
+- Antes de cada commit: `bun run format`, `bun run build` en 0, y `bunx eslint <archivos tocados>` sin errores (hasta la Task 15 quedan errores preexistentes en archivos viejos que las tareas van reemplazando; desde la Task 15, `bun run lint` completo en 0). A partir de la Task 15, además `bun run check:brand` en 0.
 - Mensajes de commit en español, prefijo `feat:`/`fix:`/`chore:`/`docs:`, y el trailer:
   ```
   Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
@@ -57,6 +57,51 @@
 **Borrar**
 - `src/lib/components/editorial/` (6 archivos), `src/lib/components/landing/{Hero,Manifiesto,ObraReciente,Plataformas,Gobierno,IA,Capacidades,Contacto}.svelte` (los viejos; `Hero` y `Contacto` se sobrescriben), `AkBadge.svelte`, `Search.svelte`, `ThFilter.svelte`, `AkBtnMetadata.svelte`.
 - `static/mistec.png`, `static/favicon.svg`, `static/fonts/IBMPlexSans-*`, `static/fonts/ibm-plex-sans.css`, `landing.html`.
+
+---
+
+### Task 0: Baseline de lint en verde
+
+**Files:**
+- Modify: `eslint.config.js`, `scripts/generate-optimized-images.js`, `scripts/clean-optimized-images.js`, `src/routes/projects/[slug]/+page.server.js`, `src/lib/components/SeoHead.svelte`, `src/lib/components/Datatable.svelte`
+
+**Interfaces:**
+- Produces: `bun run lint` en 0 sobre los archivos que el plan **no** reescribe. Los errores restantes viven en archivos que las Tasks 6–14 reemplazan por completo (Header, Footer, Card, Filters, páginas, landing vieja, ThFilter, RowsPerPage, Pagination) y desaparecen con ellas.
+- Produces: `<Datatable class>` sin prop `handler` (era un prop sin uso). La Task 12 ya lo llama así.
+
+Contexto: `bun run lint` (= `prettier --check . && eslint .`) falla hoy con 58 errores preexistentes. Esta tarea deja en verde los archivos que ninguna otra tarea toca y desactiva una regla que contradice la convención del repo.
+
+- [ ] **Step 1: Desactivar `svelte/no-navigation-without-resolve`** — el repo construye hrefs como `{base}/ruta` (convención existente y la que usa todo el plan); la regla exige `resolve()` de `$app/paths` y es un default nuevo del plugin. En `eslint.config.js`, agregar un bloque al final del array:
+
+```js
+	{
+		rules: {
+			// El sitio construye hrefs con `{base}/…` (convención del repo); no usa resolve().
+			'svelte/no-navigation-without-resolve': 'off'
+		}
+	}
+```
+
+- [ ] **Step 2: Arreglar los errores triviales de archivos que el plan no toca**
+
+Correr `bunx eslint scripts src/routes/projects/\[slug\]/+page.server.js src/lib/components/SeoHead.svelte src/lib/components/Datatable.svelte` y resolver cada error con el cambio mínimo:
+- `no-unused-vars` en `scripts/*.js` y en `[slug]/+page.server.js`: borrar la variable/import sin uso (no renombrar con `_`).
+- `no-empty` en `scripts/clean-optimized-images.js`: poner un comentario dentro del bloque vacío (`// no existe: nada que borrar`) o eliminar el try/catch si no protege nada.
+- `no-useless-escape` en `SeoHead.svelte`: quitar la barra sobrante en el string (`<\/script>` → usar `'</' + 'script>'` o `<\u002fscript>` — elegir la forma que mantenga el `</script>` fuera del HTML literal, porque es lo que evita cerrar el tag).
+- `svelte/no-at-html-tags` en `SeoHead.svelte`: anteponer `<!-- eslint-disable-next-line svelte/no-at-html-tags -- JSON-LD generado por el sitio -->` al `{@html …}`.
+- `Datatable.svelte`: quitar el prop `handler` sin uso: `let { children, class: className = '', ...props } = $props();`.
+
+- [ ] **Step 3: Verificar**
+
+Run: `bun run format && bunx eslint . 2>&1 | grep -c ' error ' ; bunx eslint . 2>&1 | grep '^/' | sed 's|.*/microfolio-1/||'`
+Expected: el conteo baja de 58 a los que quedan en archivos que las Tasks 6–14 reescriben, y la lista de archivos con errores NO incluye `scripts/`, `+page.server.js`, `SeoHead.svelte` ni `Datatable.svelte`.
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add eslint.config.js scripts src/routes/projects/[slug]/+page.server.js src/lib/components/SeoHead.svelte src/lib/components/Datatable.svelte
+git commit -m "chore: lint en verde para los archivos base; desactiva no-navigation-without-resolve"
+```
 
 ---
 
@@ -2596,7 +2641,7 @@ git commit -m "feat: página Nosotros con el contenido del Manual Institucional"
 		</div>
 
 		<div class="mt-s2 overflow-x-auto border border-rule">
-			<Datatable {handler} class="w-full">
+			<Datatable class="w-full">
 				<table class="w-full">
 					<thead>
 						<tr class="border-b border-rule bg-ink-2">
@@ -2790,7 +2835,7 @@ git commit -m "feat: lista de proyectos y componentes de tabla sobre el sistema 
 	});
 
 	$effect(() => {
-		const _ = filteredProjects;
+		void filteredProjects; // registra la dependencia
 		if (map) updateMarkers();
 	});
 
