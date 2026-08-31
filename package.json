@@ -11,6 +11,7 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"check:brand": "bash scripts/check-brand.sh",
+		"brand:assets": "node scripts/generate-brand-assets.js",
 		"deploy": "NODE_ENV=production pnpm run build",
 		"optimize-images": "node scripts/generate-optimized-images.js",
 		"clean-images": "node scripts/clean-optimized-images.js"
@@ -31,6 +32,7 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.12.4",
 		"globals": "^16.4.0",
+		"png-to-ico": "^3.0.2",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.6.14",
