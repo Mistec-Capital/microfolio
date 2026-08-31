@@ -1,25 +1,16 @@
 <script>
 	import { siteConfig } from '$lib/config.js';
 	import SeoHead from '$lib/components/SeoHead.svelte';
+	import { scrollReveal } from '$lib/actions/scrollReveal.js';
 	import Hero from '$lib/components/landing/Hero.svelte';
-	import Manifiesto from '$lib/components/landing/Manifiesto.svelte';
-	import ObraReciente from '$lib/components/landing/ObraReciente.svelte';
-	// import Plataformas from '$lib/components/landing/Plataformas.svelte';
-	import Gobierno from '$lib/components/landing/Gobierno.svelte';
-	import IA from '$lib/components/landing/IA.svelte';
-	import Capacidades from '$lib/components/landing/Capacidades.svelte';
-	import Contacto from '$lib/components/landing/Contacto.svelte';
+	import QuienesSomos from '$lib/components/landing/QuienesSomos.svelte';
+	import PropuestaValor from '$lib/components/landing/PropuestaValor.svelte';
 
 	let { data } = $props();
-	let projects = $derived(data.projects ?? []);
-	let featuredProjects = $derived(data.featuredProjects ?? []);
-	let stats = $derived(data.stats ?? { total: 0, government: 0, countries: 0, featured: 0 });
-	let obraProjects = $derived(
-		(featuredProjects.length >= 9 ? featuredProjects : projects).slice(0, 9)
-	);
+	let stats = $derived(data.stats ?? { total: 0, government: 0, countries: 0 });
 
 	let description = $derived(
-		`MisTec construye software desde Posadas, Misiones. ${stats.total}+ proyectos en LATAM — plataformas SaaS propias, sistemas para el Estado, IA aplicada y soluciones a medida.`
+		`MisTec diseña, desarrolla e implementa soluciones digitales para organizaciones públicas y privadas. ${stats.total} proyectos en ${stats.countries} países.`
 	);
 
 	const organizationJsonLd = {
@@ -27,22 +18,18 @@
 		'@type': 'Organization',
 		name: 'MisTec',
 		url: siteConfig.siteUrl,
-		logo: `${siteConfig.siteUrl}/mistec.png`,
+		logo: `${siteConfig.siteUrl}/brand/mistec-logo-512.png`,
 		image: `${siteConfig.siteUrl}${siteConfig.defaultOgImage}`,
 		description:
-			'Compañía de ingeniería de software basada en Posadas, Misiones, Argentina. Construye plataformas SaaS, sistemas para gobiernos municipales y soluciones de IA aplicada para LATAM.',
+			'Empresa dedicada al diseño, desarrollo e implementación de soluciones digitales para organizaciones públicas y privadas. Ingeniería de software, productos digitales y consultoría tecnológica.',
 		foundingDate: siteConfig.founded,
-		foundingLocation: {
-			'@type': 'Place',
-			name: 'Posadas, Misiones, Argentina'
-		},
+		foundingLocation: { '@type': 'Place', name: 'Posadas, Misiones, Argentina' },
 		address: {
 			'@type': 'PostalAddress',
 			addressLocality: 'Posadas',
 			addressRegion: 'Misiones',
 			addressCountry: 'AR'
 		},
-		areaServed: ['AR', 'PY', 'UY', 'CL', 'BR', 'BO', 'PE'],
 		contactPoint: {
 			'@type': 'ContactPoint',
 			email: siteConfig.contact.email,
@@ -60,11 +47,8 @@
 
 <SeoHead title={siteConfig.title} {description} jsonLd={organizationJsonLd} />
 
-<Hero {stats} />
-<Manifiesto {stats} />
-<ObraReciente projects={obraProjects} totalCount={stats.total} />
-<!-- <Plataformas {projects} /> -->
-<Gobierno {projects} />
-<Capacidades />
-<IA {projects} />
-<Contacto />
+<div use:scrollReveal>
+	<Hero />
+	<QuienesSomos />
+	<PropuestaValor />
+</div>
