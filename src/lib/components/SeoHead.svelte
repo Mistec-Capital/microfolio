@@ -70,6 +70,7 @@
 	<meta name="twitter:image" content={absImage} />
 
 	{#if jsonLdString}
-		{@html `<script type="application/ld+json">${jsonLdString}<\/script>`}
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html '<script type="application/ld+json">' + jsonLdString + '</' + 'script>'}
 	{/if}
 </svelte:head>

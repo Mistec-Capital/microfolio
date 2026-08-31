@@ -23,5 +23,11 @@ export default [
 	{
 		files: ['**/*.svelte', '**/*.svelte.js'],
 		languageOptions: { parserOptions: { svelteConfig } }
+	},
+	{
+		rules: {
+			// El sitio construye hrefs con `{base}/…` (convención del repo); no usa resolve().
+			'svelte/no-navigation-without-resolve': 'off'
+		}
 	}
 ];

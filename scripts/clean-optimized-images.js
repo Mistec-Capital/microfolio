@@ -84,17 +84,21 @@ async function showStats() {
 						try {
 							const stats = await stat(fullPath);
 							totalSize += stats.size;
-						} catch {}
+						} catch {
+							// Archivo no accesible o eliminado entre lectura y stat
+						}
 					} else if (entry.name.endsWith('.webp') || entry.name.endsWith('_thumb.webp')) {
 						webpCount++;
 						try {
 							const stats = await stat(fullPath);
 							totalSize += stats.size;
-						} catch {}
+						} catch {
+							// Archivo no accesible o eliminado entre lectura y stat
+						}
 					}
 				}
 			}
-		} catch (error) {
+		} catch {
 			// Directory might not exist
 		}
 	}
