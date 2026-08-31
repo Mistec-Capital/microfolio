@@ -7,7 +7,7 @@ description: 'Sistema web y aplicación móvil para el Ministerio de Deportes de
 type: 'gestion-deportiva'
 tags: ['deportes', 'talentos', 'evaluación física', 'gobierno', 'mobile', 'educación']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: false

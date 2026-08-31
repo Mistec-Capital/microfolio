@@ -8,7 +8,7 @@ type: 'recursos-humanos'
 tags: ['recursos humanos', 'asistencias', 'turnos', 'biometría', 'ZKTeco', 'huella digital', 'kiosco', 'reportes', 'auditoría']
 featured: true
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 ---
 

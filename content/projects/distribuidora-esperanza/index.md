@@ -7,7 +7,7 @@ description: 'Plataforma de e-commerce integrada con sistema ERP para gestión d
 type: 'e-commerce'
 tags: ['e-commerce', 'ERP', 'ASP.Net', 'Angular', 'SQL Server', 'ventas']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y soporte'
 status: 'en mantenimiento'
 ---

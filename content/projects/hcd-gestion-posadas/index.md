@@ -7,7 +7,7 @@ description: 'Sistema integral para la gestión de expedientes administrativos y
 type: 'gobierno-digital'
 tags: ['gobierno', 'gestión administrativa', 'expedientes', 'recursos humanos', 'biblioteca']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: true

@@ -7,7 +7,7 @@ description: 'ERP integral para la gestión empresarial completa: contabilidad, 
 type: 'saas'
 tags: ['ERP', 'gestión empresarial', 'contabilidad', 'inventario', 'CRM', 'SaaS']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 ---

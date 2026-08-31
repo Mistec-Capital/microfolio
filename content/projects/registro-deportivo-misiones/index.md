@@ -7,7 +7,7 @@ description: 'Sistema de registro digital para instituciones deportivas del Mini
 type: 'gobierno-digital'
 tags: ['gobierno', 'deportes', 'registro', 'instituciones', 'gestión pública']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo'
 status: 'entregado'
 featured: false

@@ -7,7 +7,7 @@ description: 'Marketplace de compra y venta de libros usados con sistema de sucu
 type: 'e-commerce'
 tags: ['marketplace', 'e-commerce', 'libros', 'economía circular', 'sucursales', 'billetera', 'mercadopago', 'cultura']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 status: 'en desarrollo'
 featured: true

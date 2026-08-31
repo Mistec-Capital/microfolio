@@ -7,7 +7,7 @@ description: 'Sistema integral para la gestión de torneos, fichajes, clubes, ju
 type: 'gestion-deportiva'
 tags: ['gestión deportiva', 'rugby', 'torneos', 'administración', 'web']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: true

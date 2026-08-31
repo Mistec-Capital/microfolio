@@ -1,97 +1,48 @@
 <script>
-	import { scrollReveal } from '$lib/actions/scrollReveal.js';
-	import IconArrowUpRight from '~icons/lucide/arrow-up-right';
-	import IconMessageCircle from '~icons/lucide/message-circle';
-	import IconMail from '~icons/lucide/mail';
+	import { siteConfig } from '$lib/config.js';
+	import Icon from '$lib/components/Icon.svelte';
 
-	const phone = '+54 9 3764 734375';
-	const email = 'mistec.capital@gmail.com';
-	const waLink = `https://wa.me/${phone.replace(/[^0-9]/g, '')}`;
+	const wa = `https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`;
+	const fila = 'grid grid-cols-[6rem_1fr_auto] items-center gap-s2 md:grid-cols-[8rem_1fr_auto]';
 </script>
 
-<section id="contacto" use:scrollReveal class="section-ink relative overflow-hidden py-32">
-	<div
-		class="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-		style="background: radial-gradient(ellipse, rgba(255, 184, 64, 0.07) 0%, transparent 60%); filter: blur(80px);"
-		aria-hidden="true"
-	></div>
+<section id="contacto" class="section">
+	<div class="container-brand">
+		<p class="t-kicker reveal"><span class="tnum">07</span> · Contacto</p>
 
-	<div class="relative mx-auto max-w-[1200px] px-6 md:px-10 lg:px-14">
-		<!-- Header -->
-		<div class="reveal mx-auto mb-14 max-w-[800px] text-center">
-			<span class="chip-amber">
-				<span class="status-dot" aria-hidden="true"></span>
-				CONTACTO
-			</span>
-			<h2
-				class="font-display mt-6 leading-[1.02] font-bold tracking-[-0.04em] text-[#E8E3D6]"
-				style="font-size: clamp(2.75rem, 6vw, 5rem)"
-			>
-				Agendemos una reunión. <span class="gradient-text-amber">→</span>
-			</h2>
-			<p
-				class="font-body mx-auto mt-6 max-w-[52ch] text-base leading-relaxed text-[#8A857A] md:text-lg"
-			>
-				¿Tenés un proyecto en mente? Contanos qué necesitás y charlemos cómo podemos ayudarte.
-			</p>
-		</div>
+		<div class="grid-12 mt-s2">
+			<div class="col-span-12 lg:col-span-5">
+				<h2 class="t-titulo reveal reveal-1">
+					Hablemos de tu <span class="accent">proyecto</span>.
+				</h2>
+				<p class="t-bajada reveal reveal-2 mt-s2">Contanos qué necesitás y te respondemos.</p>
+			</div>
 
-		<!-- Contact cards -->
-		<div class="mx-auto grid max-w-[800px] grid-cols-1 gap-5 md:grid-cols-2">
-			<a
-				href={waLink}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="card-gradient-border group reveal reveal-delay-1 p-7"
-			>
-				<div class="mb-5 flex items-start justify-between">
-					<div
-						class="flex h-11 w-11 items-center justify-center rounded-sm border border-[#FFB840]/30 bg-[#FFB840]/10 transition-all duration-300 group-hover:shadow-[0_0_24px_-6px_rgba(255,184,64,0.4)]"
-					>
-						<IconMessageCircle class="h-5 w-5 text-[#FFB840]" />
+			<ul class="list-rule mt-s3 col-span-12 lg:col-span-6 lg:col-start-7 lg:mt-0">
+				<li class="reveal">
+					<a href={wa} target="_blank" rel="noopener noreferrer" class="link {fila}">
+						<span class="t-kicker">WhatsApp</span>
+						<span>
+							<span class="t-cuerpo text-bone block">{siteConfig.contact.whatsapp}</span>
+							<span class="t-nota">Lunes a viernes, 9 a 18 h</span>
+						</span>
+						<Icon name="arrow-up-right" size={16} />
+					</a>
+				</li>
+				<li class="reveal reveal-1">
+					<a href="mailto:{siteConfig.contact.email}" class="link {fila}">
+						<span class="t-kicker">Email</span>
+						<span class="t-cuerpo text-bone break-all">{siteConfig.contact.email}</span>
+						<Icon name="arrow-up-right" size={16} />
+					</a>
+				</li>
+				<li class="reveal reveal-2">
+					<div class="gap-s2 grid grid-cols-[6rem_1fr] items-center md:grid-cols-[8rem_1fr]">
+						<span class="t-kicker">Ubicación</span>
+						<span class="t-cuerpo">{siteConfig.contact.location}</span>
 					</div>
-					<span class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase">
-						WhatsApp
-					</span>
-				</div>
-				<div
-					class="font-mono text-base text-[#E8E3D6] transition-colors group-hover:text-[#FFB840] md:text-lg"
-				>
-					{phone}
-				</div>
-				<div class="mt-5 flex items-center justify-between border-t border-[#2A2A28] pt-4">
-					<span class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase">
-						Lunes a Viernes 9 a 18hs
-					</span>
-					<IconArrowUpRight
-						class="h-4 w-4 text-[#8A857A] transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#FFB840]"
-					/>
-				</div>
-			</a>
-
-			<a href="mailto:{email}" class="card-gradient-border group reveal reveal-delay-2 p-7">
-				<div class="mb-5 flex items-start justify-between">
-					<div
-						class="flex h-11 w-11 items-center justify-center rounded-sm border border-[#FFB840]/30 bg-[#FFB840]/10 transition-all duration-300 group-hover:shadow-[0_0_24px_-6px_rgba(255,184,64,0.4)]"
-					>
-						<IconMail class="h-5 w-5 text-[#FFB840]" />
-					</div>
-					<span class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase"> Email </span>
-				</div>
-				<div
-					class="font-mono text-base break-all text-[#E8E3D6] transition-colors group-hover:text-[#FFB840] md:text-lg"
-				>
-					{email}
-				</div>
-				<div class="mt-5 flex items-center justify-between border-t border-[#2A2A28] pt-4">
-					<span class="font-mono text-[10px] tracking-wider text-[#8A857A] uppercase">
-						Respondemos en &lt; 24H
-					</span>
-					<IconArrowUpRight
-						class="h-4 w-4 text-[#8A857A] transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#FFB840]"
-					/>
-				</div>
-			</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </section>

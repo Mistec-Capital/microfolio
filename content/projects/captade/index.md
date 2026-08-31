@@ -7,7 +7,7 @@ description: 'Plataforma de evaluación educativa con tests físicos y evaluacio
 type: 'gobierno-digital'
 tags: ['evaluación educativa', 'deportes', 'talento deportivo', 'gobierno', 'offline-first', 'mobile', 'PDF']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'activo'
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Houton - Camisas a Medida'
 date: '2024-01-01'
-location: 'Posadas, Misiones'
+location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Plataforma de e-commerce para la creación y venta de camisas personalizadas a medida. Sistema de configuración interactiva que permite a los clientes diseñar sus propias camisas seleccionando telas, colores, estilos y medidas personalizadas.'
 type: 'e-commerce'

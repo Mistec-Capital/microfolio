@@ -8,9 +8,16 @@
 	import Soluciones from '$lib/components/landing/Soluciones.svelte';
 	import ComoTrabajamos from '$lib/components/landing/ComoTrabajamos.svelte';
 	import Alcance from '$lib/components/landing/Alcance.svelte';
+	import Proyectos from '$lib/components/landing/Proyectos.svelte';
+	import Contacto from '$lib/components/landing/Contacto.svelte';
 
 	let { data } = $props();
 	let stats = $derived(data.stats ?? { total: 0, government: 0, countries: 0 });
+	let projects = $derived(data.projects ?? []);
+	// Seis destacados; si hay menos, se completa con los más recientes.
+	let destacados = $derived(
+		[...(data.featuredProjects ?? []), ...projects.filter((p) => !p.featured)].slice(0, 6)
+	);
 
 	let description = $derived(
 		`MisTec diseña, desarrolla e implementa soluciones digitales para organizaciones públicas y privadas. ${stats.total} proyectos en ${stats.countries} países.`
@@ -57,4 +64,6 @@
 	<Soluciones />
 	<ComoTrabajamos />
 	<Alcance {stats} />
+	<Proyectos projects={destacados} total={stats.total} />
+	<Contacto />
 </div>

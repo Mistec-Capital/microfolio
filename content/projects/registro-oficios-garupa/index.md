@@ -7,7 +7,7 @@ description: 'Plataforma web pública para el registro y búsqueda de trabajador
 type: 'gobierno-digital'
 tags: ['oficios', 'registro público', 'empleo', 'gobierno digital', 'directorio', 'trabajadores']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: false

@@ -7,7 +7,7 @@ description: 'Plataforma integral de mensajería y gestión de tickets de servic
 type: 'saas'
 tags: ['mensajería', 'servicio al cliente', 'tickets', 'automatización', 'bots', 'multicanal']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 featured: true

@@ -7,7 +7,7 @@ description: 'Sistema web para la gestión de sesiones del Honorable Concejo Del
 type: 'gobierno-digital'
 tags: ['gobierno', 'sesiones', 'legislativo', 'web']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: false

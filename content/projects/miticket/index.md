@@ -7,7 +7,7 @@ description: 'Sistema de gestión de equipos y tareas de servicio técnico con s
 type: 'saas'
 tags: ['servicio técnico', 'tickets', 'gestión de equipos', 'órdenes de trabajo', 'SaaS']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 ---

@@ -7,7 +7,7 @@ description: 'Sistema integral para la gestión de afiliados y pagos del Sindica
 type: 'gestion-administrativa'
 tags: ['sindicato', 'gestión de afiliados', 'pagos', 'educación', 'cuotas']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: false

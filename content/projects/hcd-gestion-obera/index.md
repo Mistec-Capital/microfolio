@@ -7,7 +7,7 @@ description: 'Plataforma de gestión de expedientes legislativos y administrativ
 type: 'gobierno-digital'
 tags: ['gobierno', 'expedientes', 'legislativo', 'administración pública', 'digitalización']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 featured: false

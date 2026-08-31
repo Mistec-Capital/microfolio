@@ -7,7 +7,7 @@ description: 'CRM especializado en gestión de ingresos y oportunidades comercia
 type: 'saas'
 tags: ['CRM', 'ventas', 'ingresos', 'pipeline', 'SaaS', 'gestión comercial']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 ---

@@ -7,7 +7,7 @@ description: 'Aplicación móvil para reservas hoteleras, conectando clientes co
 type: 'mobile-app'
 tags: ['mobile', 'React Native', 'Expo', 'reservas', 'hoteles', 'turismo']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Mobile'
 status: 'entregado'
 featured: false

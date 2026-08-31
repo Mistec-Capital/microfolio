@@ -7,7 +7,7 @@ description: 'Sistema integral de gestión de franquicias con control de stock, 
 type: 'gestion-administrativa'
 tags: ['franquicias', 'gestión de stock', 'cierres de caja', 'inventario', 'retail']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 status: 'entregado'
 featured: false

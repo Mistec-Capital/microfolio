@@ -7,7 +7,7 @@ description: 'Sistema de consulta inteligente del Digesto Jurídico de Posadas b
 type: 'ia'
 tags: ['inteligencia artificial', 'RAG', 'legal', 'NLP', 'gobierno digital', 'LLM']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 featured: true
