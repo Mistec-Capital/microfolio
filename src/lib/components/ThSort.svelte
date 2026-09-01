@@ -8,7 +8,15 @@
 	let sortState = $derived(handler.getSort());
 </script>
 
-<th class={className} {...props}>
+<th
+	class={className}
+	{...props}
+	aria-sort={$sortState && $sortState.identifier === orderBy
+		? $sortState.direction === 'asc'
+			? 'ascending'
+			: 'descending'
+		: 'none'}
+>
 	<button
 		type="button"
 		onclick={handleSort}

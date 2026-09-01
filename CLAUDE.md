@@ -12,29 +12,35 @@ microfolio is a modern static portfolio generator built with SvelteKit 2 and Tai
 
 ```bash
 # Development server
-pnpm dev
+bun run dev
 
 
 # Preview production build
-pnpm preview
+bun run preview
 
 # Lint code
-pnpm lint
+bun run lint
 
 # Format code
-pnpm format
+bun run format
+
+# Run the test suite (node --test over tests/)
+bun run test
+
+# Verify the brand system (forbidden patterns, amber budget)
+bun run check:brand
 
 # Deploy (production build with NODE_ENV=production)
-pnpm deploy
+bun run deploy
 
 # Build only (without image optimization)
-pnpm build
+bun run build
 
 # Generate optimized images (AVIF/WebP thumbnails)
-pnpm optimize-images
+bun run optimize-images
 
-# Full build with image optimization
-pnpm build:full
+# Regenerate static/brand assets from brand/signos/
+bun run brand:assets
 ```
 
 ### Package Management
@@ -48,7 +54,7 @@ pnpm build:full
   - `marked` for Markdown parsing, `yaml` for frontmatter
   - `@vincjo/datatables` for list view functionality
   - `exifreader` for image metadata extraction
-  - Iconify for icon system (`@iconify/svelte`, `unplugin-icons`)
+  - `sharp` + `png-to-ico` for brand-asset generation (`bun run brand:assets`); icons are an own SVG set (`src/lib/components/Icon.svelte`), no icon library
 
 ## Architecture Overview
 

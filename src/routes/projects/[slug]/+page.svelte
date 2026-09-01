@@ -13,6 +13,7 @@
 
 	let selectedImage = $state(null);
 	let currentImageIndex = $state(0);
+	let dialogEl = $state(null);
 
 	function openLightbox(image) {
 		currentImageIndex = images.findIndex((img) => img.path === image.path);
@@ -63,6 +64,10 @@
 		const head = image.metadata?.headline ?? image.name;
 		return image.metadata?.description ? `${head} — ${image.metadata.description}` : head;
 	}
+
+	$effect(() => {
+		if (selectedImage && dialogEl) dialogEl.focus();
+	});
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
@@ -250,9 +255,13 @@
 		aria-modal="true"
 		aria-label="Imagen ampliada"
 		tabindex="-1"
+		bind:this={dialogEl}
 		class="gap-s2 bg-ink/95 p-s2 fixed inset-0 z-[60] flex flex-col items-center justify-center"
 		onclick={closeLightbox}
-		onkeydown={handleKeydown}
+		onkeydown={(event) => {
+			event.stopPropagation();
+			handleKeydown(event);
+		}}
 	>
 		<AkBtnClose class="top-s2 right-s2 absolute" onclick={stop(closeLightbox)} />
 

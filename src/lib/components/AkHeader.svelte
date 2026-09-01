@@ -49,7 +49,11 @@
 
 		<nav class="gap-s3 hidden items-center lg:flex" aria-label="Principal">
 			{#each navItems as item (item.href)}
-				<a href={hrefOf(item)} class="link t-ui {isActive(item) ? 'link-active' : ''}">
+				<a
+					href={hrefOf(item)}
+					class="link t-ui {isActive(item) ? 'link-active' : ''}"
+					aria-current={isActive(item) ? 'page' : undefined}
+				>
 					{item.name}
 				</a>
 			{/each}

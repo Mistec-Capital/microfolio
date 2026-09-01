@@ -27,4 +27,5 @@ test('isInDevelopment detecta "desarrollo" sin importar mayúsculas', () => {
 test('yearOf extrae el año de una fecha ISO', () => {
 	assert.equal(yearOf('2025-09-01'), '2025');
 	assert.equal(yearOf(undefined), '');
+	assert.equal(yearOf('garbage'), '');
 });

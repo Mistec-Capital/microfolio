@@ -29,7 +29,9 @@
 	});
 
 	function formatDate(dateString) {
-		return dateString ? new Date(dateString).toISOString().slice(0, 7) : '';
+		if (!dateString) return '';
+		const parsed = new Date(dateString);
+		return Number.isNaN(parsed.getTime()) ? '' : parsed.toISOString().slice(0, 7);
 	}
 
 	function truncate(text, max = 60) {
@@ -43,7 +45,7 @@
 
 <SeoHead
 	title="Lista de proyectos"
-	description="Tabla ordenable de los {projects.length} proyectos de MisTec, con búsqueda por título, descripción, tags y ubicación."
+	description="Tabla ordenable de los {projects.length} proyectos de MisTec, con búsqueda por título, descripción y tags."
 />
 
 <div use:scrollReveal>

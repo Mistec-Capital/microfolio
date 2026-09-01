@@ -7,6 +7,9 @@ import pngToIco from 'png-to-ico';
 import { mkdir, writeFile } from 'fs/promises';
 import { join } from 'path';
 
+// Rutas relativas a la raíz del repo, sin importar desde dónde se invoque.
+process.chdir(new URL('..', import.meta.url).pathname);
+
 const SRC = 'brand/signos';
 const OUT = 'static/brand';
 const INK = '#0A0A0A';
@@ -46,6 +49,8 @@ const marca = await sharp(join(SRC, 'mistec-bloque-horizontal-transparente-bone.
 	.png()
 	.toBuffer();
 
+// La fuente del título es Inter si está instalada en el sistema; si no, cae a una
+// grotesca del sistema (permitido por el manual). El JPG commiteado es la referencia.
 const titulo = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <text x="96" y="470" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="56" font-weight="500" fill="#E8E3D6" letter-spacing="-1.2">Ingeniería aplicada a resolver problemas.</text>
   <text x="96" y="530" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="400" fill="#8A857A">Ingeniería de software y soluciones digitales · Posadas, Misiones</text>

@@ -32,5 +32,7 @@ export function isInDevelopment(status) {
 }
 
 export function yearOf(date) {
-	return date ? new Date(date).getFullYear().toString() : '';
+	if (!date) return '';
+	const parsed = new Date(date);
+	return Number.isNaN(parsed.getTime()) ? '' : parsed.getFullYear().toString();
 }

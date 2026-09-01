@@ -200,7 +200,7 @@ Copy: todo el texto de esta sección es **literal o condensado del Manual Instit
 ### 5.4 · 04 Cómo trabajamos (`#metodo`) — proceso con chevrones (modo Información)
 
 - Kicker `04 · Cómo trabajamos`. Título: "Un proceso *continuo*." (*continuo* en ámbar). Bajada: `Todos los proyectos siguen una metodología estructurada que permite comprender el problema, diseñar la solución adecuada y acompañar su evolución en el tiempo.`
-- Los 6 pasos en `<ol>`: en desktop (`≥ 1024px`) una fila de 6 columnas iguales, cada paso separado del anterior por `border-left: 1px solid var(--rule)` y un `Icon chevron-right` 16 en mist centrado sobre esa línea (con fondo ink para cortarla) — el chevron es el interior del isotipo, como en la lámina de proceso del Estilo Visual. En mobile, lista vertical con `border-top` por ítem. Cada paso: número `.t-nota` tabular, `h3.t-cuerpo` 500 y `p.t-nota` con la descripción:
+- Los 6 pasos en `<ol>`: en desktop (`≥ 1280px`, `xl:`) una fila de 6 columnas iguales — entre 1024 y 1279 px las columnas quedarían en ~114 px, así que ahí se mantiene la lista vertical —, cada paso separado del anterior por `border-left: 1px solid var(--rule)` y un `Icon chevron-right` 16 en mist centrado sobre esa línea (con fondo ink para cortarla) — el chevron es el interior del isotipo, como en la lámina de proceso del Estilo Visual. En mobile, lista vertical con `border-top` por ítem. Cada paso: número `.t-nota` tabular, `h3.t-cuerpo` 500 y `p.t-nota` con la descripción:
   01 **Descubrimiento** — Comprender el contexto, identificar necesidades, relevar información y definir los objetivos del proyecto. Esta etapa permite construir una visión compartida entre el cliente y el equipo de trabajo.
   02 **Estrategia** — Definir el alcance, priorizar objetivos, seleccionar tecnologías y establecer una hoja de ruta para el desarrollo de la solución.
   03 **Diseño** — Diseñar la experiencia de usuario, la arquitectura funcional y los componentes necesarios para garantizar una solución clara, intuitiva y eficiente.
@@ -268,7 +268,7 @@ Regla general: se conserva la lógica y la estructura de datos; se reemplazan cl
 - `position: fixed; height: 64px; background: var(--ink)` (plano, sin transparencia ni blur). Al hacer scroll > 8 px: `border-bottom: 1px solid var(--rule)` (un solo recurso). Transición `--d-breve`.
 - Izquierda: `<a href="{base}/" aria-label="MisTec — inicio"><img src="{base}/brand/mistec-horizontal-bone.png" alt="MisTec" style="width:112px;height:auto"></a>`. Sin texto al lado, sin tagline, sin fondo, sin ring.
 - Derecha (desktop ≥ 1024): `nav` con `.link` (`.t-cuerpo` 14 px 500 → se define `.t-ui { font-size: .875rem; font-weight: 500 }`), gap `--s-3`. Activo (`currentPage` coincide): `.link-active`. En la landing, los anchors.
-- Mobile: `button` con `Icon menu/close` 24 en bone; panel bajo el header con `background: var(--ink); border-top: 1px solid var(--rule)`, links apilados `.t-bajada` bone con `border-bottom rule`, `padding-block: var(--s-2)`; aparece con `--d-media` (opacidad + clip vertical).
+- Mobile: `button` con `Icon menu/close` 24 en bone; panel bajo el header con `background: var(--ink); border-top: 1px solid var(--rule)`, links apilados `.t-bajada` bone con `border-bottom rule`, `padding-block: var(--s-2)`; aparece sin transición (un `{#if}`); la transición queda como mejora futura.
 
 ### 7.3 `/about` (`content/about.md` + `about/+page.svelte`)
 

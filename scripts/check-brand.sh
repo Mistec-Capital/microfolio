@@ -6,7 +6,7 @@ set -u
 set -f
 cd "$(dirname "$0")/.."
 fail=0
-files=$(find src -type f \( -name '*.svelte' -o -name '*.css' -o -name '*.js' -o -name '*.html' \) | sort)
+mapfile -t files < <(find src -type f \( -name '*.svelte' -o -name '*.css' -o -name '*.js' -o -name '*.html' \) | sort)
 
 forbidden=(
 	'font-mono' 'JetBrains' 'Geist' '~icons' 'iconify' 'lucide'
@@ -17,7 +17,7 @@ forbidden=(
 	'mistec\.png' 'Mistec Capital' 'LATAM'
 )
 for p in "${forbidden[@]}"; do
-	hits=$(grep -nE -- "$p" $files || true)
+	hits=$(grep -nE -- "$p" "${files[@]}" || true)
 	if [ -n "$hits" ]; then
 		echo "✗ prohibido «$p»:"
 		echo "$hits" | sed 's/^/    /'
@@ -26,8 +26,11 @@ for p in "${forbidden[@]}"; do
 done
 
 # Ámbar fuera de theme.css: nada.
-others=$(echo "$files" | grep -v '^src/lib/theme.css$')
-hits=$(grep -nEi -- 'ffb840|amber' $others || true)
+others=()
+for f in "${files[@]}"; do
+	[ "$f" = 'src/lib/theme.css' ] || others+=("$f")
+done
+hits=$(grep -nEi -- 'ffb840|amber' "${others[@]}" || true)
 if [ -n "$hits" ]; then
 	echo "✗ ámbar fuera de src/lib/theme.css:"
 	echo "$hits" | sed 's/^/    /'
@@ -45,6 +48,13 @@ while IFS= read -r line; do
 			;;
 	esac
 done < <(grep -nEi -- 'ffb840|amber' src/lib/theme.css || true)
+
+# Presupuesto duro: una entrada permitida no puede colarse de más (spec §4.7).
+amber_lines=$(grep -ci -- 'ffb840\|amber' src/lib/theme.css || true)
+if [ "$amber_lines" -gt 6 ]; then
+	echo "✗ theme.css tiene $amber_lines líneas con ámbar; el presupuesto son 6 (--amber, --amber-dim, ::selection, :focus-visible, .status-dot, .accent)"
+	fail=1
+fi
 
 if [ "$fail" -eq 0 ]; then
 	echo "✓ check-brand: sin violaciones"
