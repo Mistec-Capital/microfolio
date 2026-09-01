@@ -26,7 +26,11 @@
 	<p class="t-kicker reveal">Diferenciales</p>
 	<ol class="mt-s2 grid grid-cols-1 gap-x-[var(--gutter)] md:grid-cols-2">
 		{#each DIFERENCIALES as texto, i (texto)}
-			<li class="reveal gap-s2 border-rule py-s2 flex border-t">
+			<li
+				class="reveal gap-s2 border-rule py-s2 flex border-t {i === DIFERENCIALES.length - 1
+					? 'border-b'
+					: ''} {i >= DIFERENCIALES.length - 2 ? 'md:border-b' : ''}"
+			>
 				<span class="t-nota tnum w-10 shrink-0">{String(i + 1).padStart(2, '0')}</span>
 				<span class="t-cuerpo">{texto}</span>
 			</li>

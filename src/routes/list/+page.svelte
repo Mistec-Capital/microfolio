@@ -98,7 +98,7 @@
 								</td>
 								<td class={td}><span class="tag">{categoryLabel(project.type)}</span></td>
 								<td class="{td} t-nota">{project.location || '—'}</td>
-								<td class="{td} t-nota tnum">{formatDate(project.date)}</td>
+								<td class="{td} t-nota tnum whitespace-nowrap">{formatDate(project.date)}</td>
 								<td class="{td} t-nota max-w-md">{truncate(project.description)}</td>
 								<td class={td}>
 									{#if project.tags}

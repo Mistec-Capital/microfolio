@@ -11,6 +11,10 @@
 	let searchTerm = $state('');
 	let filteredProjects = $state(data.projects);
 
+	// Celdas vacías para cerrar la última fila de la grilla (si no, el fondo `rule` queda a la vista)
+	let huecosMd = $derived([...Array(filteredProjects.length % 2).keys()]);
+	let huecosLg = $derived([...Array((3 - (filteredProjects.length % 3)) % 3).keys()]);
+
 	let description = $derived(
 		`Índice de los ${projects.length} proyectos desarrollados por MisTec desde 2020: productos digitales, sistemas para organismos públicos y desarrollos a medida.`
 	);
@@ -37,6 +41,12 @@
 		<div class="grid-rule mt-s3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 			{#each filteredProjects as project (project.slug)}
 				<AkProjectCard {project} />
+			{/each}
+			{#each huecosMd as hueco (hueco)}
+				<div class="hidden md:block lg:hidden" aria-hidden="true"></div>
+			{/each}
+			{#each huecosLg as hueco (hueco)}
+				<div class="hidden lg:block" aria-hidden="true"></div>
 			{/each}
 		</div>
 	{:else}

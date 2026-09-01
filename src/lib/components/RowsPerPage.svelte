@@ -2,7 +2,7 @@
 	let { handler, class: className = '', ...props } = $props();
 
 	let rowsPerPageStore = $derived(handler.getRowsPerPage());
-	const options = [5, 10, 20, 50, 100];
+	const options = [12, 24, 48, 96];
 </script>
 
 <label class="t-nota gap-s1 flex items-center {className}" {...props}>

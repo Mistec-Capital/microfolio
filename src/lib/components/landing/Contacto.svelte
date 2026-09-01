@@ -3,7 +3,8 @@
 	import Icon from '$lib/components/Icon.svelte';
 
 	const wa = `https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`;
-	const fila = 'grid grid-cols-[6rem_1fr_auto] items-center gap-s2 md:grid-cols-[8rem_1fr_auto]';
+	const fila = 'grid grid-cols-[1fr_auto] items-center gap-s2 md:grid-cols-[8rem_1fr_auto]';
+	const label = 't-kicker col-span-2 md:col-span-1';
 </script>
 
 <section id="contacto" class="section">
@@ -21,7 +22,7 @@
 			<ul class="list-rule mt-s3 col-span-12 lg:col-span-6 lg:col-start-7 lg:mt-0">
 				<li class="reveal">
 					<a href={wa} target="_blank" rel="noopener noreferrer" class="link {fila}">
-						<span class="t-kicker">WhatsApp</span>
+						<span class={label}>WhatsApp</span>
 						<span>
 							<span class="t-cuerpo text-bone block">{siteConfig.contact.whatsapp}</span>
 							<span class="t-nota">Lunes a viernes, 9 a 18 h</span>
@@ -31,13 +32,13 @@
 				</li>
 				<li class="reveal reveal-1">
 					<a href="mailto:{siteConfig.contact.email}" class="link {fila}">
-						<span class="t-kicker">Email</span>
+						<span class={label}>Email</span>
 						<span class="t-cuerpo text-bone break-all">{siteConfig.contact.email}</span>
 						<Icon name="arrow-up-right" size={16} />
 					</a>
 				</li>
 				<li class="reveal reveal-2">
-					<div class="gap-s2 grid grid-cols-[6rem_1fr] items-center md:grid-cols-[8rem_1fr]">
+					<div class="gap-s2 grid grid-cols-1 items-center md:grid-cols-[8rem_1fr]">
 						<span class="t-kicker">Ubicación</span>
 						<span class="t-cuerpo">{siteConfig.contact.location}</span>
 					</div>

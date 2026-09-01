@@ -45,22 +45,22 @@
 		diseñar la solución adecuada y acompañar su evolución en el tiempo.
 	{/snippet}
 
-	<ol class="grid grid-cols-1 lg:grid-cols-6">
+	<ol class="grid grid-cols-1 xl:grid-cols-6">
 		{#each PASOS as paso, i (paso.titulo)}
 			<li
-				class="reveal border-rule py-s3 lg:pr-s3 lg:pl-s2 relative border-t lg:border-t-0 lg:border-l {i ===
+				class="reveal border-rule py-s3 xl:pr-s3 xl:pl-s2 relative border-t xl:border-t-0 xl:border-l {i ===
 				PASOS.length - 1
-					? 'border-b lg:border-r lg:border-b-0'
+					? 'border-b xl:border-r xl:border-b-0'
 					: ''}"
 			>
 				{#if i > 0}
-					<span class="top-s3 bg-ink text-mist absolute -left-2 hidden lg:block" aria-hidden="true">
+					<span class="top-s3 bg-ink text-mist absolute -left-2 hidden xl:block" aria-hidden="true">
 						<Icon name="chevron-right" size={16} />
 					</span>
 				{/if}
 				<span class="t-nota tnum">{String(i + 1).padStart(2, '0')}</span>
 				<h3 class="t-cuerpo mt-s2 font-medium">{paso.titulo}</h3>
-				<p class="t-nota mt-s1">{paso.texto}</p>
+				<p class="t-nota mt-s1 max-w-[62ch]">{paso.texto}</p>
 			</li>
 		{/each}
 	</ol>
