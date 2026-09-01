@@ -9,9 +9,9 @@
 
 <header class="grid-12">
 	<p class="t-kicker col-span-12">Institucional</p>
-	<h1 class="t-titulo col-span-12 mt-s2 lg:col-span-8">{page.title}</h1>
+	<h1 class="t-titulo mt-s2 col-span-12 lg:col-span-8">{page.title}</h1>
 	{#if page.description}
-		<p class="t-bajada col-span-12 mt-s2">{page.description}</p>
+		<p class="t-bajada mt-s2 col-span-12">{page.description}</p>
 	{/if}
 </header>
 
