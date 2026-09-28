@@ -25,6 +25,16 @@ export const siteConfig = {
 		location: 'Posadas, Misiones — AR'
 	},
 
+	// Certifications (badges in /static, shown under Capacidades)
+	certifications: [
+		{
+			name: 'Mercado Pago Developer',
+			issuer: 'Mercado Pago',
+			badge: '/mp-developer.svg',
+			url: ''
+		}
+	],
+
 	// Editorial nav (anchors on the landing)
 	landingNav: [
 		{ name: 'Nosotros', href: '#manifiesto' },

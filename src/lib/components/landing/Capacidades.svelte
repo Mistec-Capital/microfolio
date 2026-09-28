@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+	import { siteConfig } from '$lib/config.js';
 	import { scrollReveal } from '$lib/actions/scrollReveal.js';
 	import IconGlobe from '~icons/lucide/globe';
 	import IconSmartphone from '~icons/lucide/smartphone';
@@ -13,6 +15,9 @@
 	import IconCalendar from '~icons/lucide/calendar-check';
 	import IconCard from '~icons/lucide/credit-card';
 	import IconLayers from '~icons/lucide/layers';
+	import IconBadgeCheck from '~icons/lucide/badge-check';
+
+	const certifications = siteConfig.certifications ?? [];
 
 	const GROUPS = [
 		{
@@ -162,5 +167,50 @@
 			<span class="text-[#FFB840]">▲</span>
 			<span>12 disciplinas · 1 stack común · equipos formados in-house</span>
 		</div>
+
+		{#if certifications.length}
+			<!-- Certifications -->
+			<div class="mt-16 pt-10 border-t border-[#2A2A28] reveal">
+				<div class="flex items-baseline justify-between mb-8">
+					<div class="font-mono text-[10px] uppercase tracking-[0.18em] text-[#FFB840] flex items-center gap-2">
+						<IconBadgeCheck class="w-3.5 h-3.5" />
+						Certificaciones
+					</div>
+					<span class="font-mono text-[10px] text-[#8A857A]/40 tabular-nums">
+						{String(certifications.length).padStart(2, '0')}
+					</span>
+				</div>
+				<ul class="flex flex-wrap gap-8 md:gap-12">
+					{#each certifications as cert (cert.name)}
+						<li>
+							<svelte:element
+								this={cert.url ? 'a' : 'div'}
+								href={cert.url || undefined}
+								target={cert.url ? '_blank' : undefined}
+								rel={cert.url ? 'noopener noreferrer' : undefined}
+								class="group flex items-center gap-4"
+							>
+								<img
+									src="{base}{cert.badge}"
+									alt="Certificación {cert.name}"
+									class="h-16 w-auto shrink-0 transition-transform group-hover:-translate-y-0.5"
+									loading="lazy"
+								/>
+								<div>
+									<div
+										class="font-display font-medium text-[#E8E3D6] text-sm group-hover:text-[#FFB840] transition-colors"
+									>
+										{cert.name}
+									</div>
+									<div class="mt-0.5 font-mono text-[10px] tracking-wider text-[#8A857A]/70">
+										{cert.issuer}
+									</div>
+								</div>
+							</svelte:element>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		{/if}
 	</div>
 </section>
