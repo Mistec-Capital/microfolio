@@ -8,7 +8,7 @@ type: 'salud'
 tags: ['salud', 'pediatría', 'historia clínica', 'presupuestos', 'auxología', 'on-premise', 'instalable']
 featured: true
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 ---
 

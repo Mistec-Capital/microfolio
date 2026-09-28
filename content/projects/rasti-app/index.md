@@ -7,7 +7,7 @@ description: 'Aplicación móvil para programación y control por Bluetooth de r
 type: 'mobile-app'
 tags: ['mobile', 'educación', 'robótica', 'Bluetooth', 'React Native', 'programación']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Mobile'
 status: 'entregado'
 featured: false

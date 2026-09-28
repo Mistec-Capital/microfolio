@@ -1,4 +1,4 @@
-import { readFile, readdir, access, existsSync } from 'fs/promises';
+import { readFile, readdir, access } from 'fs/promises';
 import { existsSync as existsSyncSync } from 'fs';
 import { join } from 'path';
 import { parse } from 'yaml';
@@ -31,7 +31,7 @@ export async function load({ params }) {
 		const resources = await getProjectResources(projectPath, slug);
 
 		// Load thumbnail metadata
-		const thumbnailMetadata = await loadThumbnailMetadata(projectPath, slug);
+		const thumbnailMetadata = await loadThumbnailMetadata(projectPath);
 
 		return {
 			project: {
@@ -132,7 +132,7 @@ async function getProjectResources(projectPath, slug) {
 	return resources;
 }
 
-async function loadThumbnailMetadata(projectPath, slug) {
+async function loadThumbnailMetadata(projectPath) {
 	const localThumbnailPath = join(projectPath, 'thumbnail.jpg');
 
 	try {

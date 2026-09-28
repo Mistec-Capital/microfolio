@@ -1,7 +1,7 @@
 ---
 title: 'Sistema de Consulta de Sueldos - HCD Posadas'
 date: '2024-01-01'
-location: 'Posadas, Misiones'
+location: 'Posadas, Misiones, Argentina'
 coordinates: [-27.3671, -55.8961]
 description: 'Sistema de autenticación y consulta de recibos de sueldo para empleados del sector público de la provincia de Misiones. Implementa autenticación segura mediante OTP y permite visualizar y descargar recibos de sueldo en formato PDF.'
 type: 'gobierno-digital'

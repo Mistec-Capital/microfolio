@@ -7,7 +7,7 @@ description: 'Plataforma integral para la administración de seguros de sepelio 
 type: 'gestion-administrativa'
 tags: ['seguros', 'sepelio', 'suscripción', 'facturación', 'firma electrónica', 'pagos automáticos']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 featured: false

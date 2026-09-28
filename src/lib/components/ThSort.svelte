@@ -8,16 +8,23 @@
 	let sortState = $derived(handler.getSort());
 </script>
 
-<th class={className} {...props}>
+<th
+	class={className}
+	{...props}
+	aria-sort={$sortState && $sortState.identifier === orderBy
+		? $sortState.direction === 'asc'
+			? 'ascending'
+			: 'descending'
+		: 'none'}
+>
 	<button
+		type="button"
 		onclick={handleSort}
-		class="flex w-full items-center gap-1.5 px-1 py-1 text-left cursor-pointer text-[#FFB840] hover:text-[#E8E3D6] transition-colors"
+		class="link t-kicker gap-s1 flex w-full cursor-pointer items-center text-left"
 	>
 		{@render children()}
 		{#if $sortState && $sortState.identifier === orderBy}
-			<span class="text-[10px] tabular-nums">
-				{$sortState.direction === 'asc' ? '▲' : '▼'}
-			</span>
+			<span class="t-nota" aria-hidden="true">{$sortState.direction === 'asc' ? '↑' : '↓'}</span>
 		{/if}
 	</button>
 </th>

@@ -7,7 +7,7 @@ description: 'Sistema de gestión y automatización IoT para invernaderos hidrop
 type: 'iot'
 tags: ['IoT', 'hidroponía', 'invernaderos', 'automatización', 'sensores', 'agricultura']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 featured: false

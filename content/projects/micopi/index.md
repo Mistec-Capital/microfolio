@@ -7,7 +7,7 @@ description: 'Asistente multicanal de inteligencia artificial para el asesoramie
 type: 'ia'
 tags: ['inteligencia artificial', 'asistente IA', 'multicanal', 'gestión empresarial', 'onboarding', 'automatización']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 ---

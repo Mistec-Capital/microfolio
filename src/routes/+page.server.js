@@ -138,9 +138,7 @@ export async function load() {
 			saas: projects.filter((p) => p.domain === 'saas').length,
 			ia: projects.filter((p) => p.domain === 'ia').length,
 			countries: new Set(
-				projects
-					.map((p) => (p.location || '').split(',').pop()?.trim())
-					.filter(Boolean)
+				projects.map((p) => (p.location || '').split(',').pop()?.trim()).filter(Boolean)
 			).size
 		};
 

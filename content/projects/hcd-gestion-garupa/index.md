@@ -7,7 +7,7 @@ description: 'Solución digital para la administración y trazabilidad de expedi
 type: 'gobierno-digital'
 tags: ['gobierno', 'expedientes', 'concejo deliberante', 'gestión pública', 'trazabilidad']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 featured: false

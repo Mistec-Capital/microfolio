@@ -7,7 +7,7 @@ description: 'Sistema de gestión y sitio web público del Digesto Jurídico de 
 type: 'gobierno-digital'
 tags: ['gobierno', 'legislación', 'ordenanzas', 'digesto jurídico', 'portal público']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: false

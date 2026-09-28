@@ -7,7 +7,7 @@ description: 'Sistema de casilleros inteligentes para depósito y retiro de prod
 type: 'iot'
 tags: ['smart lockers', 'IoT', 'QR', 'OTP', 'logística', 'e-commerce', 'mobile']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 featured: false

@@ -1,50 +1,50 @@
 export const siteConfig = {
 	title: 'MisTec',
-	tagline: 'Software · LATAM',
-	description: 'Ingeniería de Software desde el Interior',
+	tagline: 'Ingeniería de software y soluciones digitales',
+	description:
+		'MisTec diseña, desarrolla e implementa soluciones digitales para organizaciones públicas y privadas. Ingeniería de software, productos digitales y consultoría tecnológica desde Posadas, Misiones.',
 	author: 'MisTec',
-	version: '0.4.0-beta.6',
 
-	// Canonical site URL (used for sitemap, OG, JSON-LD)
+	// URL canónica (sitemap, OG, JSON-LD)
 	siteUrl: 'https://mistec-capital.com',
 	defaultOgImage: '/og-default.jpg',
 	locale: 'es_AR',
 	founded: '2020',
 
-	// Social links
 	socialLinks: {
 		github: 'https://github.com/mistec-capital',
 		linkedin: 'https://linkedin.com/company/mistec-capital',
 		instagram: 'https://instagram.com/mistec.capital'
 	},
 
-	// Contact
 	contact: {
 		email: 'mistec.capital@gmail.com',
 		whatsapp: '+54 9 3764 734375',
-		location: 'Posadas, Misiones — AR'
+		location: 'Posadas, Misiones, Argentina'
 	},
 
-	// Certifications (badges in /static, shown under Capacidades)
-	certifications: [
+	// Certificaciones y alianzas (sección 05 · Alcance). Logos monocromos en
+	// static/brand/aliados/, se tiñen con el color del texto.
+	aliados: [
 		{
-			name: 'Mercado Pago Developer',
-			issuer: 'Mercado Pago',
-			badge: '/mp-developer.svg',
-			url: ''
-		}
+			nombre: 'Mercado Pago',
+			detalle: 'Certificado Checkout Pro',
+			logo: '/brand/aliados/mercadopago.svg'
+		},
+		{ nombre: 'Meta', detalle: 'Partner', logo: '/brand/aliados/meta.svg' },
+		{ nombre: 'Hikvision', detalle: 'Partner', logo: '/brand/aliados/hikvision.svg' }
 	],
 
-	// Editorial nav (anchors on the landing)
+	// Navegación de la landing (anclas a las secciones del Manual Institucional)
 	landingNav: [
-		{ name: 'Nosotros', href: '#manifiesto' },
-		{ name: 'Proyectos', href: '#obra' },
-		// { name: 'Plataformas', href: '#plataformas' },
-		{ name: 'Gobierno', href: '#gobierno' },
+		{ name: 'Nosotros', href: '#nosotros' },
+		{ name: 'Soluciones', href: '#soluciones' },
+		{ name: 'Cómo trabajamos', href: '#metodo' },
+		{ name: 'Proyectos', href: '#proyectos' },
 		{ name: 'Contacto', href: '#contacto' }
 	],
 
-	// Standard nav (used on other pages)
+	// Navegación del resto de las páginas
 	navigation: [
 		{ name: 'Inicio', href: '/' },
 		{ name: 'Proyectos', href: '/projects' },

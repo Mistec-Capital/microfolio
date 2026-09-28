@@ -1,5 +1,5 @@
 <script>
-	let { handler, children, class: className = '', ...props } = $props();
+	let { children, class: className = '', ...props } = $props();
 </script>
 
 <div class={className} {...props}>

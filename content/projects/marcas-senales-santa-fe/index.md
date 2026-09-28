@@ -7,7 +7,7 @@ description: 'Sistema provincial para la gestión y registro de marcas y señale
 type: 'gobierno-digital'
 tags: ['gobierno', 'ganadería', 'marcas', 'señales', 'registro']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: false

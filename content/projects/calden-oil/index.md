@@ -7,7 +7,7 @@ description: 'Mantenimiento y soporte del sistema de gestión de cuenta corrient
 type: 'gestion-administrativa'
 tags: ['cuenta corriente', 'estaciones de servicio', 'gestión financiera', 'clientes', 'mantenimiento']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Mantenimiento y soporte'
 status: 'en mantenimiento'
 featured: true

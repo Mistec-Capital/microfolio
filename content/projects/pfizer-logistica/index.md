@@ -7,7 +7,7 @@ description: 'Mantenimiento y soporte del sistema de control logístico para la 
 type: 'logistica'
 tags: ['logística', 'farmacéutica', 'distribución', 'Pfizer', 'mantenimiento', 'cadena de suministro']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Mantenimiento y soporte'
 status: 'en mantenimiento'
 featured: true

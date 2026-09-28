@@ -8,7 +8,7 @@ type: 'punto de venta'
 tags: ['pos', 'punto de venta', 'medusa', 'sveltekit', 'mercadopago', 'afip', 'arqueo de caja', 'argentina', 'retail']
 featured: true
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 ---
 

@@ -7,17 +7,15 @@
 	import RowCount from '$lib/components/RowCount.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
 	import AkFilters from '$lib/components/AkFilters.svelte';
-	import Kicker from '$lib/components/editorial/Kicker.svelte';
-	import SerialNumber from '$lib/components/editorial/SerialNumber.svelte';
-	import { scrollReveal } from '$lib/actions/scrollReveal.js';
+	import Icon from '$lib/components/Icon.svelte';
 	import SeoHead from '$lib/components/SeoHead.svelte';
-	import IconArrowUpRight from '~icons/lucide/arrow-up-right';
+	import { scrollReveal } from '$lib/actions/scrollReveal.js';
+	import { categoryLabel } from '$lib/utils/categories.js';
 
 	let { data } = $props();
 	let projects = $derived(data.projects);
 
 	let handler = $state();
-
 	let selectedType = $state('todos');
 	let searchTerm = $state('');
 	let filteredProjects = $state(data.projects);
@@ -32,7 +30,8 @@
 
 	function formatDate(dateString) {
 		if (!dateString) return '';
-		return new Date(dateString).toISOString().slice(0, 7);
+		const parsed = new Date(dateString);
+		return Number.isNaN(parsed.getTime()) ? '' : parsed.toISOString().slice(0, 7);
 	}
 
 	function truncate(text, max = 60) {
@@ -40,189 +39,88 @@
 		return text.length > max ? text.substring(0, max) + '…' : text;
 	}
 
-	function categoryLabel(type) {
-		switch ((type || '').toLowerCase()) {
-			case 'saas':
-				return 'SaaS';
-			case 'mobile-app':
-				return 'App Móvil';
-			case 'e-commerce':
-				return 'E-commerce';
-			case 'gobierno-digital':
-				return 'Gobierno';
-			case 'logistica':
-				return 'Logística';
-			case 'recursos-humanos':
-				return 'RRHH';
-			case 'gestion-administrativa':
-				return 'Admin';
-			case 'gestion-deportiva':
-				return 'Deportiva';
-			case 'gis-mapas':
-				return 'GIS';
-			case 'ia':
-				return 'IA';
-			case 'iot':
-				return 'IoT';
-			default:
-				return type;
-		}
-	}
+	const th = 'px-s2 py-s2 text-left';
+	const td = 'px-s2 py-s2 align-top';
 </script>
 
 <SeoHead
-	title="Lista de Proyectos"
-	description="Lista ordenable con búsqueda de los {projects.length} proyectos de Mistec Capital — filtrable por categoría, ubicación, año y tags."
+	title="Lista de proyectos"
+	description="Tabla ordenable de los {projects.length} proyectos de MisTec, con búsqueda por título, descripción y tags."
 />
 
 <div use:scrollReveal>
-	<!-- Section label -->
-	<div
-		class="flex items-baseline gap-6 pb-4 mb-16 border-b border-[#2A2A28] reveal flex-wrap"
-	>
-		<SerialNumber n={5} />
-		<Kicker>/ TABLA EDITORIAL</Kicker>
-		<Kicker class="ml-auto">{String(projects.length).padStart(3, '0')} REGISTROS</Kicker>
-	</div>
-
-	<!-- Title -->
-	<div class="grid grid-cols-12 gap-8 mb-16">
-		<h1
-			class="col-span-12 lg:col-span-8 text-headline font-display text-[#E8E3D6] reveal reveal-delay-1"
-		>
-			Datos ordenables.
+	<header class="grid-12">
+		<p class="t-kicker reveal col-span-12">Lista</p>
+		<h1 class="t-titulo reveal reveal-1 mt-s2 col-span-12 lg:col-span-8">
+			Proyectos en <span class="accent">tabla</span>.
 		</h1>
-		<p
-			class="col-span-12 lg:col-span-4 text-body text-[#8A857A] pt-3 reveal reveal-delay-2"
-		>
-			Ordenable por columna, paginado y con búsqueda combinada por título, descripción, tags y
-			ubicación.
+		<p class="t-bajada reveal reveal-2 mt-s2 col-span-12">
+			Ordenable por columna, con búsqueda y paginado.
 		</p>
+	</header>
+
+	<div class="mt-s4">
+		<AkFilters
+			{projects}
+			bind:searchTerm
+			bind:selectedType
+			bind:filteredProjects
+			showResultsCount={false}
+		/>
 	</div>
 
-	<!-- Filters -->
-	<AkFilters
-		{projects}
-		bind:searchTerm
-		bind:selectedType
-		bind:filteredProjects
-		showResultsCount={false}
-	/>
-
-	<!-- Table controls -->
 	{#if handler}
-		<div
-			class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6 font-mono text-xs text-[#8A857A] reveal"
-		>
-			<div class="flex items-center gap-6">
-				<RowsPerPage {handler} />
-				<RowCount {handler} />
-			</div>
+		<div class="mt-s3 gap-s2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+			<RowsPerPage {handler} />
+			<RowCount {handler} />
 		</div>
-	{/if}
 
-	<!-- Datatable -->
-	{#if handler}
-		<div class="overflow-x-auto border border-[#2A2A28]">
-			<Datatable {handler} class="w-full">
+		<div class="mt-s2 border-rule overflow-x-auto border">
+			<Datatable class="w-full">
 				<table class="w-full">
 					<thead>
-						<tr class="border-b border-[#2A2A28] bg-[#141413]">
-							<ThSort
-								{handler}
-								orderBy="title"
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
-							>
-								Título
-							</ThSort>
-							<ThSort
-								{handler}
-								orderBy="type"
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
-							>
-								Tipo
-							</ThSort>
-							<ThSort
-								{handler}
-								orderBy="location"
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
-							>
-								Ubicación
-							</ThSort>
-							<ThSort
-								{handler}
-								orderBy="date"
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
-							>
-								Fecha
-							</ThSort>
-							<th
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
-							>
-								Descripción
-							</th>
-							<th
-								class="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
-							>
-								Tags
-							</th>
-							<th
-								class="px-4 py-3 text-right font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFB840]"
-							>
-								Acción
-							</th>
+						<tr class="border-rule bg-ink-2 border-b">
+							<ThSort {handler} orderBy="title" class={th}>Título</ThSort>
+							<ThSort {handler} orderBy="type" class={th}>Tipo</ThSort>
+							<ThSort {handler} orderBy="location" class={th}>Ubicación</ThSort>
+							<ThSort {handler} orderBy="date" class={th}>Fecha</ThSort>
+							<th class="{th} t-kicker">Descripción</th>
+							<th class="{th} t-kicker">Tags</th>
+							<th class="{th} text-right"><span class="sr-only">Ver</span></th>
 						</tr>
 					</thead>
 					<tbody>
 						{#each $rows as project (project.slug)}
 							<tr
-								class="border-t border-[#2A2A28] hover:bg-[#141413] transition-colors group"
+								class="border-rule hover:bg-ink-2 border-t"
+								style="transition: background-color var(--d-breve) var(--ease)"
 							>
-								<td class="px-4 py-3">
-									<a
-										href="{base}/projects/{project.slug}"
-										class="font-display text-[#E8E3D6] font-medium hover:text-[#FFB840] transition-colors"
-									>
-										{project.title}
-									</a>
+								<td class={td}>
+									<a href="{base}/projects/{project.slug}" class="btn-text">{project.title}</a>
 								</td>
-								<td class="px-4 py-3">
-									<span class="tag-pill">{categoryLabel(project.type)}</span>
-								</td>
-								<td class="px-4 py-3 font-mono text-xs text-[#8A857A]">
-									{project.location || '—'}
-								</td>
-								<td class="px-4 py-3 font-mono text-xs text-[#8A857A] tabular-nums">
-									{formatDate(project.date)}
-								</td>
-								<td class="px-4 py-3 text-sm text-[#8A857A] max-w-md">
-									{truncate(project.description)}
-								</td>
-								<td class="px-4 py-3">
+								<td class={td}><span class="tag">{categoryLabel(project.type)}</span></td>
+								<td class="{td} t-nota">{project.location || '—'}</td>
+								<td class="{td} t-nota tnum whitespace-nowrap">{formatDate(project.date)}</td>
+								<td class="{td} t-nota max-w-md">{truncate(project.description)}</td>
+								<td class={td}>
 									{#if project.tags}
-										<div class="flex flex-wrap gap-1">
-											{#each project.tags.slice(0, 3) as tag}
-												<span
-													class="font-mono text-[10px] text-[#8A857A]/80 px-1.5 py-0.5 border border-[#2A2A28]"
-													>{tag}</span
-												>
+										<div class="gap-s1 flex flex-wrap">
+											{#each project.tags.slice(0, 3) as tag (tag)}
+												<span class="tag">{tag}</span>
 											{/each}
 											{#if project.tags.length > 3}
-												<span
-													class="font-mono text-[10px] text-[#FFB840]/80 px-1.5 py-0.5"
-													>+{project.tags.length - 3}</span
-												>
+												<span class="t-nota">+{project.tags.length - 3}</span>
 											{/if}
 										</div>
 									{/if}
 								</td>
-								<td class="px-4 py-3 text-right">
+								<td class="{td} text-right">
 									<a
 										href="{base}/projects/{project.slug}"
-										class="inline-flex items-center justify-center border border-[#2A2A28] text-[#8A857A] hover:border-[#FFB840] hover:text-[#FFB840] rounded-full p-2 transition-colors"
-										aria-label="Ver proyecto"
+										class="link inline-flex"
+										aria-label="Ver {project.title}"
 									>
-										<IconArrowUpRight class="size-3.5" />
+										<Icon name="arrow-up-right" size={16} />
 									</a>
 								</td>
 							</tr>
@@ -232,26 +130,10 @@
 			</Datatable>
 		</div>
 
-		<!-- Pagination -->
-		<div class="flex justify-center mt-8 font-mono text-xs">
+		<div class="mt-s3">
 			<Pagination {handler} />
 		</div>
 	{:else}
-		<div class="flex items-center justify-center py-12">
-			<p class="font-mono text-xs text-[#8A857A]">CARGANDO REGISTROS...</p>
-		</div>
+		<p class="t-nota mt-s3">Cargando registros…</p>
 	{/if}
 </div>
-
-<style>
-	:global(.datatable-search input) {
-		background: transparent !important;
-		border: 1px solid #2a2a28 !important;
-		color: #e8e3d6 !important;
-		font-family: 'JetBrains Mono', ui-monospace, monospace !important;
-	}
-	:global(.datatable-search input:focus) {
-		border-color: #ffb840 !important;
-		outline: none !important;
-	}
-</style>

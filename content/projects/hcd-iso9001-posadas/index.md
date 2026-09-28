@@ -7,7 +7,7 @@ description: 'Plataforma de gestión y auditoría del Sistema de Gestión de Cal
 type: 'gobierno-digital'
 tags: ['ISO 9001', 'calidad', 'auditoría', 'procesos', 'gobierno', 'mejora continua']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'activo'
 featured: false

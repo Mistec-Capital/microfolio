@@ -8,7 +8,7 @@ type: 'ecommerce'
 tags: ['ecommerce', 'headless', 'medusa', 'sveltekit', 'multi-región', 'checkout', 'carrito', 'stripe']
 featured: true
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 ---
 

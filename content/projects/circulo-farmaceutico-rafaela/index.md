@@ -7,7 +7,7 @@ description: 'Plataforma de e-commerce para red de farmacias con sistema de reti
 type: 'e-commerce'
 tags: ['e-commerce', 'farmacias', 'salud', 'retail', 'geolocalización']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 status: 'entregado'
 featured: false

@@ -7,7 +7,7 @@ description: 'Plataforma integral de gestión para barrios cerrados y asociacion
 type: 'saas'
 tags: ['barrios', 'gestión vecinal', 'administración', 'comunidades', 'SaaS']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'en desarrollo'
 featured: true

@@ -7,7 +7,7 @@ description: 'Sistema integral de gestión de socios, cuotas y servicios para la
 type: 'gestion-administrativa'
 tags: ['gestión de socios', 'cuotas', 'administración', 'barrio privado', 'cobranzas']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 status: 'entregado'
 featured: true

@@ -7,7 +7,7 @@ description: 'Sistema de visualización y análisis de datos espaciales para el 
 type: 'gis-mapas'
 tags: ['ganadería', 'análisis de datos', 'GIS', 'INTA', 'observatorio']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo y arquitectura'
 status: 'entregado'
 featured: false

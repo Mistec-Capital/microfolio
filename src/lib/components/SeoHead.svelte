@@ -33,9 +33,7 @@
 	let ogWidth = $derived(usingDefaultImage ? 1200 : imageWidth);
 	let ogHeight = $derived(usingDefaultImage ? 630 : imageHeight);
 
-	let jsonLdString = $derived(
-		jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null
-	);
+	let jsonLdString = $derived(jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null);
 </script>
 
 <svelte:head>
@@ -72,6 +70,7 @@
 	<meta name="twitter:image" content={absImage} />
 
 	{#if jsonLdString}
-		{@html `<script type="application/ld+json">${jsonLdString}<\/script>`}
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html '<script type="application/ld+json">' + jsonLdString + '</' + 'script>'}
 	{/if}
 </svelte:head>

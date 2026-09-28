@@ -1,13 +1,9 @@
 <script>
-	import IconClose from '~icons/carbon/close';
+	import Icon from './Icon.svelte';
 
-	let { onclick = () => {}, class: className = '', ariaLabel = 'Close' } = $props();
+	let { onclick = () => {}, class: className = '', ariaLabel = 'Cerrar' } = $props();
 </script>
 
-<button
-	{onclick}
-	class="group bg-box text-primary border-primary hover:bg-accent z-100 cursor-pointer rounded-full border-1 p-2 transition-colors hover:border-transparent hover:text-white {className}"
-	aria-label={ariaLabel}
->
-	<IconClose class="pointer-events-none size-6 group-hover:scale-120" />
+<button type="button" {onclick} class="btn btn-square bg-ink {className}" aria-label={ariaLabel}>
+	<Icon name="close" size={20} />
 </button>

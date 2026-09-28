@@ -7,7 +7,7 @@ description: 'Plataforma de e-commerce y landing page para comercio de tecnolog√
 type: 'e-commerce'
 tags: ['e-commerce', 'tecnolog√≠a', 'tienda online', 'landing page', 'retail']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 status: 'entregado'
 featured: false

@@ -7,7 +7,7 @@ description: 'Sistema integral de gestión de asistencias con integración biom�
 type: 'recursos-humanos'
 tags: ['recursos humanos', 'asistencias', 'biometría', 'ZKTeco', 'reportes', 'turnos']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 status: 'entregado'
 featured: true

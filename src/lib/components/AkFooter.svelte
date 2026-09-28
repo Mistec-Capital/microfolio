@@ -1,127 +1,81 @@
 <script>
 	import { base } from '$app/paths';
 	import { siteConfig } from '$lib/config.js';
-	import Kicker from '$lib/components/editorial/Kicker.svelte';
-	import Rule from '$lib/components/editorial/Rule.svelte';
-	import Marginalia from '$lib/components/editorial/Marginalia.svelte';
+
+	const year = new Date().getFullYear();
+	const wa = `https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`;
+
+	const empresa = [
+		{ name: 'Nosotros', href: `${base}/about` },
+		{ name: 'Proyectos', href: `${base}/projects` },
+		{ name: 'Lista', href: `${base}/list` },
+		{ name: 'Mapa', href: `${base}/map` }
+	];
+	const soluciones = [
+		{ name: 'Soluciones', href: `${base}/#soluciones` },
+		{ name: 'Cómo trabajamos', href: `${base}/#metodo` },
+		{ name: 'Alcance', href: `${base}/#alcance` }
+	];
 </script>
 
-<footer class="section-ink border-t border-[#2A2A28] pt-20 pb-10 relative">
-	<div class="max-w-[1440px] mx-auto px-8 md:px-12 lg:px-16">
-		<!-- Sitemap grid -->
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 mb-16">
-			<div>
-				<Kicker class="block mb-4">MISTEC</Kicker>
-				<p class="font-body text-[#8A857A] text-sm leading-relaxed max-w-[28ch]">
-					Construimos software desde Posadas, Misiones. Desde el interior, desde 2020.
+<footer class="border-rule border-t">
+	<div class="container-brand py-s4">
+		<div class="grid-12 gap-y-s4">
+			<div class="col-span-12 md:col-span-4">
+				<img
+					src="{base}/brand/mistec-isotipo-bone.png"
+					alt="MisTec"
+					width="45"
+					height="40"
+					class="h-10 w-auto"
+				/>
+				<p class="t-nota mt-s2 max-w-[32ch]">
+					Ingeniería de software y soluciones digitales para organizaciones públicas y privadas.
+					Posadas, Misiones, Argentina.
 				</p>
 			</div>
-			<div>
-				<Kicker class="block mb-4">Empresa</Kicker>
-				<ul class="space-y-2.5">
-					<li>
-						<a
-							href="{base}/#manifiesto"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
-						>
-							Nosotros
-						</a>
-					</li>
-					<li>
-						<a
-							href="{base}/#obra"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
-						>
-							Proyectos
-						</a>
-					</li>
-					<li>
-						<a
-							href="{base}/projects"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
-						>
-							Ver todos
-						</a>
-					</li>
+
+			<div class="col-span-6 md:col-span-2 md:col-start-6">
+				<p class="t-kicker">Empresa</p>
+				<ul class="mt-s2 gap-s1 flex flex-col">
+					{#each empresa as item (item.href)}
+						<li><a href={item.href} class="link t-nota">{item.name}</a></li>
+					{/each}
 				</ul>
 			</div>
-			<div>
-				<Kicker class="block mb-4">Servicios</Kicker>
-				<ul class="space-y-2.5">
-					<li>
-						<a
-							href="{base}/#plataformas"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
-						>
-							Plataformas
-						</a>
-					</li>
-					<li>
-						<a
-							href="{base}/#gobierno"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
-						>
-							Gobierno
-						</a>
-					</li>
-					<li>
-						<a
-							href="{base}/#ia"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
-						>
-							IA & Automatización
-						</a>
-					</li>
-					<li>
-						<a
-							href="{base}/#capacidades"
-							class="font-body text-[#8A857A] text-sm hover:text-[#FFB840] transition-colors"
-						>
-							Capacidades
-						</a>
-					</li>
+
+			<div class="col-span-6 md:col-span-2">
+				<p class="t-kicker">Soluciones</p>
+				<ul class="mt-s2 gap-s1 flex flex-col">
+					{#each soluciones as item (item.href)}
+						<li><a href={item.href} class="link t-nota">{item.name}</a></li>
+					{/each}
 				</ul>
 			</div>
-			<div>
-				<Kicker class="block mb-4">Contacto</Kicker>
-				<ul class="space-y-2.5">
+
+			<div class="col-span-12 md:col-span-3">
+				<p class="t-kicker">Contacto</p>
+				<ul class="mt-s2 gap-s1 flex flex-col">
 					<li>
-						<a
-							href="mailto:{siteConfig.contact.email}"
-							class="font-mono text-xs text-[#8A857A] hover:text-[#FFB840] transition-colors"
-						>
+						<a href="mailto:{siteConfig.contact.email}" class="link t-nota break-all">
 							{siteConfig.contact.email}
 						</a>
 					</li>
 					<li>
-						<a
-							href="https://wa.me/{siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="font-mono text-xs text-[#8A857A] hover:text-[#FFB840] transition-colors"
-						>
+						<a href={wa} target="_blank" rel="noopener noreferrer" class="link t-nota">
 							{siteConfig.contact.whatsapp}
 						</a>
 					</li>
-					<li>
-						<span class="font-mono text-xs text-[#8A857A]/60">
-							{siteConfig.contact.location}
-						</span>
-					</li>
+					<li class="t-nota">{siteConfig.contact.location}</li>
 				</ul>
 			</div>
 		</div>
 
-		<Rule />
-
-		<!-- Bottom row -->
-		<div class="flex flex-col md:flex-row md:justify-between md:items-center pt-6 gap-3">
-			<Marginalia>
-				© {new Date().getFullYear()} MisTec — Fundado en Posadas, Misiones, Argentina — 2020
-			</Marginalia>
-			<Marginalia>
-				v{siteConfig.version} / MisTec — {siteConfig.contact.email}
-			</Marginalia>
+		<div
+			class="t-nota mt-s4 gap-s1 border-rule pt-s2 flex flex-col border-t md:flex-row md:justify-between"
+		>
+			<span>© {year} MisTec</span>
+			<span>Posadas, Misiones · Argentina · Desde 2020</span>
 		</div>
 	</div>
 </footer>

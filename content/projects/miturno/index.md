@@ -7,7 +7,7 @@ description: 'Sistema integral de gestión de turnos y reservas genérico para m
 type: 'saas'
 tags: ['turnos', 'reservas', 'agenda online', 'pagos', 'SaaS', 'automatización']
 authors:
-  - name: 'Mistec Capital'
+  - name: 'MisTec'
     role: 'Desarrollo Full Stack'
 status: 'en desarrollo'
 ---

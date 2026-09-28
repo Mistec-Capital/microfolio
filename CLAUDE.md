@@ -12,34 +12,40 @@ microfolio is a modern static portfolio generator built with SvelteKit 2 and Tai
 
 ```bash
 # Development server
-pnpm dev
+bun run dev
 
 
 # Preview production build
-pnpm preview
+bun run preview
 
 # Lint code
-pnpm lint
+bun run lint
 
 # Format code
-pnpm format
+bun run format
+
+# Run the test suite (node --test over tests/)
+bun run test
+
+# Verify the brand system (forbidden patterns, amber budget)
+bun run check:brand
 
 # Deploy (production build with NODE_ENV=production)
-pnpm deploy
+bun run deploy
 
 # Build only (without image optimization)
-pnpm build
+bun run build
 
 # Generate optimized images (AVIF/WebP thumbnails)
-pnpm optimize-images
+bun run optimize-images
 
-# Full build with image optimization
-pnpm build:full
+# Regenerate static/brand assets from brand/signos/
+bun run brand:assets
 ```
 
 ### Package Management
 
-- Uses `pnpm` as the package manager (locked to pnpm@9.12.0)
+- Uses `bun` locally (`bun install`, `bun run dev`); the committed lockfile is `bun.lock`. CI (`.github/workflows/deploy.yml`) installs with pnpm without a lockfile.
 - Node.js LTS 20+ required
 - Key dependencies include:
   - SvelteKit 2 (`@sveltejs/kit`, `@sveltejs/adapter-static`)
@@ -48,7 +54,7 @@ pnpm build:full
   - `marked` for Markdown parsing, `yaml` for frontmatter
   - `@vincjo/datatables` for list view functionality
   - `exifreader` for image metadata extraction
-  - Iconify for icon system (`@iconify/svelte`, `unplugin-icons`)
+  - `sharp` + `png-to-ico` for brand-asset generation (`bun run brand:assets`); icons are an own SVG set (`src/lib/components/Icon.svelte`), no icon library
 
 ## Architecture Overview
 
@@ -85,12 +91,15 @@ pnpm build:full
 - Parses YAML metadata with `yaml` library
 - Converts Markdown to HTML using `marked`
 
-### Styling & UI
+### Styling & UI — sistema de marca MisTec
 
-- Tailwind CSS 4 with typography plugin
-- Custom components with AK prefix (AkHeader, AkFooter, AkProjectCard, etc.)
-- Responsive design with mobile-first approach
-- Datatable functionality using `@vincjo/datatables`
+- Tokens y componentes base en `src/lib/theme.css` (`@layer base` / `@layer components`); Tailwind 4 expone los mismos tokens como utilidades en `src/app.css` (`bg-ink`, `text-mist`, `border-rule`, `gap-s2`…).
+- Una sola familia: Inter variable (`static/fonts/InterVariable.woff2`, `@font-face` en `src/app.html`). Pesos 300/350/500; nada de Bold.
+- Escala tipográfica de cinco niveles: `.t-titulo .t-subtitulo .t-bajada .t-cuerpo .t-nota` (+ `.t-kicker`, `.t-cifra`).
+- Ámbar (`#FFB840`) solo en `theme.css`: `.accent` (una palabra por titular), `:focus-visible`, `::selection`, `.status-dot`. `bun run check:brand` falla si aparece en otro lado.
+- Íconos: `src/lib/components/Icon.svelte` (set propio, 24-box, trazo 2). Sin librerías de íconos.
+- Marca: `static/brand/*` generados con `bun run brand:assets` desde los originales en `brand/signos/`.
+- Spec completo: `docs/superpowers/specs/2026-08-31-rebrand-mistec-design.md`.
 
 ### Build & Deployment
 
@@ -131,7 +140,8 @@ featured: true # Shows on homepage
 
 - ESLint configuration with Svelte plugin
 - Prettier for code formatting
-- No test framework currently configured
+- `bun run test` — `node --test` sobre `tests/` (módulos puros)
+- `bun run check:brand` — verificación del sistema de marca (patrones prohibidos, presupuesto de ámbar)
 
 ## CLI Tool Integration
 
