@@ -23,6 +23,18 @@ export const siteConfig = {
 		location: 'Posadas, Misiones, Argentina'
 	},
 
+	// Certificaciones y alianzas (sección 05 · Alcance). Logos monocromos en
+	// static/brand/aliados/, se tiñen con el color del texto.
+	aliados: [
+		{
+			nombre: 'Mercado Pago',
+			detalle: 'Certificado Checkout Pro',
+			logo: '/brand/aliados/mercadopago.svg'
+		},
+		{ nombre: 'Meta', detalle: 'Partner', logo: '/brand/aliados/meta.svg' },
+		{ nombre: 'Hikvision', detalle: 'Partner', logo: '/brand/aliados/hikvision.svg' }
+	],
+
 	// Navegación de la landing (anclas a las secciones del Manual Institucional)
 	landingNav: [
 		{ name: 'Nosotros', href: '#nosotros' },

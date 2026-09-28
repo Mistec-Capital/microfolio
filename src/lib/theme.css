@@ -206,6 +206,15 @@
 		border-radius: 0;
 	}
 
+	/* Logo de tercero: el SVG hace de máscara y toma el color del texto,
+	   así la marca ajena entra monocroma al sistema. */
+	.logo-tercero {
+		display: block;
+		background-color: currentColor;
+		mask: var(--logo) no-repeat left center / contain;
+		-webkit-mask: var(--logo) no-repeat left center / contain;
+	}
+
 	/* ---- Componentes base: cuatro estados, un recurso por cambio ---- */
 	.btn {
 		display: inline-flex;

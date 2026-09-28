@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+	import { siteConfig } from '$lib/config.js';
 	import SectionHead from './SectionHead.svelte';
 
 	let { stats } = $props();
@@ -39,4 +41,22 @@
 	</ul>
 
 	<p class="t-nota reveal mt-s3">Sectores — {SECTORES}</p>
+
+	{#if siteConfig.aliados?.length}
+		<p class="t-kicker reveal mt-s4">Certificaciones y alianzas</p>
+		<ul class="grid-rule mt-s2 grid grid-cols-1 md:grid-cols-3">
+			{#each siteConfig.aliados as a (a.nombre)}
+				<li class="reveal p-s3 text-mist">
+					<span
+						class="logo-tercero h-6 w-full"
+						style="--logo: url({base}{a.logo})"
+						role="img"
+						aria-label={a.nombre}
+					></span>
+					<span class="t-cuerpo text-bone mt-s3 block font-medium">{a.nombre}</span>
+					<span class="t-nota mt-s1 block">{a.detalle}</span>
+				</li>
+			{/each}
+		</ul>
+	{/if}
 </SectionHead>
